@@ -1,0 +1,1 @@
+main call:[cleanup_platform,init_platform,inizializza_polling_timer,inizializza_uart,inizializza_variabili_encoder,leggi_telegramma] noreturn:[leggi_telegramma]

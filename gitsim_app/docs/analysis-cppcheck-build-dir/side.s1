@@ -1,0 +1,1 @@
+side global:[IstanzaTimer,counter_side_secondario] call:[XScuTimer_ClearInterruptStatus,aggiorna_variabili_encoder,emula_sensori_encoder,manda_telegramma_di_risposta,reset_conteggi_encoder] noreturn:[emula_sensori_encoder]

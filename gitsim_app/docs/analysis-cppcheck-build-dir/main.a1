@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="10980963926613103807">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="24" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="20" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdint.h&quot; not found." verbose="Include file: &quot;stdint.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="21" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xscutimer.h&quot; not found." verbose="Include file: &quot;xscutimer.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="22" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;ps7_init.h&quot; not found." verbose="Include file: &quot;ps7_init.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="23" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="21" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="22" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="23" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xgpio.h&quot; not found." verbose="Include file: &quot;xgpio.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="24" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="25" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="26" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\main.h" line="20" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\main.h" line="21" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdint.h&quot; not found." verbose="Include file: &quot;stdint.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\main.h" line="22" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;platform.h&quot; not found." verbose="Include file: &quot;platform.h&quot; not found.">
+            <location file="..\sources\main.c" line="18" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
+            <location file="..\sources\main.c" line="19" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\sources\main.c" line="20" column="0"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/main.a1.6016.dump">
+            <location file="..\sources\main.c" line="31" column="9"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/main.a1.6016.dump">
+            <location file="..\sources\main.c" line="35" column="27"/>
+        </error>
+        <error id="misra-c2012-21.6" severity="style" msg="REQUIRED - The Standard Library input/output functions shall not be used\011" verbose="REQUIRED - The Standard Library input/output functions shall not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/main.a1.6016.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="31"/>
+    <functioncall functionName="cleanup_platform"/>
+    <functioncall functionName="init_platform"/>
+    <functioncall functionName="inizializza_polling_timer"/>
+    <functioncall functionName="inizializza_uart"/>
+    <functioncall functionName="inizializza_variabili_encoder"/>
+    <functioncall functionName="leggi_telegramma"/>
+  </FileInfo>
+</analyzerinfo>

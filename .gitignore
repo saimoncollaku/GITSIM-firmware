@@ -1,0 +1,10 @@
+# Ignore SDK generated folders
+.metadata/
+RemoteSystemsTempFiles/
+.sdk/
+.Xil/
+
+# Ignore temporary files
+*.log
+*.jou
+*.str

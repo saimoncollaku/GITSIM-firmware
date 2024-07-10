@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.12.0"/>
+    <errors>
+        <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreA" verbose="Uninitialized variable: stato_sensoreA" cwe="457" file0="../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="214"/>
+        </error>
+        <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreB" verbose="Uninitialized variable: stato_sensoreB" cwe="457" file0="../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="214"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;stato_connessione_app&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;stato_connessione_app&amp;#039; is assigned a value that is never used." cwe="563" file0="../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="324"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;stato_connessione_app&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;stato_connessione_app&amp;#039; is assigned a value that is never used." cwe="563" file0="../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="339"/>
+        </error>
+        <error id="misra-c2012-2.2" severity="style" msg="REQUIRED - A project shall not contain dead code&#9;" verbose="REQUIRED - A project shall not contain dead code&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="231"/>
+        </error>
+        <error id="misra-c2012-3.1" severity="style" msg="REQUIRED - The character sequences /* and // shall not be used within a comment&#9;" verbose="REQUIRED - The character sequences /* and // shall not be used within a comment&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="333"/>
+        </error>
+        <error id="misra-c2012-3.1" severity="style" msg="REQUIRED - The character sequences /* and // shall not be used within a comment&#9;" verbose="REQUIRED - The character sequences /* and // shall not be used within a comment&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="348"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="75"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="78"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="82"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="89"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="94"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="113"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="120"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="168"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="173"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="178"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="183"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="193"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="198"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="203"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="208"/>
+        </error>
+        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="85"/>
+        </error>
+        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="187"/>
+        </error>
+        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="212"/>
+        </error>
+        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="243"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ritorna_conteggio_encoder1&amp;#039; is never used." verbose="The function &amp;#039;ritorna_conteggio_encoder1&amp;#039; is never used." cwe="561" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="368"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ritorna_velocita_encoder2&amp;#039; is never used." verbose="The function &amp;#039;ritorna_velocita_encoder2&amp;#039; is never used." cwe="561" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\emulazione_encoder.c" line="363"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="111"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="112"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="113"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="114"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="116"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="117"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="118"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\emulazione_encoder.h" line="119"/>
+        </error>
+        <error id="misra-c2012-21.6" severity="style" msg="REQUIRED - The Standard Library input/output functions shall not be used&#9;" verbose="REQUIRED - The Standard Library input/output functions shall not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_uart.h" line="20"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_uart.h" line="43"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_uart.h" line="44"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_uart.h" line="45"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_uart.h" line="46"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\headers\gestione_polling.h" line="59"/>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &amp;#039;Status&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;Status&amp;#039; is reassigned a value before the old one has been used." cwe="563" file0="../sources/gestione_polling.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="120" info="Status is overwritten"/>
+            <location file="..\sources\gestione_polling.c" line="116" info="Status is assigned"/>
+        </error>
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="36"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="ADVISORY - A function should have a single point of exit at the end&#9;" verbose="ADVISORY - A function should have a single point of exit at the end&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="61"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="ADVISORY - A function should have a single point of exit at the end&#9;" verbose="ADVISORY - A function should have a single point of exit at the end&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="77"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="111"/>
+        </error>
+        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="50"/>
+        </error>
+        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_polling.c" line="82"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;byte&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;byte&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="58"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;byte&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;byte&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="122"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;buffer&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;buffer&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="211"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;temp_cont&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;temp_cont&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="213"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." cwe="563" file0="../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="152"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="47"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="82"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="99"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="103"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="146"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="154"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="158"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="164"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="170"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="227"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="228"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="232"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="233"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="236"/>
+        </error>
+        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="215"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="86"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="89"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="92"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="160"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="161"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="166"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="167"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="219"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="223"/>
+        </error>
+        <error id="misra-c2012-18.4" severity="style" msg="ADVISORY - The +, -, += and -= operators should not be applied to an expression of pointer type&#9;" verbose="ADVISORY - The +, -, += and -= operators should not be applied to an expression of pointer type&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="223"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="86"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="89"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="92"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="160"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="161"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="166"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="167"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="219"/>
+        </error>
+        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="223"/>
+        </error>
+        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="55"/>
+        </error>
+        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\gestione_uart.c" line="119"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/main.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\main.c" line="31"/>
+        </error>
+        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" verbose="REQUIRED - The value returned by a function having non-void return type shall be used&#9;" file0="analysis-cppcheck-build-dir/main.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\main.c" line="35"/>
+        </error>
+        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters&#9;" verbose="ADVISORY - A function should not contain unused parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\side.c" line="38"/>
+        </error>
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/side.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\side.c" line="32"/>
+        </error>
+        <error id="misra-c2012-10.8" severity="style" msg="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type&#9;" verbose="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type&#9;" file0="analysis-cppcheck-build-dir/side.a1.6016.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\sources\side.c" line="44"/>
+        </error>
+    </errors>
+</results>

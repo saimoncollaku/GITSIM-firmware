@@ -1,0 +1,5 @@
+emulazione_encoder.a1::../sources/emulazione_encoder.c
+gestione_polling.a1::../sources/gestione_polling.c
+gestione_uart.a1::../sources/gestione_uart.c
+main.a1::../sources/main.c
+side.a1::../sources/side.c

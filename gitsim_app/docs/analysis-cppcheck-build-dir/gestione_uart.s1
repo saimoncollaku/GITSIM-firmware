@@ -1,0 +1,6 @@
+leggi_telegramma_di_connessione global:[Uart_Ps] call:[XUartPs_IsReceiveData,XUartPs_ReadReg,assegna_diametro_ruota,assegna_ppr_encoder1,assegna_ppr_encoder2,memcpy,sizeof,while]
+leggi_telegramma_funzionamento global:[Uart_Ps] call:[XUartPs_IsReceiveData,XUartPs_ReadReg,assegna_accelerazione_encoder,assegna_velocita_encoder,memcpy,sizeof,while] noreturn:[assegna_accelerazione_encoder,assegna_velocita_encoder]
+leggi_telegramma global:[handshake_avvenuto,stato_connessione_app] call:[leggi_telegramma_di_connessione,leggi_telegramma_funzionamento] noreturn:[leggi_telegramma_di_connessione,leggi_telegramma_funzionamento]
+inizializza_uart global:[Uart_Ps] call:[XUartPs_CfgInitialize,XUartPs_LookupConfig] noreturn:[XUartPs_CfgInitialize]
+manda_telegramma_di_risposta global:[handshake_avvenuto,stato_connessione_app] call:[XUartPs_SendByte,memcpy,ritorna_conteggio_encoder2,ritorna_velocita_encoder1,sizeof] noreturn:[XUartPs_SendByte]
+ritorna_stato_connessione_app global:[stato_connessione_app]
