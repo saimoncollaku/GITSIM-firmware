@@ -329,7 +329,7 @@ void aggiorna_variabili_encoder()
 //	if(stato_connessione_app == true)
 //	{
 		aggiorna_encoder(&E1);
-//		aggiorna_encoder(&E2);
+		aggiorna_encoder(&E2);
 //	}
 //	else
 //	{
@@ -344,7 +344,7 @@ void emula_sensori_encoder()
 //	if(stato_connessione_app == true)
 //	{
 		emula_encoder(&E1);
-//		emula_encoder(&E2);
+		emula_encoder(&E2);
 //	}
 //	else
 //	{
