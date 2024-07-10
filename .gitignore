@@ -3,6 +3,7 @@
 RemoteSystemsTempFiles/
 .sdk/
 .Xil/
+.webtalk/
 
 # Ignore temporary files
 *.log
