@@ -326,30 +326,30 @@ void aggiorna_variabili_encoder()
 {
 	bool stato_connessione_app = ritorna_stato_connessione_app();
 
-//	if(stato_connessione_app == true)
-//	{
+	if(stato_connessione_app == true)
+	{
 		aggiorna_encoder(&E1);
 		aggiorna_encoder(&E2);
-//	}
-//	else
-//	{
-//		/* Non succede niente */
-//	}
+	}
+	else
+	{
+		/* Non succede niente */
+	}
 }
 
 void emula_sensori_encoder()
 {
 	bool stato_connessione_app = ritorna_stato_connessione_app();
 
-//	if(stato_connessione_app == true)
-//	{
+	if(stato_connessione_app == true)
+	{
 		emula_encoder(&E1);
 		emula_encoder(&E2);
-//	}
-//	else
-//	{
-//		/* Non succede niente */
-//	}
+	}
+	else
+	{
+		/* Non succede niente */
+	}
 }
 
 void reset_conteggi_encoder()

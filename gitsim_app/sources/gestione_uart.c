@@ -148,26 +148,36 @@ bool leggi_telegramma_funzionamento(void)
 	/* Estraggo identificatore telegramma valore */
 	identificatore_valore = byte_ricevuti[8];
 
+	//TODO Da togliere
+	for(int i = 0; i < 14; i++)
+	{
+		identificatore_valore = byte_ricevuti[i];
+		if(identificatore_valore != 0)
+		{
+			int k = 0;
+		}
+	}
+
 	/* Estraggo identificatore telegramma addon */
 	identificatore_addon = byte_ricevuti[13];
 
-	if(identificatore_valore == 0x00)
+	if(identificatore_valore == 0)
 	{
 		/* Non succede niente */
 	}
-	else if(identificatore_valore == 0x01)
+	else if(identificatore_valore == 1)
 	{
 		memcpy(&dato_valore1, &byte_ricevuti[0], sizeof(float_t));
 		memcpy(&dato_valore2, &byte_ricevuti[4], sizeof(float_t));
 		assegna_velocita_encoder(dato_valore1, dato_valore2);
 	}
-	else if(identificatore_valore == 0x02)
+	else if(identificatore_valore == 2)
 	{
 		memcpy(&dato_valore1, &byte_ricevuti[0], sizeof(float_t));
 		memcpy(&dato_valore2, &byte_ricevuti[4], sizeof(float_t));
 		assegna_accelerazione_encoder(dato_valore1, dato_valore2);
 	}
-	else if(identificatore_valore == 0x03)
+	else if(identificatore_valore == 3)
 	{
 		connessione_mantenuta = false;
 	}
