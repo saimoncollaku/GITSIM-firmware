@@ -63,6 +63,10 @@ bool leggi_telegramma_di_connessione()
 	uint16_t ppr1;
 	uint16_t ppr2;
 
+//	XUartPs_WriteReg(Uart_Ps.Config.BaseAddress, XUARTPS_CR_OFFSET,
+//			XUartPs_ReadReg(Uart_Ps.Config.BaseAddress, XUARTPS_CR_OFFSET) |
+//			XUARTPS_RXBS_MASK);
+
 
 	do {
 		/* Attendo che un byte arrivi */
@@ -148,16 +152,6 @@ bool leggi_telegramma_funzionamento(void)
 	/* Estraggo identificatore telegramma valore */
 	identificatore_valore = byte_ricevuti[8];
 
-	//TODO Da togliere
-	for(int i = 0; i < 14; i++)
-	{
-		identificatore_valore = byte_ricevuti[i];
-		if(identificatore_valore != 0)
-		{
-			int k = 0;
-		}
-	}
-
 	/* Estraggo identificatore telegramma addon */
 	identificatore_addon = byte_ricevuti[13];
 
@@ -180,6 +174,7 @@ bool leggi_telegramma_funzionamento(void)
 	else if(identificatore_valore == 3)
 	{
 		connessione_mantenuta = false;
+		handshake_avvenuto = false;
 	}
 	else
 	{
