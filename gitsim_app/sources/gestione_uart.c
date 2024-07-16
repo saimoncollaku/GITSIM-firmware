@@ -114,6 +114,8 @@ bool leggi_telegramma_di_connessione()
 		assegna_ppr_encoder1(ppr1);
 		assegna_ppr_encoder2(ppr2);
 		assegna_diametro_ruota(diametro);
+		aggiorna_passo_encoder1();
+		aggiorna_passo_encoder2();
 		connessione_riuscita = true;
 	}
 
@@ -228,7 +230,7 @@ void manda_telegramma_di_risposta()
     	memcpy(buffer + 4, &temp_vel, sizeof(float_t));
 
     	/* Mando conteggio del GIT 1 */
-    	temp_cont = ritorna_conteggio_encoder2();
+    	temp_cont = ritorna_conteggio_encoder1();
     	buffer[8] = temp_cont & 0xFF;
     	buffer[9] = (temp_cont >> 8) & 0xFF;
 

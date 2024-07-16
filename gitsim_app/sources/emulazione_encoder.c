@@ -406,5 +406,14 @@ void assegna_accelerazione_encoder(float_t acc1, float_t acc2)
 	E2.acc = ((double_t) acc2);
 }
 
+void aggiorna_passo_encoder1(void)
+{
+	E1.l_passo = (((double_t) E1.diametro) / ((double_t) E1.ppr)) * 0.5;
+}
+void aggiorna_passo_encoder2(void)
+{
+	E2.l_passo = (((double_t) E2.diametro) / ((double_t) E2.ppr)) * 0.5;
+}
+
 
 

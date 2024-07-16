@@ -123,6 +123,8 @@ void assegna_ppr_encoder2(uint16_t ppr);
 void assegna_diametro_ruota(float_t diametro);
 void assegna_velocita_encoder(float_t vel1, float_t vel2);
 void assegna_accelerazione_encoder(float_t acc1, float_t acc2);
+void aggiorna_passo_encoder1(void);
+void aggiorna_passo_encoder2(void);
 
 #ifdef __cplusplus
 }
