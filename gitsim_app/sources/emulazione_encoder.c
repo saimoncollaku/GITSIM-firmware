@@ -394,16 +394,24 @@ void assegna_diametro_ruota(float_t diametro)
 	E2.diametro = diametro;
 }
 
-void assegna_velocita_encoder(float_t vel1, float_t vel2)
+void assegna_velocita_encoder1(float_t vel)
 {
-	E1.vel = ((double_t) vel1);
-	E2.vel = ((double_t) vel2);
+	E1.vel = ((double_t) vel);
 }
 
-void assegna_accelerazione_encoder(float_t acc1, float_t acc2)
+void assegna_velocita_encoder2(float_t vel)
 {
-	E1.acc = ((double_t) acc1);
-	E2.acc = ((double_t) acc2);
+	E2.vel = ((double_t) vel);
+}
+
+void assegna_accelerazione_encoder1(float_t acc)
+{
+	E1.acc = ((double_t) acc);
+}
+
+void assegna_accelerazione_encoder2(float_t acc)
+{
+	E1.acc = ((double_t) acc);
 }
 
 void aggiorna_passo_encoder1(void)

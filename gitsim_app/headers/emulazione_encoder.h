@@ -121,8 +121,13 @@ uint16_t ritorna_conteggio_encoder2(void);
 void assegna_ppr_encoder1(uint16_t ppr);
 void assegna_ppr_encoder2(uint16_t ppr);
 void assegna_diametro_ruota(float_t diametro);
-void assegna_velocita_encoder(float_t vel1, float_t vel2);
-void assegna_accelerazione_encoder(float_t acc1, float_t acc2);
+
+void assegna_velocita_encoder1(float_t vel);
+void assegna_velocita_encoder2(float_t vel);
+
+void assegna_accelerazione_encoder1(float_t acc);
+void assegna_accelerazione_encoder2(float_t acc);
+
 void aggiorna_passo_encoder1(void);
 void aggiorna_passo_encoder2(void);
 

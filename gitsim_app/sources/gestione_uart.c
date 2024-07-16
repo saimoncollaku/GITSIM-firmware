@@ -21,6 +21,8 @@
 #define L_TELEGRAMMA_CONN   	8
 #define L_TELEGRAMMA_FUNZ   	14
 #define L_TELEGRAMMA_RISP   	12
+#define L_FUNZ_VALORE   		9
+#define L_FUNZ_ADDON   			5
 #define MAX_DIAMETRO_RUOTA 		1.25
 #define MIN_DIAMETRO_RUOTA 		0.8
 #define MAX_PPR_ENCODER 		128
@@ -34,7 +36,7 @@
  * STATIC VARIABLES
  ************************************/
 static XUartPs Uart_Ps;
-static bool stato_connessione_app;
+static bool stato_connessione_app = false;
 static bool handshake_avvenuto = false;
 
 /************************************
@@ -44,20 +46,20 @@ static bool handshake_avvenuto = false;
 /************************************
  * STATIC FUNCTION PROTOTYPES
  ************************************/
-bool leggi_telegramma_di_connessione(void);
-bool leggi_telegramma_funzionamento(void);
+void  leggi_telegramma_di_connessione(void);
+void leggi_telegramma_funzionamento(void);
+void azione_funzionamento_valore(uint8_t identificatore, uint8_t *array_stringa);
 
 
 /************************************
  * STATIC FUNCTIONS
  ************************************/
 
-bool leggi_telegramma_di_connessione()
+void leggi_telegramma_di_connessione()
 {
 	uint16_t n_byte_ricevuti = 0;
 	uint8_t byte;
 	uint8_t byte_ricevuti[L_TELEGRAMMA_CONN];
-	bool connessione_riuscita;
 
 	float_t diametro;
 	uint16_t ppr1;
@@ -98,15 +100,15 @@ bool leggi_telegramma_di_connessione()
 	/* Controllo se i parametri rientrano nei valori corretti */
 	if((diametro > MAX_DIAMETRO_RUOTA) || (diametro < MIN_DIAMETRO_RUOTA))
 	{
-		connessione_riuscita = false;
+		stato_connessione_app = false;
 	}
 	else if((ppr1 > MAX_PPR_ENCODER) || (ppr1 < MIN_PPR_ENCODER))
 	{
-		connessione_riuscita = false;
+		stato_connessione_app = false;
 	}
 	else if((ppr2 > MAX_PPR_ENCODER) || (ppr2 < MIN_PPR_ENCODER))
 	{
-		connessione_riuscita = false;
+		stato_connessione_app = false;
 	}
 	else
 	{
@@ -116,22 +118,20 @@ bool leggi_telegramma_di_connessione()
 		assegna_diametro_ruota(diametro);
 		aggiorna_passo_encoder1();
 		aggiorna_passo_encoder2();
-		connessione_riuscita = true;
+		stato_connessione_app = true;
 	}
 
- 	return connessione_riuscita;
 }
 
-bool leggi_telegramma_funzionamento(void)
+void leggi_telegramma_funzionamento(void)
 {
 	uint16_t n_byte_ricevuti = 0;
 	uint8_t byte;
 	uint8_t byte_ricevuti[L_TELEGRAMMA_FUNZ];
-	bool connessione_mantenuta = true;
 	uint8_t identificatore_valore;
-	uint8_t identificatore_addon; /* TODO Da aggiungere */
-	float_t dato_valore1;
-	float_t dato_valore2;
+	uint8_t stringa_valore[L_FUNZ_VALORE];
+	uint8_t stringa_addon[L_FUNZ_ADDON];
+	uint8_t identificatore_addon;
 
 
 	do {
@@ -152,30 +152,64 @@ bool leggi_telegramma_funzionamento(void)
 	}while(n_byte_ricevuti != L_TELEGRAMMA_FUNZ);
 
 	/* Estraggo identificatore telegramma valore */
-	identificatore_valore = byte_ricevuti[8];
+	identificatore_valore = byte_ricevuti[L_FUNZ_VALORE - 1];
+	memcpy(&stringa_valore, &byte_ricevuti[0], sizeof(uint8_t) * L_FUNZ_VALORE);
+	azione_funzionamento_valore(identificatore_valore, stringa_valore);
+
 
 	/* Estraggo identificatore telegramma addon */
-	identificatore_addon = byte_ricevuti[13];
+	identificatore_addon = byte_ricevuti[L_FUNZ_ADDON - 1];
+	memcpy(&stringa_valore, &byte_ricevuti[L_FUNZ_VALORE - 1], sizeof(uint8_t) * L_FUNZ_ADDON);
 
-	if(identificatore_valore == 0)
+
+}
+
+void azione_funzionamento_valore(uint8_t identificatore, uint8_t array_stringa[])
+{
+	float_t dato_valore1;
+	float_t dato_valore2;
+
+	if(identificatore == 0x00)
 	{
 		/* Non succede niente */
 	}
-	else if(identificatore_valore == 1)
+	else if(identificatore == 0x01)
 	{
-		memcpy(&dato_valore1, &byte_ricevuti[0], sizeof(float_t));
-		memcpy(&dato_valore2, &byte_ricevuti[4], sizeof(float_t));
-		assegna_velocita_encoder(dato_valore1, dato_valore2);
+		memcpy(&dato_valore1, &array_stringa[0], sizeof(float_t));
+		assegna_velocita_encoder1(dato_valore1);
 	}
-	else if(identificatore_valore == 2)
+	else if(identificatore == 0x02)
 	{
-		memcpy(&dato_valore1, &byte_ricevuti[0], sizeof(float_t));
-		memcpy(&dato_valore2, &byte_ricevuti[4], sizeof(float_t));
-		assegna_accelerazione_encoder(dato_valore1, dato_valore2);
+		memcpy(&dato_valore2, &array_stringa[4], sizeof(float_t));
+		assegna_velocita_encoder2(dato_valore2);
 	}
-	else if(identificatore_valore == 3)
+	else if(identificatore == 0x03)
 	{
-		connessione_mantenuta = false;
+		memcpy(&dato_valore1, &array_stringa[0], sizeof(float_t));
+		memcpy(&dato_valore2, &array_stringa[4], sizeof(float_t));
+		assegna_velocita_encoder1(dato_valore1);
+		assegna_velocita_encoder2(dato_valore2);
+	}
+	else if(identificatore == 0x04)
+	{
+		memcpy(&dato_valore1, &array_stringa[0], sizeof(float_t));
+		assegna_accelerazione_encoder1(dato_valore1);
+	}
+	else if(identificatore == 0x05)
+	{
+		memcpy(&dato_valore2, &array_stringa[4], sizeof(float_t));
+		assegna_accelerazione_encoder2(dato_valore2);
+	}
+	else if(identificatore == 0x06)
+	{
+		memcpy(&dato_valore1, &array_stringa[0], sizeof(float_t));
+		memcpy(&dato_valore2, &array_stringa[4], sizeof(float_t));
+		assegna_accelerazione_encoder1(dato_valore1);
+		assegna_accelerazione_encoder2(dato_valore2);
+	}
+	else if(identificatore == 0x07)
+	{
+		stato_connessione_app = false;
 		handshake_avvenuto = false;
 	}
 	else
@@ -183,8 +217,9 @@ bool leggi_telegramma_funzionamento(void)
 		/* Non succede niente */
 	}
 
-	return connessione_mantenuta;
+
 }
+
 
 
 /************************************
@@ -195,11 +230,11 @@ void leggi_telegramma()
 {
 	if(stato_connessione_app == false)
 	{
-		stato_connessione_app = leggi_telegramma_di_connessione();
+		leggi_telegramma_di_connessione();
 	}
 	else
 	{
-		stato_connessione_app = leggi_telegramma_funzionamento();
+		leggi_telegramma_funzionamento();
 	}
 	handshake_avvenuto = true;
 }
@@ -226,7 +261,7 @@ void manda_telegramma_di_risposta()
     	memcpy(buffer, &temp_vel, sizeof(float_t));
 
     	/* Mando velocita' del GIT 2*/
-    	temp_vel = ritorna_velocita_encoder1();
+    	temp_vel = ritorna_velocita_encoder2();
     	memcpy(buffer + 4, &temp_vel, sizeof(float_t));
 
     	/* Mando conteggio del GIT 1 */
