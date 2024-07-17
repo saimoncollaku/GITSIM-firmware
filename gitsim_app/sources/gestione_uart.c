@@ -209,6 +209,7 @@ void azione_funzionamento_valore(uint8_t identificatore, uint8_t array_stringa[]
 	}
 	else if(identificatore == 0x07)
 	{
+		inizializza_variabili_encoder();
 		stato_connessione_app = false;
 		handshake_avvenuto = false;
 	}

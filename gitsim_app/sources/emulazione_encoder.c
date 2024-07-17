@@ -219,7 +219,7 @@ void emula_encoder(encoder *encoder)
 
 void inizializza_encoder(encoder *encoder)
 {
-	encoder->vel = 50;
+	encoder->vel = 0;
 	encoder->acc = 0;
 	encoder->pos_A = 0;
 	encoder->pos_B = 0;
@@ -231,7 +231,7 @@ void inizializza_encoder(encoder *encoder)
 	encoder->incollaggio_B = false;
 	encoder->ppr = 128;
 	encoder->diametro = 1;
-	encoder->l_passo = PI_GRECO*1/256;
+	encoder->l_passo = PI_GRECO / 256;
 }
 
 void reset_gpio(encoder *encoder)
@@ -411,7 +411,7 @@ void assegna_accelerazione_encoder1(float_t acc)
 
 void assegna_accelerazione_encoder2(float_t acc)
 {
-	E1.acc = ((double_t) acc);
+	E2.acc = ((double_t) acc);
 }
 
 void aggiorna_passo_encoder1(void)
