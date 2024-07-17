@@ -416,11 +416,11 @@ void assegna_accelerazione_encoder2(float_t acc)
 
 void aggiorna_passo_encoder1(void)
 {
-	E1.l_passo = (((double_t) E1.diametro) / ((double_t) E1.ppr)) * 0.5;
+	E1.l_passo = (((double_t) E1.diametro * PI_GRECO) / ((double_t) E1.ppr)) * 0.5;
 }
 void aggiorna_passo_encoder2(void)
 {
-	E2.l_passo = (((double_t) E2.diametro) / ((double_t) E2.ppr)) * 0.5;
+	E2.l_passo = (((double_t) E2.diametro * PI_GRECO) / ((double_t) E2.ppr)) * 0.5;
 }
 
 
