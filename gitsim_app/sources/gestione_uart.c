@@ -213,6 +213,13 @@ void azione_funzionamento_valore(uint8_t identificatore, uint8_t array_stringa[]
 		stato_connessione_app = false;
 		handshake_avvenuto = false;
 	}
+	else if(identificatore == 0x08)
+	{
+		assegna_accelerazione_encoder1(0);
+		assegna_accelerazione_encoder2(0);
+		assegna_velocita_encoder1(0);
+		assegna_velocita_encoder2(0);
+	}
 	else
 	{
 		/* Non succede niente */
