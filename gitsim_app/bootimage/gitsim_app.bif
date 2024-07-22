@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\fsbl\Debug\fsbl.elf
+	C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\hw_platform\design_1_wrapper.bit
+	C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\Debug\gitsim_app.elf
+}
