@@ -1,5 +1,5 @@
-emulazione_encoder.a1::../sources/emulazione_encoder.c
-gestione_polling.a1::../sources/gestione_polling.c
-gestione_uart.a1::../sources/gestione_uart.c
-main.a1::../sources/main.c
-side.a1::../sources/side.c
+emulazione_encoder.a1::C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c
+gestione_polling.a1::C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_polling.c
+gestione_uart.a1::C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c
+main.a1::C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/main.c
+side.a1::C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/side.c

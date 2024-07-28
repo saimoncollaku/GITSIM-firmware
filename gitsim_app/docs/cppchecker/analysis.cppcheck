@@ -7,11 +7,14 @@
     <max-ctu-depth>2</max-ctu-depth>
     <max-template-recursion>100</max-template-recursion>
     <includedir>
-        <dir name="../headers/"/>
+        <dir name="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/"/>
     </includedir>
     <paths>
-        <dir name="../sources"/>
+        <dir name="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources"/>
     </paths>
+    <suppressions>
+        <suppression>redundantAssignment</suppression>
+    </suppressions>
     <addons>
         <addon>misra</addon>
     </addons>

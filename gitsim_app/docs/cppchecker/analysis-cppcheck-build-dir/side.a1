@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="15751543884351985625">
+<analyzerinfo hash="14076519586652406426">
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\side.h" line="20" column="0"/>
         </error>
@@ -21,20 +21,17 @@
         <error id="missingInclude" severity="information" msg="Include file: &quot;ps7_init.h&quot; not found." verbose="Include file: &quot;ps7_init.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="23" column="0"/>
         </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
+        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
-        </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="24" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
@@ -57,17 +54,23 @@
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="26" column="0"/>
         </error>
-        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters\011" verbose="ADVISORY - A function should not contain unused parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/side.a1.6016.dump">
-            <location file="..\sources\side.c" line="38" column="17"/>
+        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters\011" verbose="ADVISORY - A function should not contain unused parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\side.c" line="38" column="17"/>
         </error>
-        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/side.a1.6016.dump">
-            <location file="..\sources\side.c" line="32" column="17"/>
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\side.c" line="32" column="17"/>
         </error>
-        <error id="misra-c2012-10.8" severity="style" msg="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type\011" verbose="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/side.a1.6016.dump">
-            <location file="..\sources\side.c" line="44" column="33"/>
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="34" column="25"/>
         </error>
-        <error id="misra-c2012-21.6" severity="style" msg="REQUIRED - The Standard Library input/output functions shall not be used\011" verbose="REQUIRED - The Standard Library input/output functions shall not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/side.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
+        <error id="misra-c2012-10.8" severity="style" msg="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type\011" verbose="REQUIRED - The value of a composite expression shall not be cast to a different essential type category or a wider essential type\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\side.c" line="43" column="33"/>
+        </error>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="32" column="1"/>
+        </error>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/side.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="37" column="1"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
     <functiondecl functionName="side" lineNumber="38"/>

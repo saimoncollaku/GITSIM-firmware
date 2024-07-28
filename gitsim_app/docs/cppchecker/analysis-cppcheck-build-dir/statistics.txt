@@ -1,7 +1,7 @@
-[09.07.2024]
-1720523142202
-cppcheck-error:1
+[28.07.2024]
+1722170474593
+cppcheck-error:2
 cppcheck-warning:0
-cppcheck-style:92
+cppcheck-style:54
 cppcheck-performance:0
 cppcheck-portability:0

@@ -17,7 +17,6 @@ extern "C" {
 /************************************
  * INCLUDES
  ************************************/
-#include <stdio.h>
 #include "xil_printf.h"
 #include "xparameters.h"
 #include "math.h"
@@ -30,6 +29,15 @@ extern "C" {
 /************************************
  * TYPEDEFS
  ************************************/
+union float_bytes {
+    float_t value;
+    uint8_t bytes[sizeof(float_t)];
+};
+
+union uint16_bytes {
+	uint16_t value;
+    uint8_t bytes[sizeof(uint16_t)];
+};
 
 /************************************
  * EXPORTED VARIABLES

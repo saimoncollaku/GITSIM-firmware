@@ -1,22 +1,19 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="2231364963685430585">
+<analyzerinfo hash="18194823771917767524">
         <error id="missingInclude" severity="information" msg="Include file: &quot;xuartps.h&quot; not found." verbose="Include file: &quot;xuartps.h&quot; not found.">
-            <location file="..\sources\gestione_uart.c" line="13" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="13" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="24" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
@@ -39,150 +36,74 @@
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="26" column="0"/>
         </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;byte&apos; can be reduced." verbose="The scope of the variable &apos;byte&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c">
-            <location file="..\sources\gestione_uart.c" line="58" column="10"/>
-            <symbol>byte</symbol>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;temp_vel.value&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;temp_vel.value&apos; is reassigned a value before the old one has been used." cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="265" column="18" info="temp_vel.value is overwritten"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="261" column="18" info="temp_vel.value is assigned"/>
+            <symbol>temp_vel.value</symbol>
         </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;byte&apos; can be reduced." verbose="The scope of the variable &apos;byte&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c">
-            <location file="..\sources\gestione_uart.c" line="122" column="10"/>
-            <symbol>byte</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;buffer&apos; can be reduced." verbose="The scope of the variable &apos;buffer&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c">
-            <location file="..\sources\gestione_uart.c" line="211" column="13"/>
-            <symbol>buffer</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;temp_cont&apos; can be reduced." verbose="The scope of the variable &apos;temp_cont&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../sources/gestione_uart.c">
-            <location file="..\sources\gestione_uart.c" line="213" column="14"/>
-            <symbol>temp_cont</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." verbose="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." cwe="563" file0="../sources/gestione_uart.c">
-            <location file="..\sources\gestione_uart.c" line="152" column="23"/>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." verbose="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="153" column="23"/>
             <symbol>identificatore_addon</symbol>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="43" column="22"/>
+        <error id="unusedVariable" severity="style" msg="Unused variable: stringa_addon" verbose="Unused variable: stringa_addon" cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="125" column="10"/>
+            <symbol>stringa_addon</symbol>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="44" column="34"/>
+  <FileInfo check="ctu">
+<function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c:51:13" call-funcname="azione_funzionamento_valore" call-argnr="2" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="149" col="29" call-argexpr="stringa_valore" call-argvaluetype="7" call-argvalue="9"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:128:6" call-funcname="assegna_accelerazione_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="210" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:129:6" call-funcname="assegna_accelerazione_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="211" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:125:6" call-funcname="assegna_velocita_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="212" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:126:6" call-funcname="assegna_velocita_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="213" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/>  </FileInfo>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="51" column="22"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="45" column="22"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="52" column="34"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="46" column="35"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="53" column="22"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="47" column="37"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="54" column="35"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="82" column="25"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="49" column="45"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="99" column="16"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="50" column="43"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="103" column="16"/>
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="34" column="25"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="146" column="25"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="32" column="1"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="154" column="27"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="37" column="1"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="158" column="32"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="62" column="2"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="164" column="32"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="63" column="2"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="170" column="32"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="64" column="2"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="227" column="28"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="161" column="2"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="228" column="35"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="162" column="2"/>
         </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="232" column="29"/>
-        </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="233" column="36"/>
-        </error>
-        <error id="misra-c2012-10.4" severity="style" msg="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" verbose="REQUIRED - Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="236" column="38"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit\011" verbose="ADVISORY - The precedence of operators within expressions should be made explicit\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="215" column="35"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="86" column="8"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="89" column="8"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="92" column="8"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="160" column="9"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="161" column="9"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="166" column="9"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="167" column="9"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="219" column="12"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="223" column="12"/>
-        </error>
-        <error id="misra-c2012-18.4" severity="style" msg="ADVISORY - The +, -, += and -= operators should not be applied to an expression of pointer type\011" verbose="ADVISORY - The +, -, += and -= operators should not be applied to an expression of pointer type\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="223" column="20"/>
-        </error>
-        <error id="misra-c2012-21.6" severity="style" msg="REQUIRED - The Standard Library input/output functions shall not be used\011" verbose="REQUIRED - The Standard Library input/output functions shall not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="86" column="2"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="89" column="2"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="92" column="2"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="160" column="3"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="161" column="3"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="166" column="3"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="167" column="3"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="219" column="6"/>
-        </error>
-        <error id="misra-c2012-21.15" severity="style" msg="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" verbose="REQUIRED - The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/analysis-cppcheck-build-dir/gestione_uart.a1.6016.dump">
-            <location file="..\sources\gestione_uart.c" line="223" column="6"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.15572.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="257" column="3"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="leggi_telegramma_di_connessione" lineNumber="55"/>
+    <functiondecl functionName="leggi_telegramma_di_connessione" lineNumber="58"/>
     <functiondecl functionName="leggi_telegramma_funzionamento" lineNumber="119"/>
-    <functiondecl functionName="leggi_telegramma" lineNumber="187"/>
-    <functiondecl functionName="inizializza_uart" lineNumber="200"/>
-    <functiondecl functionName="manda_telegramma_di_risposta" lineNumber="209"/>
-    <functiondecl functionName="ritorna_stato_connessione_app" lineNumber="249"/>
+    <functiondecl functionName="azione_funzionamento_valore" lineNumber="159"/>
+    <functiondecl functionName="leggi_telegramma" lineNumber="229"/>
+    <functiondecl functionName="inizializza_uart" lineNumber="242"/>
+    <functiondecl functionName="manda_telegramma_di_risposta" lineNumber="251"/>
+    <functiondecl functionName="ritorna_stato_connessione_app" lineNumber="292"/>
     <functioncall functionName="XPAR_PS7_UART_0_BASEADDR"/>
     <functioncall functionName="XUARTPS_FIFO_OFFSET"/>
     <functioncall functionName="XUartPs_CfgInitialize"/>
@@ -190,17 +111,25 @@
     <functioncall functionName="XUartPs_LookupConfig"/>
     <functioncall functionName="XUartPs_ReadReg"/>
     <functioncall functionName="XUartPs_SendByte"/>
-    <functioncall functionName="assegna_accelerazione_encoder"/>
+    <functioncall functionName="aggiorna_passo_encoder1"/>
+    <functioncall functionName="aggiorna_passo_encoder2"/>
+    <functioncall functionName="assegna_accelerazione_encoder1"/>
+    <functioncall functionName="assegna_accelerazione_encoder2"/>
     <functioncall functionName="assegna_diametro_ruota"/>
     <functioncall functionName="assegna_ppr_encoder1"/>
     <functioncall functionName="assegna_ppr_encoder2"/>
-    <functioncall functionName="assegna_velocita_encoder"/>
+    <functioncall functionName="assegna_velocita_encoder1"/>
+    <functioncall functionName="assegna_velocita_encoder2"/>
+    <functioncall functionName="azione_funzionamento_valore"/>
     <functioncall functionName="false"/>
+    <functioncall functionName="inizializza_variabili_encoder"/>
     <functioncall functionName="leggi_telegramma_di_connessione"/>
     <functioncall functionName="leggi_telegramma_funzionamento"/>
     <functioncall functionName="memcpy"/>
+    <functioncall functionName="ritorna_conteggio_encoder1"/>
     <functioncall functionName="ritorna_conteggio_encoder2"/>
     <functioncall functionName="ritorna_velocita_encoder1"/>
+    <functioncall functionName="ritorna_velocita_encoder2"/>
     <functioncall functionName="true"/>
   </FileInfo>
 </analyzerinfo>
