@@ -1,1 +1,2 @@
-side global:[IstanzaTimer,counter_side_secondario] call:[XScuTimer_ClearInterruptStatus,aggiorna_variabili_encoder,emula_sensori_encoder,manda_telegramma_di_risposta,reset_conteggi_encoder] noreturn:[emula_sensori_encoder]
+side global:[counter_side_secondario,istanza_timer,n_polls_side_lento] call:[XScuTimer_ClearInterruptStatus,aggiorna_variabili_encoder,emula_sensori_encoder,manda_telegramma_di_risposta,reset_conteggi_encoder] noreturn:[emula_sensori_encoder]
+inizializza_side global:[counter_side_secondario,istanza_timer,n_polls_side_lento] call:[ritorna_istanza_timer,ritorna_tempo_del_polling]

@@ -19,17 +19,15 @@
 /************************************
  * PRIVATE MACROS AND DEFINES
  ************************************/
-#define T_SIDE_LENTO 		0.05
-#define N_CLOCK_SIDE_LENTO	((float_t) T_SIDE_LENTO) / ((float_t) T_POLLING)
-
-
+#define T_SIDE_LENTO 		0.05f
 
 
 /************************************
  * STATIC VARIABLES
  ************************************/
-
-static uint32_t counter_side_secondario = 0;
+static uint32_t counter_side_secondario;
+static XScuTimer istanza_timer;
+static uint32_t n_polls_side_lento = 999999999;
 
 
 /************************************
@@ -38,9 +36,9 @@ static uint32_t counter_side_secondario = 0;
 void side(void *CallBack_Timer)
 {
 	/* Rimuovi flag di interrupt */
-	XScuTimer_ClearInterruptStatus(&IstanzaTimer);
+	XScuTimer_ClearInterruptStatus(&istanza_timer);
 
-	if (counter_side_secondario == N_CLOCK_SIDE_LENTO - 1)
+	if (counter_side_secondario == (n_polls_side_lento - 1U))
 	{
 		manda_telegramma_di_risposta();
 		reset_conteggi_encoder();
@@ -55,3 +53,14 @@ void side(void *CallBack_Timer)
 	emula_sensori_encoder();
 }
 
+/************************************
+ * INIZIALIZZAZIONE SIDE
+ ************************************/
+void inizializza_side()
+{
+	counter_side_secondario = 0;
+	istanza_timer = ritorna_istanza_timer();
+	float_t t_polling = ritorna_tempo_del_polling();
+	float_t n_polls_misra = T_SIDE_LENTO / t_polling;
+	n_polls_side_lento = (uint32_t) n_polls_misra;
+}

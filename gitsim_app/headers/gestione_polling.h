@@ -21,6 +21,7 @@ extern "C" {
 #include "stdint.h"
 #include "xscutimer.h"
 #include "ps7_init.h"
+#include "math.h"
 
 /************************************
  * MACROS AND DEFINES
@@ -32,16 +33,13 @@ extern "C" {
  */
 
 
-#define TIMER_PRESCALER			(19 + 1) /**< Prescaler del timer, serve a
+#define TIMER_PSC		(19U + 1U) /**< Prescaler del timer, serve a
                                 definire il valore massimo su cui il timer
                                 si resetta */
 
-#define TIMER_LOAD_VALUE 		(64 + 1) /**< Valore di load del timer, serve a
+#define TIMER_LV 		(64U + 1U) /**< Valore di load del timer, serve a
                                 definire il valore massimo su cui il timer
                                 si resetta */
-#define NUM_T_POLLING	((float_t) (TIMER_PRESCALER * TIMER_LOAD_VALUE))
-#define DEN_T_POLLING	((float_t) (APU_FREQ / 2))
-#define T_POLLING 		NUM_T_POLLING / DEN_T_POLLING
 
 
 /************************************
@@ -51,12 +49,14 @@ extern "C" {
 /************************************
  * EXPORTED VARIABLES
  ************************************/
-extern XScuTimer IstanzaTimer;
 
 /************************************
  * GLOBAL FUNCTION PROTOTYPES
  ************************************/
-int32_t inizializza_polling_timer(void);
+void inizializza_polling_timer(void);
+XScuTimer ritorna_istanza_timer(void);
+float_t ritorna_tempo_del_polling(void);
+
 
 #ifdef __cplusplus
 }

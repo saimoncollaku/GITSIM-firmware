@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="14397314843201492006">
+<analyzerinfo hash="481564227975445730">
         <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="20" column="0"/>
         </error>
@@ -11,6 +11,9 @@
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;ps7_init.h&quot; not found." verbose="Include file: &quot;ps7_init.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="23" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="24" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_exception.h&quot; not found." verbose="Include file: &quot;xil_exception.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="14" column="0"/>
@@ -27,30 +30,21 @@
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\side.h" line="22" column="0"/>
         </error>
-        <error id="redundantAssignment" severity="style" msg="Variable &apos;Status&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;Status&apos; is reassigned a value before the old one has been used." cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_polling.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="120" column="9" info="Status is overwritten"/>
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="116" column="9" info="Status is assigned"/>
-            <symbol>Status</symbol>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="17" column="0"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.15572.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="59" column="34"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="56" column="31"/>
         </error>
-        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.15572.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="36" column="16"/>
-        </error>
-        <error id="misra-c2012-15.5" severity="style" msg="ADVISORY - A function should have a single point of exit at the end\011" verbose="ADVISORY - A function should have a single point of exit at the end\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.15572.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="61" column="3"/>
-        </error>
-        <error id="misra-c2012-15.5" severity="style" msg="ADVISORY - A function should have a single point of exit at the end\011" verbose="ADVISORY - A function should have a single point of exit at the end\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.15572.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="77" column="3"/>
-        </error>
-        <error id="misra-c2012-17.7" severity="style" msg="REQUIRED - The value returned by a function having non-void return type shall be used\011" verbose="REQUIRED - The value returned by a function having non-void return type shall be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.15572.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="111" column="24"/>
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="38" column="16"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="setup_interrupt_system" lineNumber="50"/>
-    <functiondecl functionName="connetti_interrupt_su_timer" lineNumber="82"/>
-    <functiondecl functionName="inizializza_polling_timer" lineNumber="105"/>
+    <functiondecl functionName="setup_interrupt_system" lineNumber="53"/>
+    <functiondecl functionName="connetti_interrupt_su_timer" lineNumber="85"/>
+    <functiondecl functionName="inizializza_polling_timer" lineNumber="108"/>
+    <functiondecl functionName="ritorna_istanza_timer" lineNumber="152"/>
+    <functiondecl functionName="ritorna_tempo_del_polling" lineNumber="157"/>
     <functioncall functionName="XIL_EXCEPTION_ID_INT"/>
     <functioncall functionName="XIL_EXCEPTION_IRQ"/>
     <functioncall functionName="XPAR_SCUGIC_SINGLE_DEVICE_ID"/>

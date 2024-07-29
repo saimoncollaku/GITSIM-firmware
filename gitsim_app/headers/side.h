@@ -25,6 +25,7 @@ extern "C" {
  * GLOBAL FUNCTION PROTOTYPES
  ************************************/
 void side(void *CallBack_Timer);
+void inizializza_side(void);
 
 
 

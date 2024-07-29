@@ -14,11 +14,12 @@
 #include "xil_exception.h"
 #include "xscugic.h"
 #include "side.h"
+#include "math.h"
 
 /************************************
  * EXTERN VARIABLES
  ************************************/
-XScuTimer IstanzaTimer; /**< Istanza del timer hardware */
+
 
 /************************************
  * PRIVATE MACROS AND DEFINES
@@ -33,23 +34,25 @@ XScuTimer IstanzaTimer; /**< Istanza del timer hardware */
 /************************************
  * STATIC VARIABLES
  ************************************/
-static XScuGic IstanzaInterrupt; /**< Istanza dell'interrupt*/
+//const static float_t t_polling_zynq = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5);
+static XScuGic istanza_interrupt; /**< Istanza dell'interrupt*/
+static XScuTimer istanza_timer_zynq; /**< Istanza del timer hardware */
 
 /************************************
  * STATIC FUNCTION PROTOTYPES
  ************************************/
-void connetti_interrupt_su_timer(XScuGic *IstanzaInterrupt,
-								XScuTimer *IstanzaTimer,
+static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt,
+								XScuTimer *istanza_timer,
 								uint16_t ID_Timer_Interrupt);
-int setup_interrupt_system(XScuGic *IstanzaGIC);
+static s32 setup_interrupt_system(XScuGic *IstanzaGIC);
 
 
 /************************************
  * STATIC FUNCTIONS
  ************************************/
-int setup_interrupt_system(XScuGic *IstanzaGIC)
+static s32 setup_interrupt_system(XScuGic *IstanzaGIC)
 {
-	int Status;
+	s32 status = XST_SUCCESS;
 
 	XScuGic_Config *IntcConfig; /* Istanza dell'interrupt controller */
 
@@ -57,44 +60,44 @@ int setup_interrupt_system(XScuGic *IstanzaGIC)
 
 	/* Inizializza i driver dell'interrupt controller */
 	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
-	if (NULL == IntcConfig) {
-		return XST_FAILURE;
+	if (NULL != IntcConfig)
+	{
+		status = XScuGic_CfgInitialize(IstanzaGIC, IntcConfig,
+						IntcConfig->CpuBaseAddress);
+
+		/* Collega l'handler dell'interrupt alla logica di gestione di
+		 * di interrupt hw del processore */
+		Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+					(Xil_ExceptionHandler)XScuGic_InterruptHandler,
+					IstanzaGIC);
+
+		/* Abilita l'interrupt del processore */
+		Xil_ExceptionEnableMask(XIL_EXCEPTION_IRQ);
+	}
+	else
+	{
+		status = XST_FAILURE;
 	}
 
-	Status = XScuGic_CfgInitialize(IstanzaGIC, IntcConfig,
-					IntcConfig->CpuBaseAddress);
-
-	/* Collecga l'handler dell'interrupt alla logica di gestione di
-	 * di interrupt hw del processore */
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
-				(Xil_ExceptionHandler)XScuGic_InterruptHandler,
-				IstanzaGIC);
-
-	/* Abilita l'interrupt del processore */
-	Xil_ExceptionEnableMask(XIL_EXCEPTION_IRQ);
-
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	return XST_SUCCESS;
+	return status;
 }
-void connetti_interrupt_su_timer(XScuGic *IstanzaInterrupt,
-								XScuTimer *IstanzaTimer,
+
+static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt,
+								XScuTimer *istanza_timer,
 								uint16_t ID_Timer_Interrupt)
 {
 	Xil_ExceptionInit();
 
 	/* Associazione funzione di interrupt */
-	XScuGic_Connect(IstanzaInterrupt, ID_Timer_Interrupt,
+	XScuGic_Connect(istanza_interrupt, ID_Timer_Interrupt,
 			(Xil_ExceptionHandler)side,
-			(void *)IstanzaTimer);
+			(void *)istanza_timer);
 
 	/* Abilita GIC interrupt*/
-	XScuGic_Enable(IstanzaInterrupt, ID_Timer_Interrupt);
+	XScuGic_Enable(istanza_interrupt, ID_Timer_Interrupt);
 
 	/* Abilita interrupt sul timer */
-	XScuTimer_EnableInterrupt(IstanzaTimer);
+	XScuTimer_EnableInterrupt(istanza_timer);
 	Xil_ExceptionEnable();
 }
 
@@ -102,38 +105,57 @@ void connetti_interrupt_su_timer(XScuGic *IstanzaInterrupt,
 /************************************
  * GLOBAL FUNCTIONS
  ************************************/
-int32_t inizializza_polling_timer()
+void inizializza_polling_timer()
 {
-	int Status;
+	s32 status = XST_SUCCESS;
 	XScuTimer_Config *ConfigPtr;
 
 	/* Inizializza l'interrupt */
-	setup_interrupt_system(&IstanzaInterrupt);
+	status = setup_interrupt_system(&istanza_interrupt);
+	while(status != XST_SUCCESS)
+	{
+		/* Interrupt setup fail */
+	}
 
 	/* Inizializza il driver del timer */
 	ConfigPtr = XScuTimer_LookupConfig(TIMER_DEVICE_ID);
-
-	Status = XScuTimer_CfgInitialize(&IstanzaTimer, ConfigPtr,
+	status = XScuTimer_CfgInitialize(&istanza_timer_zynq, ConfigPtr,
 									 ConfigPtr->BaseAddr);
+	while(status != XST_SUCCESS)
+	{
+		/* Timer setup fail */
+	}
 
 	/* Test */
-	Status = XScuTimer_SelfTest(&IstanzaTimer);
+	status = XScuTimer_SelfTest(&istanza_timer_zynq);
+	while(status != XST_SUCCESS)
+	{
+		/* Timer selftest fail */
+	}
 
 	/* Connetti l'interrupt sul reset del timer */
-	connetti_interrupt_su_timer(&IstanzaInterrupt, &IstanzaTimer, TIMER_IRPT_INTR);
+	connetti_interrupt_su_timer(&istanza_interrupt, &istanza_timer_zynq, TIMER_IRPT_INTR);
 
 	/* Abilita l'auto reset del timer */
-	XScuTimer_EnableAutoReload(&IstanzaTimer);
+	XScuTimer_EnableAutoReload(&istanza_timer_zynq);
 
 	/* Imposta il prescaler */
-	XScuTimer_SetPrescaler(&IstanzaTimer, TIMER_PRESCALER - 1);
+	XScuTimer_SetPrescaler(&istanza_timer_zynq, TIMER_PSC - 1U);
 
 	/* Carica valore a cui il timer si resetta */
-	XScuTimer_LoadTimer(&IstanzaTimer, TIMER_LOAD_VALUE - 1);
+	XScuTimer_LoadTimer(&istanza_timer_zynq, TIMER_LV - 1U);
 
 	/* Inizia il conteggio */
-	XScuTimer_Start(&IstanzaTimer);
-
-	return Status;
+	XScuTimer_Start(&istanza_timer_zynq);
 }
 
+XScuTimer ritorna_istanza_timer(void)
+{
+	return istanza_timer_zynq;
+}
+
+float_t ritorna_tempo_del_polling(void)
+{
+	float_t t_polling_zynq = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5);
+	return t_polling_zynq;
+}

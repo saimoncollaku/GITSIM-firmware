@@ -1,9 +1,9 @@
-aggiorna_encoder
+aggiorna_encoder global:[t_polling]
 emula_encoder call:[XGpio_DiscreteWrite,valuta_stato_encoder] noreturn:[valuta_stato_encoder]
 inizializza_encoder
 reset_gpio call:[XGpio_DiscreteClear,XGpio_SetDataDirection] noreturn:[XGpio_DiscreteClear]
 valuta_stato_encoder
-inizializza_variabili_encoder global:[E1,E2] call:[XGpio_Initialize,inizializza_encoder,reset_gpio] noreturn:[reset_gpio]
+inizializza_variabili_encoder global:[E1,E2,t_polling] call:[XGpio_Initialize,inizializza_encoder,reset_gpio,ritorna_tempo_del_polling] noreturn:[reset_gpio]
 aggiorna_variabili_encoder global:[E1,E2] call:[aggiorna_encoder,ritorna_stato_connessione_app] noreturn:[aggiorna_encoder]
 emula_sensori_encoder global:[E1,E2] call:[emula_encoder,ritorna_stato_connessione_app] noreturn:[emula_encoder]
 reset_conteggi_encoder global:[E1,E2]

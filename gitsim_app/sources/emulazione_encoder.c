@@ -27,9 +27,6 @@
 /************************************
  * PRIVATE MACROS AND DEFINES
  ************************************/
-#define T_SAMPLE T_POLLING                /**< Tempo di aggiornamento
-                                              dello spazio */
-
 #define PI_GRECO 3.14159265358   /**< Costante pigreco */
 
 #define VELOCITA_MAX 700/3.6 /**< Velocità massima lineare
@@ -42,6 +39,7 @@
 /************************************
  * STATIC VARIABLES
  ************************************/
+static float_t t_polling;
 static encoder E1;
 static encoder E2;
 
@@ -74,7 +72,7 @@ void aggiorna_encoder(encoder *encoder)
 								dello spazio */
 
 	/* Integrazione dell'accelerazione */
-	encoder->vel = (encoder->acc * T_SAMPLE) + encoder->vel;
+	encoder->vel = (encoder->acc * t_polling) + encoder->vel;
 
 	/* Saturo la velocità se va oltre la soglia di 700 km/h*/
 	if (encoder->vel > VELOCITA_MAX)
@@ -88,7 +86,7 @@ void aggiorna_encoder(encoder *encoder)
 
 	/* Integrazione della velocità, assegno lo spazio ad A
 	(che è una scelta arbitraria) */
-	encoder->pos_A = encoder->vel * T_SAMPLE + encoder->pos_A;
+	encoder->pos_A = encoder->vel * t_polling + encoder->pos_A;
 
 	/* 	Estrapolo il fattore di sfasamento, cioè converto i gradi nella
 	 quantità di spazio da cui il canale B si discosta dal canale A */
@@ -307,6 +305,8 @@ void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 
 void inizializza_variabili_encoder()
 {
+	t_polling = ritorna_tempo_del_polling();
+
 	/* Inizializzo variabili */
 	inizializza_encoder(&E1);
 	inizializza_encoder(&E2);
