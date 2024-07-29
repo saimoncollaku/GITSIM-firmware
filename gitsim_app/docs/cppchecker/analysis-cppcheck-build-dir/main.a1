@@ -75,16 +75,16 @@
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\main.c" line="21" column="0"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.18096.dump">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\main.c" line="32" column="9"/>
         </error>
-        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.18096.dump">
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="34" column="25"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.18096.dump">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="32" column="1"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.18096.dump">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/main.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="37" column="1"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">

@@ -29,7 +29,7 @@
  ************************************/
 #define PI_GRECO 3.14159265358   /**< Costante pigreco */
 
-#define VELOCITA_MAX 700/3.6 /**< Velocità massima lineare
+#define VELOCITA_MAX (700/3.6) /**< Velocità massima lineare
                             emulabile dal GIT, in m/s */
 
 /************************************
@@ -51,17 +51,17 @@ static encoder E2;
  * STATIC FUNCTION PROTOTYPES
  ************************************/
 
-void aggiorna_encoder(encoder *encoder);
-void emula_encoder(encoder *encoder);
-void inizializza_encoder(encoder *encoder);
-void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB);
-void reset_gpio(encoder *encoder);
+static void aggiorna_encoder(encoder *encoder);
+static void emula_encoder(encoder *encoder);
+static void inizializza_encoder(encoder *encoder);
+static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB);
+static void reset_gpio(encoder *encoder);
 
 /************************************
  * STATIC FUNCTIONS
  ************************************/
 
-void aggiorna_encoder(encoder *encoder)
+static void aggiorna_encoder(encoder *encoder)
 {
 	double_t pos_minore; /*	Contiene la posizione minore tra quella
 								del canale A e B, serve per la correzione
@@ -83,15 +83,19 @@ void aggiorna_encoder(encoder *encoder)
 	{
 		encoder->vel = -VELOCITA_MAX;
 	}
+	else
+	{
+		/* Non succede niente, MISRA-2023-15.7 */
+	}
 
 	/* Integrazione della velocità, assegno lo spazio ad A
 	(che è una scelta arbitraria) */
-	encoder->pos_A = encoder->vel * t_polling + encoder->pos_A;
+	encoder->pos_A = encoder->pos_A + (encoder->vel * t_polling);
 
 	/* 	Estrapolo il fattore di sfasamento, cioè converto i gradi nella
 	 quantità di spazio da cui il canale B si discosta dal canale A */
 	float_t k_fase = ((float_t) - (encoder->fase) / 360);
-	encoder->pos_B = encoder->pos_A + 2 * encoder->l_passo * k_fase;
+	encoder->pos_B = encoder->pos_A + (2 * encoder->l_passo * k_fase);
 
 	/* 	Indico chi è il sensore con la posizione maggiore e quale con la
 	 minore, mi serve per fare il controllo sulla correzione di spazio */
@@ -110,14 +114,14 @@ void aggiorna_encoder(encoder *encoder)
 
 	/* Satura lo spazio se uno dei due sensori va oltre la
 	soglia [-2*passi, 2*passi] */
-	if (pos_minore <= -2 * encoder->l_passo)
+	if (pos_minore <= (-2 * encoder->l_passo))
 	{
 		/* il minore ha sforato, esso ritorna a 0 mentre il maggiore
 		 va ad un valore maggiore di 0 (dipende dalla fase) */
 		encoder->pos_A = encoder->pos_A + (2 * encoder->l_passo);
 		encoder->pos_B = encoder->pos_B + (2 * encoder->l_passo);
 	}
-	else if (pos_maggiore >= 2 * encoder->l_passo)
+	else if (pos_maggiore >= (2 * encoder->l_passo))
 	{
 		/* il maggiore ha sforato, esso ritorna a 0 mentre il minore
 		 va ad un valore minore di 0 (dipende dalla fase) */
@@ -133,7 +137,7 @@ void aggiorna_encoder(encoder *encoder)
 
 }
 
-void emula_encoder(encoder *encoder)
+static void emula_encoder(encoder *encoder)
 {
 	/* Stato del canale, equivalente al valore logico di GPIO corrispondente */
 	bool stato_sensoreA;
@@ -166,56 +170,64 @@ void emula_encoder(encoder *encoder)
 	 * Esempio: il range dello spazio è 0 -> 2 passi, se duty = 50%
 	 * la soglia di transizione alto/basso sarà 1 passo.
 	 */
-	if (encoder->pos_A >= soglia_min_def && encoder->pos_A < soglia_neg_A)
+	if ((encoder->pos_A >= soglia_min_def) && (encoder->pos_A < soglia_neg_A))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_A, 1, 0x01);
 		stato_sensoreA = true;
 	}
-	else if (encoder->pos_A >= soglia_neg_A && encoder->pos_A < 0)
+	else if ((encoder->pos_A >= soglia_neg_A) && (encoder->pos_A < 0))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_A, 1, 0x00);
 		stato_sensoreA = false;
 	}
-	else if  (encoder->pos_A >= 0 && encoder->pos_A < soglia_pos_A)
+	else if  ((encoder->pos_A >= 0) && (encoder->pos_A < soglia_pos_A))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_A, 1, 0x01);
 		stato_sensoreA = true;
 	}
-	else if (encoder->pos_A >= soglia_pos_A && encoder->pos_A < soglia_max_def)
+	else if ((encoder->pos_A >= soglia_pos_A) && (encoder->pos_A < soglia_max_def))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_A, 1, 0x00);
 		stato_sensoreA = false;
+	}
+	else
+	{
+		/* Non succede niente, MISRA-2023-15.7 */
 	}
 
 	/*
 	 * Generazione segnale per canale B da GPIO, valgono gli stessi
 	 *ragionamenti del canale A
 	 */
-	if (encoder->pos_B >= soglia_min_def && encoder->pos_B < soglia_neg_B)
+	if ((encoder->pos_B >= soglia_min_def) && (encoder->pos_B < soglia_neg_B))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_B, 1, 0x01);
 		stato_sensoreB = true;
 	}
-	else if (encoder->pos_B >= soglia_neg_B && encoder->pos_B < 0)
+	else if ((encoder->pos_B >= soglia_neg_B) && (encoder->pos_B < 0))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_B, 1, 0x00);
 		stato_sensoreB = false;
 	}
-	else if  (encoder->pos_B >= 0 && encoder->pos_B < soglia_pos_B)
+	else if  ((encoder->pos_B >= 0) && (encoder->pos_B < soglia_pos_B))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_B, 1, 0x01);
 		stato_sensoreB = true;
 	}
-	else if (encoder->pos_B >= soglia_pos_B && encoder->pos_B < soglia_max_def)
+	else if ((encoder->pos_B >= soglia_pos_B) && (encoder->pos_B < soglia_max_def))
 	{
 		XGpio_DiscreteWrite(&encoder->indirizzo_gpio_B, 1, 0x00);
 		stato_sensoreB = false;
+	}
+	else
+	{
+		/* Non succede niente, MISRA-2023-15.7 */
 	}
 
 	valuta_stato_encoder(encoder, stato_sensoreA, stato_sensoreB);
 }
 
-void inizializza_encoder(encoder *encoder)
+static void inizializza_encoder(encoder *encoder)
 {
 	encoder->vel = 0;
 	encoder->acc = 0;
@@ -232,7 +244,7 @@ void inizializza_encoder(encoder *encoder)
 	encoder->l_passo = PI_GRECO / 256;
 }
 
-void reset_gpio(encoder *encoder)
+static void reset_gpio(encoder *encoder)
 {
 
     XGpio_SetDataDirection(&encoder->indirizzo_gpio_A, 1, 0x00);
@@ -241,7 +253,7 @@ void reset_gpio(encoder *encoder)
     XGpio_DiscreteClear(&encoder->indirizzo_gpio_B, 1, 0x01);
 }
 
-void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
+static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 {
 
 	if((statoA == false) && (statoB == false) && (encoder->stato != zero))
@@ -418,6 +430,7 @@ void aggiorna_passo_encoder1(void)
 {
 	E1.l_passo = (((double_t) E1.diametro * PI_GRECO) / ((double_t) E1.ppr)) * 0.5;
 }
+
 void aggiorna_passo_encoder2(void)
 {
 	E2.l_passo = (((double_t) E2.diametro * PI_GRECO) / ((double_t) E2.ppr)) * 0.5;

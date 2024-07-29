@@ -33,10 +33,10 @@
         <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="17" column="0"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="56" column="31"/>
         </error>
-        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump">
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="38" column="16"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">

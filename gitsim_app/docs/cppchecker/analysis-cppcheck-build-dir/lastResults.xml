@@ -2,118 +2,64 @@
 <results version="2">
     <cppcheck version="2.12.0"/>
     <errors>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_polling.h" line="56"/>
         </error>
-        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_polling.c" line="38"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\side.h" line="28"/>
         </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreA" verbose="Uninitialized variable: stato_sensoreA" cwe="457" file0="../../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="215"/>
+            <location file="..\..\sources\emulazione_encoder.c" line="227"/>
         </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreB" verbose="Uninitialized variable: stato_sensoreB" cwe="457" file0="../../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="215"/>
+            <location file="..\..\sources\emulazione_encoder.c" line="227"/>
         </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="78"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="82"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="89"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="94"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="113"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="120"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="169"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="174"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="179"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="184"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="194"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="199"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="204"/>
-        </error>
-        <error id="misra-c2012-12.1" severity="style" msg="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" verbose="ADVISORY - The precedence of operators within expressions should be made explicit&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="209"/>
-        </error>
-        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="85"/>
-        </error>
-        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="188"/>
-        </error>
-        <error id="misra-c2012-15.7" severity="style" msg="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" verbose="REQUIRED - All if … else if constructs shall be terminated with an else statement&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="213"/>
-        </error>
-        <error id="misra-c2012-8.7" severity="style" msg="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" verbose="ADVISORY - Functions and objects should not be defined with external linkage if they are referenced in only one translation unit&#9;" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="244"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="111"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="112"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="113"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="114"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="116"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="117"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="118"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\emulazione_encoder.h" line="119"/>
         </error>
-        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="34"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="32"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="37"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="51"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="52"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="53"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\headers\gestione_uart.h" line="54"/>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." cwe="563" file0="../../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
@@ -122,34 +68,34 @@
         <error id="unusedVariable" severity="style" msg="Unused variable: stringa_addon" verbose="Unused variable: stringa_addon" cwe="563" file0="../../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="125"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="49"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="50"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="62"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="63"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="64"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="161"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="162"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\gestione_uart.c" line="257"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/main.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/main.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\main.c" line="32"/>
         </error>
-        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters&#9;" verbose="ADVISORY - A function should not contain unused parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.18096.dump" sinceDate="dd/MM/yyyy">
+        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters&#9;" verbose="ADVISORY - A function should not contain unused parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.4008.dump" sinceDate="dd/MM/yyyy">
             <location file="..\..\sources\side.c" line="36"/>
         </error>
     </errors>
