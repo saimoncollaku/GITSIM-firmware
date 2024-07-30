@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    side.h
- * @author  wasab
- * @date    5 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -15,18 +13,10 @@ extern "C" {
 #endif
 
 /************************************
- * INCLUDES
- ************************************/
-#include "xil_io.h"
-#include "stdio.h"
-#include <stdint.h>
-
-/************************************
  * GLOBAL FUNCTION PROTOTYPES
  ************************************/
 void side(void *CallBack_Timer);
 void inizializza_side(void);
-
 
 
 #ifdef __cplusplus

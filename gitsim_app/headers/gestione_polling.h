@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    gestione_polling.h
- * @author  wasab
- * @date    5 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -17,10 +15,8 @@ extern "C" {
 /************************************
  * INCLUDES
  ************************************/
-#include "stdio.h"
-#include "stdint.h"
+
 #include "xscutimer.h"
-#include "ps7_init.h"
 #include "math.h"
 
 /************************************
@@ -40,15 +36,6 @@ extern "C" {
 #define TIMER_LV 		(64U + 1U) /**< Valore di load del timer, serve a
                                 definire il valore massimo su cui il timer
                                 si resetta */
-
-
-/************************************
- * TYPEDEFS
- ************************************/
-
-/************************************
- * EXPORTED VARIABLES
- ************************************/
 
 /************************************
  * GLOBAL FUNCTION PROTOTYPES

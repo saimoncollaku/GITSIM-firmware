@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    gestione_polling.c
- * @author  wasab
- * @date    5 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -12,14 +10,9 @@
  ************************************/
 #include "gestione_polling.h"
 #include "xil_exception.h"
+#include "ps7_init.h"
 #include "xscugic.h"
 #include "side.h"
-#include "math.h"
-
-/************************************
- * EXTERN VARIABLES
- ************************************/
-
 
 /************************************
  * PRIVATE MACROS AND DEFINES

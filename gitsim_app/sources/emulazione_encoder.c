@@ -1,28 +1,18 @@
 /**
  ********************************************************************************
  * @file    emulazione_encoder.c
- * @author  wasab
- * @date    6 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
+
 
 /************************************
  * INCLUDES
  ************************************/
-#include "xil_io.h"
-#include "stdio.h"
-#include <stdint.h>
 #include "emulazione_encoder.h"
 #include "gestione_uart.h"
 #include "gestione_polling.h"
-#include "xgpio.h"
 
-#include <xparameters.h>
-
-/************************************
- * EXTERN VARIABLES
- ************************************/
 
 /************************************
  * PRIVATE MACROS AND DEFINES
@@ -32,9 +22,6 @@
 #define VELOCITA_MAX (700/3.6) /**< Velocità massima lineare
                             emulabile dal GIT, in m/s */
 
-/************************************
- * PRIVATE TYPEDEFS
- ************************************/
 
 /************************************
  * STATIC VARIABLES
@@ -43,19 +30,16 @@ static float_t t_polling;
 static encoder E1;
 static encoder E2;
 
-/************************************
- * GLOBAL VARIABLES
- ************************************/
 
 /************************************
  * STATIC FUNCTION PROTOTYPES
  ************************************/
-
 static void aggiorna_encoder(encoder *encoder);
 static void emula_encoder(encoder *encoder);
 static void inizializza_encoder(encoder *encoder);
 static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB);
 static void reset_gpio(encoder *encoder);
+
 
 /************************************
  * STATIC FUNCTIONS
@@ -130,7 +114,7 @@ static void aggiorna_encoder(encoder *encoder)
 	}
 	else
 	{
-		/* Richiesto dal MISRA, non succede nulla */
+		/* Non succede niente, MISRA-2023-15.7 */
 	}
 
 	return;
@@ -310,6 +294,7 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 	}
 
 }
+
 
 /************************************
  * GLOBAL FUNCTIONS

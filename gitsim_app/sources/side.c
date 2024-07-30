@@ -2,8 +2,6 @@
  ********************************************************************************
  * @file    side.c
  * @author  Saimon Collaku
- * @date
- * @brief   
  ********************************************************************************
  */
 
@@ -52,6 +50,7 @@ void side(void *CallBack_Timer)
 	aggiorna_variabili_encoder();
 	emula_sensori_encoder();
 }
+
 
 /************************************
  * INIZIALIZZAZIONE SIDE

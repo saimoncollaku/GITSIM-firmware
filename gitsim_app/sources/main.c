@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    main.c
- * @author  wasab
- * @date    5 Jul 2024
- * @brief
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -14,17 +12,8 @@
 #include "gestione_uart.h"
 #include "gestione_polling.h"
 #include "emulazione_encoder.h"
-#include "main.h"
 #include "side.h"
 #include "platform.h"
-#include "xparameters.h"
-#include <stdbool.h>
-
-
-/************************************
- * EXTERN VARIABLES
- ************************************/
-
 
 /************************************
  * MAIN

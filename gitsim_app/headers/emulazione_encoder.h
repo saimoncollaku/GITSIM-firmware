@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    emulazione_encoder.h
- * @author  TEST
- * @date    6 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -17,17 +15,10 @@ extern "C" {
 /************************************
  * INCLUDES
  ************************************/
-#include "xil_io.h"
-#include "stdio.h"
-#include <stdint.h>
 #include <math.h>
 #include "xgpio.h"
-#include <assert.h>
 #include <stdbool.h>
 
-/************************************
- * MACROS AND DEFINES
- ************************************/
 
 /************************************
  * TYPEDEFS
@@ -100,9 +91,6 @@ typedef struct
   stato_encoder stato;
 } encoder;
 
-/************************************
- * EXPORTED VARIABLES
- ************************************/
 
 /************************************
  * GLOBAL FUNCTION PROTOTYPES

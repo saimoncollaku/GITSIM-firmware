@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GITSIM - FW:  File sorgente emulazione_encoder.h</title>
+<link rel="icon" href="icon.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">GITSIM - FW
+   </div>
+   <div id="projectbrief">Documentazione del firmware</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('emulazione__encoder_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">emulazione_encoder.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="emulazione__encoder_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">    2</span><span class="comment"> ********************************************************************************</span></div>
+<div class="line"><span class="lineno">    3</span><span class="comment"> * @file    emulazione_encoder.h</span></div>
+<div class="line"><span class="lineno">    4</span><span class="comment"> * @author  Saimon Collaku</span></div>
+<div class="line"><span class="lineno">    5</span><span class="comment"> ********************************************************************************</span></div>
+<div class="line"><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">HEADERS_EMULAZIONE_ENCODER_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">HEADERS_EMULAZIONE_ENCODER_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/************************************</span></div>
+<div class="line"><span class="lineno">   16</span><span class="comment"> * INCLUDES</span></div>
+<div class="line"><span class="lineno">   17</span><span class="comment"> ************************************/</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">math</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;xgpio.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdbool</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/************************************</span></div>
+<div class="line"><span class="lineno">   24</span><span class="comment"> * TYPEDEFS</span></div>
+<div class="line"><span class="lineno">   25</span><span class="comment"> ************************************/</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0">   26</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db">   28</a></span>    <a class="code hl_enumvalue" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db">zero</a>,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b">   29</a></span>    <a class="code hl_enumvalue" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b">uno</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a">   30</a></span>    <a class="code hl_enumvalue" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a">due</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99">   31</a></span>    <a class="code hl_enumvalue" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99">tre</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c">incerto</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c">   33</a></span>}stato_encoder;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structencoder.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structencoder.html#a4d4cef7da5d96a727cdca73797719e71">   38</a></span>  <a class="code hl_variable" href="structencoder.html#a4d4cef7da5d96a727cdca73797719e71">uint16_t</a> <a class="code hl_variable" href="structencoder.html#a4d4cef7da5d96a727cdca73797719e71">duty_A</a>;          <span class="comment">/**&lt; Duty cycle del segnale in uscita al canale A,</span></div>
+<div class="line"><span class="lineno">   39</span><span class="comment">                                espresso come intero percentuale (fare</span></div>
+<div class="line"><span class="lineno">   40</span><span class="comment">                                attenzione perchè bisogna convertirlo in numero</span></div>
+<div class="line"><span class="lineno">   41</span><span class="comment">                                moltiplicando per 0.01). */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structencoder.html#ae0f78e46ade6acb432ec551990426095">   43</a></span>  <a class="code hl_variable" href="structencoder.html#ae0f78e46ade6acb432ec551990426095">uint16_t</a> <a class="code hl_variable" href="structencoder.html#ae0f78e46ade6acb432ec551990426095">duty_B</a>;          <span class="comment">/**&lt; Duty cycle del segnale in uscita al canale B,</span></div>
+<div class="line"><span class="lineno">   44</span><span class="comment">                                espresso come percentuale (fare</span></div>
+<div class="line"><span class="lineno">   45</span><span class="comment">                                attenzione perchè bisogna convertirlo in numero</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment">                                moltiplicando per 0.01). */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structencoder.html#a1a5a0d827a7c72bb9f195b74ba562f38">   47</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structencoder.html#a1a5a0d827a7c72bb9f195b74ba562f38">incollaggio_A</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structencoder.html#affbfeefc23b882a65ebed4ba52e7cd67">   49</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structencoder.html#affbfeefc23b882a65ebed4ba52e7cd67">incollaggio_B</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structencoder.html#a3982ba30ef6e02e76754c11dda6eadf7">   51</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structencoder.html#a3982ba30ef6e02e76754c11dda6eadf7">err_freq_A</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structencoder.html#a3b6443968af3b037cc864065acda87f6">   53</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structencoder.html#a3b6443968af3b037cc864065acda87f6">err_freq_B</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structencoder.html#a43bacf9a20bbbb8201f6fa497627423c">   55</a></span>  <a class="code hl_variable" href="structencoder.html#a43bacf9a20bbbb8201f6fa497627423c">float_t</a> <a class="code hl_variable" href="structencoder.html#a43bacf9a20bbbb8201f6fa497627423c">err_freq_passo</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structencoder.html#af1445e4ed7cf1b67f7d17f922b38fd07">   59</a></span>  <a class="code hl_variable" href="structencoder.html#af1445e4ed7cf1b67f7d17f922b38fd07">int16_t</a> <a class="code hl_variable" href="structencoder.html#af1445e4ed7cf1b67f7d17f922b38fd07">fase</a>;           <span class="comment">/**&lt; Sfasamento dei due segnali dal GIT, misurato</span></div>
+<div class="line"><span class="lineno">   60</span><span class="comment">                                in gradi. */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">   62</a></span>  <a class="code hl_variable" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">uint16_t</a> <a class="code hl_variable" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">ppr</a>;            <span class="comment">/**&lt; Risoluzione del GIT riconducibile come numero</span></div>
+<div class="line"><span class="lineno">   63</span><span class="comment">                                di suddivisioni del disco o al numero di</span></div>
+<div class="line"><span class="lineno">   64</span><span class="comment">                                impulsi per giro, misurato in ppr. */</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9">   66</a></span>  <a class="code hl_variable" href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9">float_t</a> <a class="code hl_variable" href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9">diametro</a>;              <span class="comment">/**&lt; Diametro della ruota il cui asse è</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">                                collegato al GIT, misurato in metri. */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">   69</a></span>  <a class="code hl_variable" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">double_t</a> <a class="code hl_variable" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">l_passo</a>;             <span class="comment">/**&lt; Lunghezza del passo di ruota recepito dal</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">                                GIT, misurato in metri.  Esso deve essere</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">                                ricalcolato ogni volta che il diametro o</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">                                la risoluzione variano utilizzando la</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">                                formula: \f$ passo=\frac{\pi \cdot diametro}</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">                                {4 \cdot risoluzione}\f$. */</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structencoder.html#a154e80c108a59f6e83a4ba086812811e">   76</a></span>  <a class="code hl_variable" href="structencoder.html#a154e80c108a59f6e83a4ba086812811e">double_t</a> <a class="code hl_variable" href="structencoder.html#a154e80c108a59f6e83a4ba086812811e">pos_A</a>;       <span class="comment">/**&lt; Posizione del sensore A, misurato in metri. */</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structencoder.html#a8f69cba833fa6de5c35e59842c825bd0">   78</a></span>  <a class="code hl_variable" href="structencoder.html#a8f69cba833fa6de5c35e59842c825bd0">double_t</a> <a class="code hl_variable" href="structencoder.html#a8f69cba833fa6de5c35e59842c825bd0">pos_B</a>;       <span class="comment">/**&lt; Posizione del sensore B nell&#39;intervallo di 4</span></div>
+<div class="line"><span class="lineno">   79</span><span class="comment">                                passi, misurato in metri */</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structencoder.html#a611077c5760214be5601fce57d5543bf">   81</a></span>  <a class="code hl_variable" href="structencoder.html#a611077c5760214be5601fce57d5543bf">double_t</a> <a class="code hl_variable" href="structencoder.html#a611077c5760214be5601fce57d5543bf">vel</a>;         <span class="comment">/**&lt; Velocità del GIT, in m/s */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">   83</a></span>  <a class="code hl_variable" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">double_t</a> <a class="code hl_variable" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">acc</a>;         <span class="comment">/**&lt; Accelerazione del GIT, in m/s^2 */</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structencoder.html#abb823a68809270d2076d935df527fb0d">   85</a></span>  <a class="code hl_variable" href="structencoder.html#abb823a68809270d2076d935df527fb0d">uint16_t</a> <a class="code hl_variable" href="structencoder.html#abb823a68809270d2076d935df527fb0d">conteggio</a>;        <span class="comment">/**&lt; Numero di passi svolti dall&#39;ultimo reset,</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">                                i passi sono quelli ottenuti tramite la</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">                                tecnica di risoluzione x4 */</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structencoder.html#ab1e2e262124dc623de3b99e556678318">   88</a></span>  <a class="code hl_variable" href="structencoder.html#ab1e2e262124dc623de3b99e556678318">XGpio</a> <a class="code hl_variable" href="structencoder.html#ab1e2e262124dc623de3b99e556678318">indirizzo_gpio_A</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structencoder.html#ad093cdf5c8c2d01ed3f28d6154382ff8">   89</a></span>  <a class="code hl_variable" href="structencoder.html#ad093cdf5c8c2d01ed3f28d6154382ff8">XGpio</a> <a class="code hl_variable" href="structencoder.html#ad093cdf5c8c2d01ed3f28d6154382ff8">indirizzo_gpio_B</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structencoder.html#adff6421cc3a0d4f9aa6e9545e44a1b6e">   91</a></span>  stato_encoder <a class="code hl_variable" href="structencoder.html#adff6421cc3a0d4f9aa6e9545e44a1b6e">stato</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>} encoder;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">/************************************</span></div>
+<div class="line"><span class="lineno">   96</span><span class="comment"> * GLOBAL FUNCTION PROTOTYPES</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment"> ************************************/</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a>(uint16_t ppr);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a>(uint16_t ppr);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a>(float_t diametro);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a>(float_t vel);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a>(float_t vel);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a>(float_t acc);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a>(float_t acc);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8c.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00409">emulazione_encoder.c:409</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a271856af8b8b2cadea103f02bd5b668f"><div class="ttname"><a href="emulazione__encoder_8c.html#a271856af8b8b2cadea103f02bd5b668f">VELOCITA_MAX</a></div><div class="ttdeci">#define VELOCITA_MAX</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00022">emulazione_encoder.c:22</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8c.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00383">emulazione_encoder.c:383</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a4070100d200e3aa39629900d96c86de7"><div class="ttname"><a href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a></div><div class="ttdeci">void emula_sensori_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00337">emulazione_encoder.c:337</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8c.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00378">emulazione_encoder.c:378</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a96ee7a4d2aee8a097cf25167be12018f"><div class="ttname"><a href="emulazione__encoder_8c.html#a96ee7a4d2aee8a097cf25167be12018f">PI_GRECO</a></div><div class="ttdeci">#define PI_GRECO</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00020">emulazione_encoder.c:20</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_aa5f668eb17b9909cee1f23d59bc1ff0e"><div class="ttname"><a href="emulazione__encoder_8c.html#aa5f668eb17b9909cee1f23d59bc1ff0e">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00368">emulazione_encoder.c:368</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8c.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00388">emulazione_encoder.c:388</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8c.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00394">emulazione_encoder.c:394</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_abd632f950c7db7923b3efc93e43b6b6a"><div class="ttname"><a href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a></div><div class="ttdeci">void reset_conteggi_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00352">emulazione_encoder.c:352</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_abec5dbea1209c33f57b6e198b568d199"><div class="ttname"><a href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a></div><div class="ttdeci">void aggiorna_variabili_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00322">emulazione_encoder.c:322</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ad4c02bb329fe2b0101f7b8348879b392"><div class="ttname"><a href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a></div><div class="ttdeci">void aggiorna_passo_encoder2(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00419">emulazione_encoder.c:419</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ad708854593fcede64d064abf3eb94514"><div class="ttname"><a href="emulazione__encoder_8c.html#ad708854593fcede64d064abf3eb94514">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00373">emulazione_encoder.c:373</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_adb19ec24d33f34186a3a6f1d8fcff445"><div class="ttname"><a href="emulazione__encoder_8c.html#adb19ec24d33f34186a3a6f1d8fcff445">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00363">emulazione_encoder.c:363</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_add8b04e0f68d02c8381598ad996a6627"><div class="ttname"><a href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a></div><div class="ttdeci">void aggiorna_passo_encoder1(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00414">emulazione_encoder.c:414</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8c.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00404">emulazione_encoder.c:404</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af365796989f4167084d5d6cebf1905b4"><div class="ttname"><a href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a></div><div class="ttdeci">void inizializza_variabili_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00303">emulazione_encoder.c:303</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8c.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00399">emulazione_encoder.c:399</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af98a3fdbf248c008920827b801012ff7"><div class="ttname"><a href="emulazione__encoder_8c.html#af98a3fdbf248c008920827b801012ff7">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00358">emulazione_encoder.c:358</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00409">emulazione_encoder.c:409</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00383">emulazione_encoder.c:383</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00378">emulazione_encoder.c:378</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a8097758f4e4c5efc56c99bf84b79fa65"><div class="ttname"><a href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00358">emulazione_encoder.c:358</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00388">emulazione_encoder.c:388</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00394">emulazione_encoder.c:394</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b">uno</a></div><div class="ttdeci">@ uno</div><div class="ttdef"><b>Definition</b> <a href="#l00029">emulazione_encoder.h:29</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99">tre</a></div><div class="ttdeci">@ tre</div><div class="ttdef"><b>Definition</b> <a href="#l00031">emulazione_encoder.h:31</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db">zero</a></div><div class="ttdeci">@ zero</div><div class="ttdef"><b>Definition</b> <a href="#l00028">emulazione_encoder.h:28</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a">due</a></div><div class="ttdeci">@ due</div><div class="ttdef"><b>Definition</b> <a href="#l00030">emulazione_encoder.h:30</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c">incerto</a></div><div class="ttdeci">@ incerto</div><div class="ttdef"><b>Definition</b> <a href="#l00033">emulazione_encoder.h:32</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ad9b89960a40205bfa08e969668a90038"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00368">emulazione_encoder.c:368</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ad9ce0f0afcc896ca8dad86f9fd2fa7a9"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00363">emulazione_encoder.c:363</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00404">emulazione_encoder.c:404</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ae999bf6b9b44defa8212f47192d0c450"><div class="ttname"><a href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2(void)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00373">emulazione_encoder.c:373</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00399">emulazione_encoder.c:399</a></div></div>
+<div class="ttc" id="agestione__uart_8h_html_a08f294acc7835e12d7697b8920910d29"><div class="ttname"><a href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a></div><div class="ttdeci">bool ritorna_stato_connessione_app(void)</div><div class="ttdef"><b>Definition</b> <a href="gestione__uart_8c_source.html#l00285">gestione_uart.c:285</a></div></div>
+<div class="ttc" id="astructencoder_html_a154e80c108a59f6e83a4ba086812811e"><div class="ttname"><a href="structencoder.html#a154e80c108a59f6e83a4ba086812811e">encoder::pos_A</a></div><div class="ttdeci">double_t pos_A</div><div class="ttdef"><b>Definition</b> <a href="#l00076">emulazione_encoder.h:76</a></div></div>
+<div class="ttc" id="astructencoder_html_a163640e005e8c38fdca97e7246c63fbf"><div class="ttname"><a href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">encoder::ppr</a></div><div class="ttdeci">uint16_t ppr</div><div class="ttdef"><b>Definition</b> <a href="#l00062">emulazione_encoder.h:62</a></div></div>
+<div class="ttc" id="astructencoder_html_a1a5a0d827a7c72bb9f195b74ba562f38"><div class="ttname"><a href="structencoder.html#a1a5a0d827a7c72bb9f195b74ba562f38">encoder::incollaggio_A</a></div><div class="ttdeci">bool incollaggio_A</div><div class="ttdef"><b>Definition</b> <a href="#l00047">emulazione_encoder.h:47</a></div></div>
+<div class="ttc" id="astructencoder_html_a3982ba30ef6e02e76754c11dda6eadf7"><div class="ttname"><a href="structencoder.html#a3982ba30ef6e02e76754c11dda6eadf7">encoder::err_freq_A</a></div><div class="ttdeci">bool err_freq_A</div><div class="ttdef"><b>Definition</b> <a href="#l00051">emulazione_encoder.h:51</a></div></div>
+<div class="ttc" id="astructencoder_html_a3b6443968af3b037cc864065acda87f6"><div class="ttname"><a href="structencoder.html#a3b6443968af3b037cc864065acda87f6">encoder::err_freq_B</a></div><div class="ttdeci">bool err_freq_B</div><div class="ttdef"><b>Definition</b> <a href="#l00053">emulazione_encoder.h:53</a></div></div>
+<div class="ttc" id="astructencoder_html_a43bacf9a20bbbb8201f6fa497627423c"><div class="ttname"><a href="structencoder.html#a43bacf9a20bbbb8201f6fa497627423c">encoder::err_freq_passo</a></div><div class="ttdeci">float_t err_freq_passo</div><div class="ttdef"><b>Definition</b> <a href="#l00055">emulazione_encoder.h:55</a></div></div>
+<div class="ttc" id="astructencoder_html_a4d4cef7da5d96a727cdca73797719e71"><div class="ttname"><a href="structencoder.html#a4d4cef7da5d96a727cdca73797719e71">encoder::duty_A</a></div><div class="ttdeci">uint16_t duty_A</div><div class="ttdef"><b>Definition</b> <a href="#l00038">emulazione_encoder.h:38</a></div></div>
+<div class="ttc" id="astructencoder_html_a5af3e088f719b48eadbd2ac4e8d34fbd"><div class="ttname"><a href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">encoder::acc</a></div><div class="ttdeci">double_t acc</div><div class="ttdef"><b>Definition</b> <a href="#l00083">emulazione_encoder.h:83</a></div></div>
+<div class="ttc" id="astructencoder_html_a611077c5760214be5601fce57d5543bf"><div class="ttname"><a href="structencoder.html#a611077c5760214be5601fce57d5543bf">encoder::vel</a></div><div class="ttdeci">double_t vel</div><div class="ttdef"><b>Definition</b> <a href="#l00081">emulazione_encoder.h:81</a></div></div>
+<div class="ttc" id="astructencoder_html_a8e27ae3ab7c03427eb5ee42ab646aa45"><div class="ttname"><a href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">encoder::l_passo</a></div><div class="ttdeci">double_t l_passo</div><div class="ttdef"><b>Definition</b> <a href="#l00069">emulazione_encoder.h:69</a></div></div>
+<div class="ttc" id="astructencoder_html_a8f69cba833fa6de5c35e59842c825bd0"><div class="ttname"><a href="structencoder.html#a8f69cba833fa6de5c35e59842c825bd0">encoder::pos_B</a></div><div class="ttdeci">double_t pos_B</div><div class="ttdef"><b>Definition</b> <a href="#l00078">emulazione_encoder.h:78</a></div></div>
+<div class="ttc" id="astructencoder_html_ab1e2e262124dc623de3b99e556678318"><div class="ttname"><a href="structencoder.html#ab1e2e262124dc623de3b99e556678318">encoder::indirizzo_gpio_A</a></div><div class="ttdeci">XGpio indirizzo_gpio_A</div><div class="ttdef"><b>Definition</b> <a href="#l00088">emulazione_encoder.h:88</a></div></div>
+<div class="ttc" id="astructencoder_html_ab9a0b6484dbeb660f4cb2a66cf9c0ca9"><div class="ttname"><a href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9">encoder::diametro</a></div><div class="ttdeci">float_t diametro</div><div class="ttdef"><b>Definition</b> <a href="#l00066">emulazione_encoder.h:66</a></div></div>
+<div class="ttc" id="astructencoder_html_abb823a68809270d2076d935df527fb0d"><div class="ttname"><a href="structencoder.html#abb823a68809270d2076d935df527fb0d">encoder::conteggio</a></div><div class="ttdeci">uint16_t conteggio</div><div class="ttdef"><b>Definition</b> <a href="#l00085">emulazione_encoder.h:85</a></div></div>
+<div class="ttc" id="astructencoder_html_ad093cdf5c8c2d01ed3f28d6154382ff8"><div class="ttname"><a href="structencoder.html#ad093cdf5c8c2d01ed3f28d6154382ff8">encoder::indirizzo_gpio_B</a></div><div class="ttdeci">XGpio indirizzo_gpio_B</div><div class="ttdef"><b>Definition</b> <a href="#l00089">emulazione_encoder.h:89</a></div></div>
+<div class="ttc" id="astructencoder_html_adff6421cc3a0d4f9aa6e9545e44a1b6e"><div class="ttname"><a href="structencoder.html#adff6421cc3a0d4f9aa6e9545e44a1b6e">encoder::stato</a></div><div class="ttdeci">stato_encoder stato</div><div class="ttdef"><b>Definition</b> <a href="#l00091">emulazione_encoder.h:91</a></div></div>
+<div class="ttc" id="astructencoder_html_ae0f78e46ade6acb432ec551990426095"><div class="ttname"><a href="structencoder.html#ae0f78e46ade6acb432ec551990426095">encoder::duty_B</a></div><div class="ttdeci">uint16_t duty_B</div><div class="ttdef"><b>Definition</b> <a href="#l00043">emulazione_encoder.h:43</a></div></div>
+<div class="ttc" id="astructencoder_html_af1445e4ed7cf1b67f7d17f922b38fd07"><div class="ttname"><a href="structencoder.html#af1445e4ed7cf1b67f7d17f922b38fd07">encoder::fase</a></div><div class="ttdeci">int16_t fase</div><div class="ttdef"><b>Definition</b> <a href="#l00059">emulazione_encoder.h:59</a></div></div>
+<div class="ttc" id="astructencoder_html_affbfeefc23b882a65ebed4ba52e7cd67"><div class="ttname"><a href="structencoder.html#affbfeefc23b882a65ebed4ba52e7cd67">encoder::incollaggio_B</a></div><div class="ttdeci">bool incollaggio_B</div><div class="ttdef"><b>Definition</b> <a href="#l00049">emulazione_encoder.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="emulazione__encoder_8h.html">emulazione_encoder.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

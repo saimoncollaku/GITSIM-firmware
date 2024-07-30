@@ -1,0 +1,9 @@
+<map id="gestione_uart.h" name="gestione_uart.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="85,5,195,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,86,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,35,76,73,72,68,122,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,80,171,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,33,143,64,138,64,138,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="195,80,269,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,30,206,68,203,73,155,35"/>
+</map>

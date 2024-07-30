@@ -1,9 +1,7 @@
 /**
  ********************************************************************************
  * @file    gestione_uart.c
- * @author  wasab
- * @date    5 Jul 2024
- * @brief   
+ * @author  Saimon Collaku
  ********************************************************************************
  */
 
@@ -13,6 +11,7 @@
 #include "xuartps.h"
 #include "gestione_uart.h"
 #include "emulazione_encoder.h"
+
 
 /************************************
  * PRIVATE MACROS AND DEFINES
@@ -28,9 +27,6 @@
 #define MAX_PPR_ENCODER 		(uint16_t) 128
 #define MIN_PPR_ENCODER 		(uint16_t) 80
 
-/************************************
- * PRIVATE TYPEDEFS
- ************************************/
 
 /************************************
  * STATIC VARIABLES
@@ -39,9 +35,6 @@ static XUartPs Uart_Ps;
 static bool stato_connessione_app = false;
 static bool handshake_avvenuto = false;
 
-/************************************
- * GLOBAL VARIABLES
- ************************************/
 
 /************************************
  * STATIC FUNCTION PROTOTYPES
