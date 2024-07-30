@@ -2,101 +2,107 @@
 <results version="2">
     <cppcheck version="2.12.0"/>
     <errors>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_polling.h" line="56"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_polling.h" line="43"/>
         </error>
-        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_polling.c" line="38"/>
+        <error id="misra-c2012-8.9" severity="style" msg="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" verbose="ADVISORY - An object should be declared at block scope if its identifier only appears in a single function&#9;" file0="analysis-cppcheck-build-dir/gestione_polling.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_polling.c" line="36"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\side.h" line="28"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="99"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="100"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="101"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="102"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="104"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="105"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="106"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\emulazione_encoder.h" line="107"/>
+        </error>
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="28"/>
+        </error>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="26"/>
+        </error>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="31"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="40"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="41"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="42"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\gestione_uart.h" line="43"/>
         </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreA" verbose="Uninitialized variable: stato_sensoreA" cwe="457" file0="../../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="227"/>
+            <location file="..\..\sources\emulazione_encoder.c" line="242"/>
         </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreB" verbose="Uninitialized variable: stato_sensoreB" cwe="457" file0="../../sources/emulazione_encoder.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\emulazione_encoder.c" line="227"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="111"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="112"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="113"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="114"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="116"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="117"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="118"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\emulazione_encoder.h" line="119"/>
-        </error>
-        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="34"/>
-        </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="32"/>
-        </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="37"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="51"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="52"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="53"/>
-        </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\headers\gestione_uart.h" line="54"/>
+            <location file="..\..\sources\emulazione_encoder.c" line="242"/>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;identificatore_addon&amp;#039; is assigned a value that is never used." cwe="563" file0="../../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="153"/>
+            <location file="..\..\sources\gestione_uart.c" line="146"/>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: stringa_addon" verbose="Unused variable: stringa_addon" cwe="563" file0="../../sources/gestione_uart.c" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="125"/>
+            <location file="..\..\sources\gestione_uart.c" line="118"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="49"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="42"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="50"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="43"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="62"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="55"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="63"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="56"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="64"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="57"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="161"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="154"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="162"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="155"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\gestione_uart.c" line="257"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used&#9;" verbose="ADVISORY - The union keyword should not be used&#9;" file0="analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\gestione_uart.c" line="250"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/main.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\main.c" line="32"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/main.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\main.c" line="21"/>
         </error>
-        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters&#9;" verbose="ADVISORY - A function should not contain unused parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.4008.dump" sinceDate="dd/MM/yyyy">
-            <location file="..\..\sources\side.c" line="36"/>
+        <error id="misra-c2012-8.4" severity="style" msg="REQUIRED - A compatible declaration shall be visible when an object or function with external linkage is defined&#9;" verbose="REQUIRED - A compatible declaration shall be visible when an object or function with external linkage is defined&#9;" file0="analysis-cppcheck-build-dir/main.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\main.c" line="21"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;main_loop&amp;#039; is never used." verbose="The function &amp;#039;main_loop&amp;#039; is never used." cwe="561" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\main.c" line="21"/>
+        </error>
+        <error id="misra-c2012-2.7" severity="style" msg="ADVISORY - A function should not contain unused parameters&#9;" verbose="ADVISORY - A function should not contain unused parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\sources\side.c" line="34"/>
+        </error>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters&#9;" verbose="REQUIRED - Function types shall be in prototype form with named parameters&#9;" file0="analysis-cppcheck-build-dir/side.a1.11904.dump" sinceDate="dd/MM/yyyy">
+            <location file="..\..\headers\side.h" line="19"/>
         </error>
     </errors>
 </results>

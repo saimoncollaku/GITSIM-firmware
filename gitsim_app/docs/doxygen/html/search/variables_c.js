@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['t_5fpolling_0',['t_polling',['../emulazione__encoder_8c.html#a28fa46af8ea455fae6d54188abcfeb47',1,'emulazione_encoder.c']]]
+  ['t_5fupdate_0',['t_update',['../emulazione__encoder_8c.html#a545aac6e56804cc76b305836c9ba14c6',1,'emulazione_encoder.c']]]
 ];

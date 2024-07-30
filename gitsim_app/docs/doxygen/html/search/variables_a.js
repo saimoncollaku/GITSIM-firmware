@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['value_0',['value',['../unionfloat__bytes.html#a86665e1c72f080d16be80435b4d14f7d',1,'float_bytes::value'],['../unionuint16__bytes.html#a900b69af7d674b8db3bceae754b4955a',1,'uint16_bytes::value']]],
-  ['vel_1',['vel',['../structencoder.html#a611077c5760214be5601fce57d5543bf',1,'encoder']]]
+  ['pos_5fa_0',['pos_A',['../structencoder.html#a154e80c108a59f6e83a4ba086812811e',1,'encoder']]],
+  ['pos_5fb_1',['pos_B',['../structencoder.html#a8f69cba833fa6de5c35e59842c825bd0',1,'encoder']]],
+  ['ppr_2',['ppr',['../structencoder.html#a163640e005e8c38fdca97e7246c63fbf',1,'encoder']]]
 ];

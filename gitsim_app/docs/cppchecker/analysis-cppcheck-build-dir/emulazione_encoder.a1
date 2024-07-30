@@ -1,142 +1,103 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="8026778552066257313">
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="13" column="0"/>
+<analyzerinfo hash="13200952131674760697">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="18" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="14" column="0"/>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xgpio.h&quot; not found." verbose="Include file: &quot;xgpio.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="19" column="0"/>
         </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="15" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="21" column="0"/>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="18" column="0"/>
         </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="22" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="23" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xgpio.h&quot; not found." verbose="Include file: &quot;xgpio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="24" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="25" column="0"/>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="19" column="0"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="26" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;xscutimer.h&quot; not found." verbose="Include file: &quot;xscutimer.h&quot; not found.">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="19" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="20" column="0"/>
         </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;stdint.h&quot; not found." verbose="Include file: &quot;stdint.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="21" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xscutimer.h&quot; not found." verbose="Include file: &quot;xscutimer.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="22" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;ps7_init.h&quot; not found." verbose="Include file: &quot;ps7_init.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="23" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="24" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xgpio.h&quot; not found." verbose="Include file: &quot;xgpio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="19" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;xparameters.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;xparameters.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="21" column="0"/>
-        </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreA" verbose="Uninitialized variable: stato_sensoreA" cwe="457" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="227" column="32"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="242" column="32"/>
             <symbol>stato_sensoreA</symbol>
         </error>
         <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: stato_sensoreB" verbose="Uninitialized variable: stato_sensoreB" cwe="457" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="227" column="48"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\emulazione_encoder.c" line="242" column="48"/>
             <symbol>stato_sensoreB</symbol>
         </error>
   <FileInfo check="ctu">
-<function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:56:13" call-funcname="inizializza_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="323" col="21" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:56:13" call-funcname="inizializza_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="324" col="21" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:58:13" call-funcname="reset_gpio" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="333" col="12" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:58:13" call-funcname="reset_gpio" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="334" col="12" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:54:13" call-funcname="aggiorna_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="343" col="19" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:54:13" call-funcname="aggiorna_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="344" col="19" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" call-funcname="emula_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="358" col="16" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" call-funcname="emula_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="359" col="16" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/>  </FileInfo>
+<function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:53:13" call-funcname="inizializza_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="339" col="21" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:53:13" call-funcname="inizializza_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="340" col="21" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" call-funcname="reset_gpio" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="349" col="12" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" call-funcname="reset_gpio" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="350" col="12" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:51:13" call-funcname="aggiorna_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="359" col="19" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:51:13" call-funcname="aggiorna_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="360" col="19" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:52:13" call-funcname="emula_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="374" col="16" call-argexpr="&amp;E1" call-argvaluetype="7" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:52:13" call-funcname="emula_encoder" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="375" col="16" call-argexpr="&amp;E2" call-argvaluetype="7" call-argvalue="0"/>  </FileInfo>
   <FileInfo check="Null pointer">
-    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:54:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="75" col="2" value="0"/>
-    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="147" col="31" value="0"/>
-    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:56:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="232" col="2" value="0"/>
+    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:51:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="80" col="2" value="0"/>
+    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:52:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="162" col="31" value="0"/>
+    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:53:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="247" col="2" value="0"/>
   </FileInfo>
   <FileInfo check="Uninitialized variables">
-    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:55:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="147" col="31" value="0"/>
+    <unsafe-usage my-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c:52:13" my-argnr="1" my-argname="encoder" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/emulazione_encoder.c" line="162" col="31" value="0"/>
   </FileInfo>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="111" column="35"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="99" column="35"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="112" column="27"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="100" column="27"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="113" column="32"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="101" column="32"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="114" column="28"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="102" column="28"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="116" column="35"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="104" column="35"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="117" column="35"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="105" column="35"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="118" column="36"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="106" column="36"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="119" column="36"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="107" column="36"/>
         </error>
-        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="34" column="25"/>
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="28" column="25"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="32" column="1"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="26" column="1"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="37" column="1"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/emulazione_encoder.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="31" column="1"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="aggiorna_encoder" lineNumber="64"/>
-    <functiondecl functionName="emula_encoder" lineNumber="140"/>
-    <functiondecl functionName="inizializza_encoder" lineNumber="230"/>
-    <functiondecl functionName="reset_gpio" lineNumber="247"/>
-    <functiondecl functionName="valuta_stato_encoder" lineNumber="256"/>
-    <functiondecl functionName="inizializza_variabili_encoder" lineNumber="318"/>
-    <functiondecl functionName="aggiorna_variabili_encoder" lineNumber="337"/>
-    <functiondecl functionName="emula_sensori_encoder" lineNumber="352"/>
-    <functiondecl functionName="reset_conteggi_encoder" lineNumber="367"/>
-    <functiondecl functionName="ritorna_velocita_encoder1" lineNumber="373"/>
-    <functiondecl functionName="ritorna_velocita_encoder2" lineNumber="378"/>
-    <functiondecl functionName="ritorna_conteggio_encoder1" lineNumber="383"/>
-    <functiondecl functionName="ritorna_conteggio_encoder2" lineNumber="388"/>
-    <functiondecl functionName="assegna_ppr_encoder1" lineNumber="393"/>
-    <functiondecl functionName="assegna_ppr_encoder2" lineNumber="398"/>
-    <functiondecl functionName="assegna_diametro_ruota" lineNumber="403"/>
-    <functiondecl functionName="assegna_velocita_encoder1" lineNumber="409"/>
-    <functiondecl functionName="assegna_velocita_encoder2" lineNumber="414"/>
-    <functiondecl functionName="assegna_accelerazione_encoder1" lineNumber="419"/>
-    <functiondecl functionName="assegna_accelerazione_encoder2" lineNumber="424"/>
-    <functiondecl functionName="aggiorna_passo_encoder1" lineNumber="429"/>
-    <functiondecl functionName="aggiorna_passo_encoder2" lineNumber="434"/>
+    <functiondecl functionName="aggiorna_encoder" lineNumber="62"/>
+    <functiondecl functionName="emula_encoder" lineNumber="155"/>
+    <functiondecl functionName="inizializza_encoder" lineNumber="245"/>
+    <functiondecl functionName="reset_gpio" lineNumber="262"/>
+    <functiondecl functionName="valuta_stato_encoder" lineNumber="271"/>
+    <functiondecl functionName="inizializza_variabili_encoder" lineNumber="334"/>
+    <functiondecl functionName="aggiorna_variabili_encoder" lineNumber="353"/>
+    <functiondecl functionName="emula_sensori_encoder" lineNumber="368"/>
+    <functiondecl functionName="reset_conteggi_encoder" lineNumber="383"/>
+    <functiondecl functionName="ritorna_velocita_encoder1" lineNumber="389"/>
+    <functiondecl functionName="ritorna_velocita_encoder2" lineNumber="394"/>
+    <functiondecl functionName="ritorna_conteggio_encoder1" lineNumber="399"/>
+    <functiondecl functionName="ritorna_conteggio_encoder2" lineNumber="404"/>
+    <functiondecl functionName="assegna_ppr_encoder1" lineNumber="409"/>
+    <functiondecl functionName="assegna_ppr_encoder2" lineNumber="414"/>
+    <functiondecl functionName="assegna_diametro_ruota" lineNumber="419"/>
+    <functiondecl functionName="assegna_velocita_encoder1" lineNumber="425"/>
+    <functiondecl functionName="assegna_velocita_encoder2" lineNumber="430"/>
+    <functiondecl functionName="assegna_accelerazione_encoder1" lineNumber="435"/>
+    <functiondecl functionName="assegna_accelerazione_encoder2" lineNumber="440"/>
+    <functiondecl functionName="aggiorna_passo_encoder1" lineNumber="445"/>
+    <functiondecl functionName="aggiorna_passo_encoder2" lineNumber="450"/>
     <functioncall functionName="XGpio_DiscreteClear"/>
     <functioncall functionName="XGpio_DiscreteWrite"/>
     <functioncall functionName="XGpio_Initialize"/>

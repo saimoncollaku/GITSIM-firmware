@@ -1,109 +1,94 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="18194823771917767524">
+<analyzerinfo hash="8745923143437685550">
         <error id="missingInclude" severity="information" msg="Include file: &quot;xuartps.h&quot; not found." verbose="Include file: &quot;xuartps.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="13" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="11" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xil_printf.h&quot; not found." verbose="Include file: &quot;xil_printf.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xparameters.h&quot; not found." verbose="Include file: &quot;xparameters.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="21" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="18" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;math.h&quot; not found." verbose="Include file: &quot;math.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="22" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="19" column="0"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="23" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;xil_io.h&quot; not found." verbose="Include file: &quot;xil_io.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
-        </error>
-        <error id="missingInclude" severity="information" msg="Include file: &quot;stdio.h&quot; not found." verbose="Include file: &quot;stdio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="21" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdint.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="22" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="20" column="0"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="23" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="18" column="0"/>
         </error>
         <error id="missingInclude" severity="information" msg="Include file: &quot;xgpio.h&quot; not found." verbose="Include file: &quot;xgpio.h&quot; not found.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="24" column="0"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;assert.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="25" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="19" column="0"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="26" column="0"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\emulazione_encoder.h" line="20" column="0"/>
         </error>
         <error id="redundantAssignment" severity="style" msg="Variable &apos;temp_vel.value&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;temp_vel.value&apos; is reassigned a value before the old one has been used." cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="265" column="18" info="temp_vel.value is overwritten"/>
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="261" column="18" info="temp_vel.value is assigned"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="258" column="18" info="temp_vel.value is overwritten"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="254" column="18" info="temp_vel.value is assigned"/>
             <symbol>temp_vel.value</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." verbose="Variable &apos;identificatore_addon&apos; is assigned a value that is never used." cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="153" column="23"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="146" column="23"/>
             <symbol>identificatore_addon</symbol>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: stringa_addon" verbose="Unused variable: stringa_addon" cwe="563" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="125" column="10"/>
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="118" column="10"/>
             <symbol>stringa_addon</symbol>
         </error>
   <FileInfo check="ctu">
-<function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c:51:13" call-funcname="azione_funzionamento_valore" call-argnr="2" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="149" col="29" call-argexpr="stringa_valore" call-argvaluetype="7" call-argvalue="9"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:128:6" call-funcname="assegna_accelerazione_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="210" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:129:6" call-funcname="assegna_accelerazione_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="211" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:125:6" call-funcname="assegna_velocita_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="212" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:126:6" call-funcname="assegna_velocita_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="213" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/>  </FileInfo>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="51" column="22"/>
+<function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c:44:13" call-funcname="azione_funzionamento_valore" call-argnr="2" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="142" col="29" call-argexpr="stringa_valore" call-argvaluetype="7" call-argvalue="9"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:116:6" call-funcname="assegna_accelerazione_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="203" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:117:6" call-funcname="assegna_accelerazione_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="204" col="33" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:113:6" call-funcname="assegna_velocita_encoder1" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="205" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/headers/emulazione_encoder.h:114:6" call-funcname="assegna_velocita_encoder2" call-argnr="1" file="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/sources/gestione_uart.c" line="206" col="28" call-argexpr="0" call-argvaluetype="0" call-argvalue="0"/>  </FileInfo>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="40" column="22"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="52" column="34"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="41" column="34"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="53" column="22"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="42" column="22"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="54" column="35"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="43" column="35"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="49" column="45"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="42" column="45"/>
         </error>
-        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="50" column="43"/>
+        <error id="misra-c2012-8.2" severity="style" msg="REQUIRED - Function types shall be in prototype form with named parameters\011" verbose="REQUIRED - Function types shall be in prototype form with named parameters\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="43" column="43"/>
         </error>
-        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="34" column="25"/>
+        <error id="misra-config" severity="error" msg="Unknown array size, please review configuration" verbose="Unknown array size, please review configuration" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="28" column="25"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="32" column="1"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="26" column="1"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="37" column="1"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_uart.h" line="31" column="1"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="62" column="2"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="55" column="2"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="63" column="2"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="56" column="2"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="64" column="2"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="57" column="2"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="161" column="2"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="154" column="2"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="162" column="2"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="155" column="2"/>
         </error>
-        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.4008.dump">
-            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="257" column="3"/>
+        <error id="misra-c2012-19.2" severity="style" msg="ADVISORY - The union keyword should not be used\011" verbose="ADVISORY - The union keyword should not be used\011" file0="C:/Xilinx/Vivado/Projects/gitsim_python/gitsim_python.sdk/gitsim_app/docs/cppchecker/analysis-cppcheck-build-dir/gestione_uart.a1.11904.dump">
+            <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_uart.c" line="250" column="3"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="leggi_telegramma_di_connessione" lineNumber="58"/>
-    <functiondecl functionName="leggi_telegramma_funzionamento" lineNumber="119"/>
-    <functiondecl functionName="azione_funzionamento_valore" lineNumber="159"/>
-    <functiondecl functionName="leggi_telegramma" lineNumber="229"/>
-    <functiondecl functionName="inizializza_uart" lineNumber="242"/>
-    <functiondecl functionName="manda_telegramma_di_risposta" lineNumber="251"/>
-    <functiondecl functionName="ritorna_stato_connessione_app" lineNumber="292"/>
+    <functiondecl functionName="leggi_telegramma_di_connessione" lineNumber="51"/>
+    <functiondecl functionName="leggi_telegramma_funzionamento" lineNumber="112"/>
+    <functiondecl functionName="azione_funzionamento_valore" lineNumber="152"/>
+    <functiondecl functionName="leggi_telegramma" lineNumber="222"/>
+    <functiondecl functionName="inizializza_uart" lineNumber="235"/>
+    <functiondecl functionName="manda_telegramma_di_risposta" lineNumber="244"/>
+    <functiondecl functionName="ritorna_stato_connessione_app" lineNumber="285"/>
     <functioncall functionName="XPAR_PS7_UART_0_BASEADDR"/>
     <functioncall functionName="XUARTPS_FIFO_OFFSET"/>
     <functioncall functionName="XUartPs_CfgInitialize"/>

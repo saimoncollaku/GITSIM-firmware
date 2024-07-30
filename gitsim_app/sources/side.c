@@ -31,7 +31,7 @@ static uint32_t n_polls_side_lento = 999999999;
 /************************************
  * SIDE
  ************************************/
-void side(void *CallBack_Timer)
+void side_loop(void *CallBack_Timer)
 {
 	/* Rimuovi flag di interrupt */
 	XScuTimer_ClearInterruptStatus(&istanza_timer);
@@ -55,11 +55,11 @@ void side(void *CallBack_Timer)
 /************************************
  * INIZIALIZZAZIONE SIDE
  ************************************/
-void inizializza_side()
+void inizializza_side_loop()
 {
 	counter_side_secondario = 0;
 	istanza_timer = ritorna_istanza_timer();
-	float_t t_polling = ritorna_tempo_del_polling();
-	float_t n_polls_misra = T_SIDE_LENTO / t_polling;
+	float_t t_polling_side = ritorna_tempo_del_polling();
+	float_t n_polls_misra = T_SIDE_LENTO / t_polling_side;
 	n_polls_side_lento = (uint32_t) n_polls_misra;
 }

@@ -38,6 +38,7 @@ var NAVTREE =
       [ "Elementi globali", "globals.html", [
         [ "Tutto", "globals.html", null ],
         [ "Funzioni", "globals_func.html", null ],
+        [ "Variabili", "globals_vars.html", null ],
         [ "Tipi enumerati (enum)", "globals_enum.html", null ],
         [ "Valori del tipo enumerato", "globals_eval.html", null ],
         [ "Definizioni", "globals_defs.html", null ]

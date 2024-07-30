@@ -135,7 +135,7 @@ _start:
 	mov	r1, #0
 
 	/* Let her rip */
-	bl	main
+	bl	main_loop
 
    /* Cleanup global constructors */
    bl __libc_fini_array

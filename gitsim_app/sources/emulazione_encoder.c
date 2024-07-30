@@ -17,17 +17,31 @@
 /************************************
  * PRIVATE MACROS AND DEFINES
  ************************************/
-#define PI_GRECO 3.14159265358   /**< Costante pigreco */
 
-#define VELOCITA_MAX (700/3.6) /**< Velocità massima lineare
-                            emulabile dal GIT, in m/s */
+/** @brief Costante pigreco */
+#define PI_GRECO 3.14159265358
+
+/** @brief Velocita' massima lineare emulabile dal GIT, in m/s */
+#define VELOCITA_MAX (700/3.6)
 
 
 /************************************
  * STATIC VARIABLES
  ************************************/
-static float_t t_polling;
+
+/** @brief Tempo di aggiornamento delle variabili di encoder */
+static float_t t_update;
+
+/**
+ *  @brief Struttura dati utilizzata per contenere tutte le variabili
+ * di stato dell'encoder 1
+ */
 static encoder E1;
+
+/**
+ *  @brief Struttura dati utilizzata per contenere tutte le variabili
+ * di stato dell'encoder 2
+ */
 static encoder E2;
 
 
@@ -47,18 +61,25 @@ static void reset_gpio(encoder *encoder);
 
 static void aggiorna_encoder(encoder *encoder)
 {
-	double_t pos_minore; /*	Contiene la posizione minore tra quella
-								del canale A e B, serve per la correzione
-								dello spazio */
 
-	double_t pos_maggiore; /* Contiene la posizione maggiore tra quella
-								del canale A e B, serve per la correzione
-								dello spazio */
+	/*
+	 * Contiene la posizione MINORE tra quella
+	*  del canale A e B, serve per la correzione
+	* dello spazio
+	*/
+	double_t pos_minore;
+
+	/*
+	 * Contiene la posizione MAGGIORE tra quella
+	*  del canale A e B, serve per la correzione
+	* dello spazio
+	*/
+	double_t pos_maggiore;
 
 	/* Integrazione dell'accelerazione */
-	encoder->vel = (encoder->acc * t_polling) + encoder->vel;
+	encoder->vel = (encoder->acc * t_update) + encoder->vel;
 
-	/* Saturo la velocità se va oltre la soglia di 700 km/h*/
+	/* Saturo la velocità se va oltre la soglia fissata */
 	if (encoder->vel > VELOCITA_MAX)
 	{
 		encoder->vel = VELOCITA_MAX;
@@ -72,17 +93,23 @@ static void aggiorna_encoder(encoder *encoder)
 		/* Non succede niente, MISRA-2023-15.7 */
 	}
 
-	/* Integrazione della velocità, assegno lo spazio ad A
-	(che è una scelta arbitraria) */
-	encoder->pos_A = encoder->pos_A + (encoder->vel * t_polling);
+	/*
+	 * Integrazione della velocità, assegno lo spazio ad A
+	 * (che è una scelta arbitraria)
+	 */
+	encoder->pos_A = encoder->pos_A + (encoder->vel * t_update);
 
-	/* 	Estrapolo il fattore di sfasamento, cioè converto i gradi nella
-	 quantità di spazio da cui il canale B si discosta dal canale A */
+	/*
+	 * Estrapolo il fattore di sfasamento, cioè converto i gradi nella
+	 * quantità di spazio da cui il canale B si discosta dal canale A
+	 */
 	float_t k_fase = ((float_t) - (encoder->fase) / 360);
 	encoder->pos_B = encoder->pos_A + (2 * encoder->l_passo * k_fase);
 
-	/* 	Indico chi è il sensore con la posizione maggiore e quale con la
-	 minore, mi serve per fare il controllo sulla correzione di spazio */
+	/*
+	 * Indico chi è il sensore con la posizione maggiore e quale con la
+	 * minore, mi serve per fare il controllo sulla correzione di spazio
+	 */
 	if (k_fase <= 0)
 	{
 		/* Posizione del B è minore dell'A */
@@ -100,15 +127,19 @@ static void aggiorna_encoder(encoder *encoder)
 	soglia [-2*passi, 2*passi] */
 	if (pos_minore <= (-2 * encoder->l_passo))
 	{
-		/* il minore ha sforato, esso ritorna a 0 mentre il maggiore
-		 va ad un valore maggiore di 0 (dipende dalla fase) */
+		/*
+		 * Il MINORE ha sforato, esso ritorna a 0 mentre il maggiore
+		 * va ad un valore maggiore di 0 (dipende dalla fase)
+		 */
 		encoder->pos_A = encoder->pos_A + (2 * encoder->l_passo);
 		encoder->pos_B = encoder->pos_B + (2 * encoder->l_passo);
 	}
 	else if (pos_maggiore >= (2 * encoder->l_passo))
 	{
-		/* il maggiore ha sforato, esso ritorna a 0 mentre il minore
-		 va ad un valore minore di 0 (dipende dalla fase) */
+		/*
+		 * Il MAGGIORE ha sforato, esso ritorna a 0 mentre il minore
+		 * va ad un valore minore di 0 (dipende dalla fase)
+		 */
 		encoder->pos_A = encoder->pos_A - (2 * encoder->l_passo);
 		encoder->pos_B = encoder->pos_B - (2 * encoder->l_passo);
 	}
@@ -127,7 +158,7 @@ static void emula_encoder(encoder *encoder)
 	bool stato_sensoreA;
 	bool stato_sensoreB;
 
-	/* Porto i duty cycle da percentuale intera a decimale*/
+	/* Porto i duty cycle da percentuale intera a decimale */
 	float_t k_dutyA = ((float_t) encoder->duty_A) * 0.01;
 	float_t k_dutyB = ((float_t) encoder->duty_B) * 0.01;
 
@@ -181,7 +212,7 @@ static void emula_encoder(encoder *encoder)
 
 	/*
 	 * Generazione segnale per canale B da GPIO, valgono gli stessi
-	 *ragionamenti del canale A
+	 * ragionamenti del canale A
 	 */
 	if ((encoder->pos_B >= soglia_min_def) && (encoder->pos_B < soglia_neg_B))
 	{
@@ -248,7 +279,7 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 		}
 		else
 		{
-			/* Non succede niente */
+			/* Non succede niente, MISRA-2023-15.7 */
 		}
 		encoder->stato = zero;
 	}
@@ -260,7 +291,7 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 		}
 		else
 		{
-			/* Non succede niente */
+			/* Non succede niente, MISRA-2023-15.7 */
 		}
 		encoder->stato = uno;
 	}
@@ -272,7 +303,7 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 		}
 		else
 		{
-			/* Non succede niente */
+			/* Non succede niente, MISRA-2023-15.7 */
 		}
 		encoder->stato = due;
 	}
@@ -284,13 +315,13 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 		}
 		else
 		{
-			/* Non succede niente */
+			/* Non succede niente, MISRA-2023-15.7 */
 		}
 		encoder->stato = tre;
 	}
 	else
 	{
-		/* Non succede niente */
+		/* Non succede niente, MISRA-2023-15.7 */
 	}
 
 }
@@ -302,7 +333,7 @@ static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)
 
 void inizializza_variabili_encoder()
 {
-	t_polling = ritorna_tempo_del_polling();
+	t_update = ritorna_tempo_del_polling();
 
 	/* Inizializzo variabili */
 	inizializza_encoder(&E1);

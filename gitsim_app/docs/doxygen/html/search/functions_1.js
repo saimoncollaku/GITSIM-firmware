@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['emula_5fsensori_5fencoder_0',['emula_sensori_encoder',['../emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7',1,'emula_sensori_encoder():&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#a5b0b8a41698d413616d6c2430cc6f831',1,'emula_sensori_encoder(void):&#160;emulazione_encoder.c']]]
+  ['configura_5fgic_5fsystem_0',['configura_gic_system',['../gestione__polling_8c.html#aca5103ba3151e3d354f4591b2ef2ba38',1,'gestione_polling.c']]],
+  ['connetti_5finterrupt_5fsu_5ftimer_1',['connetti_interrupt_su_timer',['../gestione__polling_8c.html#a05499ac458b9b13fd6c26c075fa4130e',1,'gestione_polling.c']]]
 ];

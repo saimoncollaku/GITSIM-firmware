@@ -2,6 +2,7 @@ var emulazione__encoder_8c =
 [
     [ "PI_GRECO", "emulazione__encoder_8c.html#a96ee7a4d2aee8a097cf25167be12018f", null ],
     [ "VELOCITA_MAX", "emulazione__encoder_8c.html#a271856af8b8b2cadea103f02bd5b668f", null ],
+    [ "aggiorna_encoder", "emulazione__encoder_8c.html#abd8515068e97207bc58b4ed9fa3378a1", null ],
     [ "aggiorna_passo_encoder1", "emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627", null ],
     [ "aggiorna_passo_encoder2", "emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392", null ],
     [ "aggiorna_variabili_encoder", "emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199", null ],
@@ -12,11 +13,18 @@ var emulazione__encoder_8c =
     [ "assegna_ppr_encoder2", "emulazione__encoder_8c.html#a2c6c35197adc71411fb983a1848b208b", null ],
     [ "assegna_velocita_encoder1", "emulazione__encoder_8c.html#ab358634ef9e3b741a898816578d8f368", null ],
     [ "assegna_velocita_encoder2", "emulazione__encoder_8c.html#af64a357c6ad264e627bfb52867e74a34", null ],
+    [ "emula_encoder", "emulazione__encoder_8c.html#aa3c1a771357c0494f787da14b49a1255", null ],
     [ "emula_sensori_encoder", "emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7", null ],
+    [ "inizializza_encoder", "emulazione__encoder_8c.html#abab32b99b4dbae2dfcab33db6c043df1", null ],
     [ "inizializza_variabili_encoder", "emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4", null ],
     [ "reset_conteggi_encoder", "emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a", null ],
+    [ "reset_gpio", "emulazione__encoder_8c.html#a595e41b6e74d7c73e109267d3c6185a0", null ],
     [ "ritorna_conteggio_encoder1", "emulazione__encoder_8c.html#aa5f668eb17b9909cee1f23d59bc1ff0e", null ],
     [ "ritorna_conteggio_encoder2", "emulazione__encoder_8c.html#ad708854593fcede64d064abf3eb94514", null ],
     [ "ritorna_velocita_encoder1", "emulazione__encoder_8c.html#af98a3fdbf248c008920827b801012ff7", null ],
-    [ "ritorna_velocita_encoder2", "emulazione__encoder_8c.html#adb19ec24d33f34186a3a6f1d8fcff445", null ]
+    [ "ritorna_velocita_encoder2", "emulazione__encoder_8c.html#adb19ec24d33f34186a3a6f1d8fcff445", null ],
+    [ "valuta_stato_encoder", "emulazione__encoder_8c.html#a31c0a7f35c565d3beff657e44beb8ba9", null ],
+    [ "E1", "emulazione__encoder_8c.html#a1dbeb5d24ff6d11ace4daccd93c60ba6", null ],
+    [ "E2", "emulazione__encoder_8c.html#a2d68873e63158a117fa2be744dfd1a48", null ],
+    [ "t_update", "emulazione__encoder_8c.html#a545aac6e56804cc76b305836c9ba14c6", null ]
 ];

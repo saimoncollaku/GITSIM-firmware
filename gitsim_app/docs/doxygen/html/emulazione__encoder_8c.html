@@ -98,7 +98,8 @@ $(function(){initNavTree('emulazione__encoder_8c.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Definizioni</a> &#124;
-<a href="#func-members">Funzioni</a>  </div>
+<a href="#func-members">Funzioni</a> &#124;
+<a href="#var-members">Variabili</a>  </div>
   <div class="headertitle"><div class="title">Riferimenti per il file emulazione_encoder.c</div></div>
 </div><!--header-->
 <div class="contents">
@@ -138,12 +139,24 @@ Grafo delle dipendenze di inclusione per emulazione_encoder.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Definizioni</h2></td></tr>
 <tr class="memitem:a96ee7a4d2aee8a097cf25167be12018f" id="r_a96ee7a4d2aee8a097cf25167be12018f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96ee7a4d2aee8a097cf25167be12018f">PI_GRECO</a>&#160;&#160;&#160;3.14159265358</td></tr>
+<tr class="memdesc:a96ee7a4d2aee8a097cf25167be12018f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costante pigreco.  <br /></td></tr>
 <tr class="separator:a96ee7a4d2aee8a097cf25167be12018f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a271856af8b8b2cadea103f02bd5b668f" id="r_a271856af8b8b2cadea103f02bd5b668f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a271856af8b8b2cadea103f02bd5b668f">VELOCITA_MAX</a>&#160;&#160;&#160;(700/3.6)</td></tr>
+<tr class="memdesc:a271856af8b8b2cadea103f02bd5b668f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocita' massima lineare emulabile dal GIT, in m/s.  <br /></td></tr>
 <tr class="separator:a271856af8b8b2cadea103f02bd5b668f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:abd8515068e97207bc58b4ed9fa3378a1" id="r_abd8515068e97207bc58b4ed9fa3378a1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd8515068e97207bc58b4ed9fa3378a1">aggiorna_encoder</a> (<a class="el" href="structencoder.html">encoder</a> *<a class="el" href="structencoder.html">encoder</a>)</td></tr>
+<tr class="separator:abd8515068e97207bc58b4ed9fa3378a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c1a771357c0494f787da14b49a1255" id="r_aa3c1a771357c0494f787da14b49a1255"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3c1a771357c0494f787da14b49a1255">emula_encoder</a> (<a class="el" href="structencoder.html">encoder</a> *<a class="el" href="structencoder.html">encoder</a>)</td></tr>
+<tr class="separator:aa3c1a771357c0494f787da14b49a1255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab32b99b4dbae2dfcab33db6c043df1" id="r_abab32b99b4dbae2dfcab33db6c043df1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abab32b99b4dbae2dfcab33db6c043df1">inizializza_encoder</a> (<a class="el" href="structencoder.html">encoder</a> *<a class="el" href="structencoder.html">encoder</a>)</td></tr>
+<tr class="separator:abab32b99b4dbae2dfcab33db6c043df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c0a7f35c565d3beff657e44beb8ba9" id="r_a31c0a7f35c565d3beff657e44beb8ba9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31c0a7f35c565d3beff657e44beb8ba9">valuta_stato_encoder</a> (<a class="el" href="structencoder.html">encoder</a> *<a class="el" href="structencoder.html">encoder</a>, bool statoA, bool statoB)</td></tr>
+<tr class="separator:a31c0a7f35c565d3beff657e44beb8ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595e41b6e74d7c73e109267d3c6185a0" id="r_a595e41b6e74d7c73e109267d3c6185a0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a595e41b6e74d7c73e109267d3c6185a0">reset_gpio</a> (<a class="el" href="structencoder.html">encoder</a> *<a class="el" href="structencoder.html">encoder</a>)</td></tr>
+<tr class="separator:a595e41b6e74d7c73e109267d3c6185a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af365796989f4167084d5d6cebf1905b4" id="r_af365796989f4167084d5d6cebf1905b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a> ()</td></tr>
 <tr class="separator:af365796989f4167084d5d6cebf1905b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abec5dbea1209c33f57b6e198b568d199" id="r_abec5dbea1209c33f57b6e198b568d199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a> ()</td></tr>
@@ -178,6 +191,18 @@ Funzioni</h2></td></tr>
 <tr class="separator:add8b04e0f68d02c8381598ad996a6627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4c02bb329fe2b0101f7b8348879b392" id="r_ad4c02bb329fe2b0101f7b8348879b392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a> (void)</td></tr>
 <tr class="separator:ad4c02bb329fe2b0101f7b8348879b392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a545aac6e56804cc76b305836c9ba14c6" id="r_a545aac6e56804cc76b305836c9ba14c6"><td class="memItemLeft" align="right" valign="top">static float_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a545aac6e56804cc76b305836c9ba14c6">t_update</a></td></tr>
+<tr class="memdesc:a545aac6e56804cc76b305836c9ba14c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tempo di aggiornamento delle variabili di encoder.  <br /></td></tr>
+<tr class="separator:a545aac6e56804cc76b305836c9ba14c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbeb5d24ff6d11ace4daccd93c60ba6" id="r_a1dbeb5d24ff6d11ace4daccd93c60ba6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structencoder.html">encoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dbeb5d24ff6d11ace4daccd93c60ba6">E1</a></td></tr>
+<tr class="memdesc:a1dbeb5d24ff6d11ace4daccd93c60ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 1.  <br /></td></tr>
+<tr class="separator:a1dbeb5d24ff6d11ace4daccd93c60ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d68873e63158a117fa2be744dfd1a48" id="r_a2d68873e63158a117fa2be744dfd1a48"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structencoder.html">encoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d68873e63158a117fa2be744dfd1a48">E2</a></td></tr>
+<tr class="memdesc:a2d68873e63158a117fa2be744dfd1a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 2.  <br /></td></tr>
+<tr class="separator:a2d68873e63158a117fa2be744dfd1a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><dl class="section author"><dt>Autore</dt><dd>Saimon Collaku </dd></dl>
@@ -195,9 +220,10 @@ Funzioni</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Costante pigreco </p>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00020">20</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p>Costante pigreco. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00022">22</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -212,13 +238,41 @@ Funzioni</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Velocità massima lineare emulabile dal GIT, in m/s </p>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00022">22</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p>Velocita' massima lineare emulabile dal GIT, in m/s. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00025">25</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentazione delle funzioni</h2>
+<a id="abd8515068e97207bc58b4ed9fa3378a1" name="abd8515068e97207bc58b4ed9fa3378a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8515068e97207bc58b4ed9fa3378a1">&#9670;&#160;</a></span>aggiorna_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void aggiorna_encoder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structencoder.html">encoder</a> *</td>          <td class="paramname"><span class="paramname"><em>encoder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00062">62</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
 <a id="add8b04e0f68d02c8381598ad996a6627" name="add8b04e0f68d02c8381598ad996a6627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add8b04e0f68d02c8381598ad996a6627">&#9670;&#160;</a></span>aggiorna_passo_encoder1()</h2>
 
@@ -234,7 +288,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00414">414</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00445">445</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -253,7 +307,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00419">419</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00450">450</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -272,7 +326,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00322">322</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00353">353</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -291,7 +345,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00404">404</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00435">435</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -310,7 +364,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00409">409</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00440">440</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -329,7 +383,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00388">388</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00419">419</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -348,7 +402,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00378">378</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00409">409</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -367,7 +421,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00383">383</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00414">414</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -386,7 +440,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00394">394</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00425">425</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -405,7 +459,34 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00399">399</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00430">430</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="aa3c1a771357c0494f787da14b49a1255" name="aa3c1a771357c0494f787da14b49a1255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c1a771357c0494f787da14b49a1255">&#9670;&#160;</a></span>emula_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void emula_encoder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structencoder.html">encoder</a> *</td>          <td class="paramname"><span class="paramname"><em>encoder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00155">155</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -424,7 +505,34 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00337">337</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00368">368</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="abab32b99b4dbae2dfcab33db6c043df1" name="abab32b99b4dbae2dfcab33db6c043df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab32b99b4dbae2dfcab33db6c043df1">&#9670;&#160;</a></span>inizializza_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void inizializza_encoder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structencoder.html">encoder</a> *</td>          <td class="paramname"><span class="paramname"><em>encoder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00245">245</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -443,7 +551,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00303">303</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00334">334</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -462,7 +570,34 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00352">352</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00383">383</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="a595e41b6e74d7c73e109267d3c6185a0" name="a595e41b6e74d7c73e109267d3c6185a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595e41b6e74d7c73e109267d3c6185a0">&#9670;&#160;</a></span>reset_gpio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void reset_gpio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structencoder.html">encoder</a> *</td>          <td class="paramname"><span class="paramname"><em>encoder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00262">262</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -481,7 +616,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00368">368</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00399">399</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -500,7 +635,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00373">373</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00404">404</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -519,7 +654,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00358">358</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00389">389</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -538,7 +673,122 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00363">363</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00394">394</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="a31c0a7f35c565d3beff657e44beb8ba9" name="a31c0a7f35c565d3beff657e44beb8ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c0a7f35c565d3beff657e44beb8ba9">&#9670;&#160;</a></span>valuta_stato_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void valuta_stato_encoder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structencoder.html">encoder</a> *</td>          <td class="paramname"><span class="paramname"><em>encoder</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>statoA</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>statoB</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00271">271</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentazione delle variabili</h2>
+<a id="a1dbeb5d24ff6d11ace4daccd93c60ba6" name="a1dbeb5d24ff6d11ace4daccd93c60ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dbeb5d24ff6d11ace4daccd93c60ba6">&#9670;&#160;</a></span>E1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structencoder.html">encoder</a> E1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 1. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00039">39</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="a2d68873e63158a117fa2be744dfd1a48" name="a2d68873e63158a117fa2be744dfd1a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d68873e63158a117fa2be744dfd1a48">&#9670;&#160;</a></span>E2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structencoder.html">encoder</a> E2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 2. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00045">45</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+
+</div>
+</div>
+<a id="a545aac6e56804cc76b305836c9ba14c6" name="a545aac6e56804cc76b305836c9ba14c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545aac6e56804cc76b305836c9ba14c6">&#9670;&#160;</a></span>t_update</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float_t t_update</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tempo di aggiornamento delle variabili di encoder. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00033">33</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>

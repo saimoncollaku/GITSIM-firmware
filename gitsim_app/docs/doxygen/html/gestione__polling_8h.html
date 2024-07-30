@@ -129,10 +129,13 @@ Definizioni</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
 <tr class="memitem:aad71fd58545a2f7151100684b550d256" id="r_aad71fd58545a2f7151100684b550d256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad71fd58545a2f7151100684b550d256">inizializza_polling_timer</a> (void)</td></tr>
+<tr class="memdesc:aad71fd58545a2f7151100684b550d256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza e configura il timer per il polling.  <br /></td></tr>
 <tr class="separator:aad71fd58545a2f7151100684b550d256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a877e16bea707ab7569676a8a38d3f1" id="r_a4a877e16bea707ab7569676a8a38d3f1"><td class="memItemLeft" align="right" valign="top">XScuTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a877e16bea707ab7569676a8a38d3f1">ritorna_istanza_timer</a> (void)</td></tr>
+<tr class="memdesc:a4a877e16bea707ab7569676a8a38d3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'istanza del timer SCU utilizzato.  <br /></td></tr>
 <tr class="separator:a4a877e16bea707ab7569676a8a38d3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca75d2a909b2c0b851925be4fc601d3" id="r_a2ca75d2a909b2c0b851925be4fc601d3"><td class="memItemLeft" align="right" valign="top">float_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca75d2a909b2c0b851925be4fc601d3">ritorna_tempo_del_polling</a> (void)</td></tr>
+<tr class="memdesc:a2ca75d2a909b2c0b851925be4fc601d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola e restituisce il tempo di polling del timer.  <br /></td></tr>
 <tr class="separator:a2ca75d2a909b2c0b851925be4fc601d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
@@ -190,7 +193,10 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00101">101</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
+<p>Inizializza e configura il timer per il polling. </p>
+<p>Questa funzione configura l'interrupt GIC, inizializza il timer SCU, esegue un self-test, connette l'interrupt, e avvia il timer con le impostazioni specificate. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00139">139</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
 
 </div>
 </div>
@@ -209,7 +215,11 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00145">145</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
+<p>Restituisce l'istanza del timer SCU utilizzato. </p>
+<p>Questa funzione fornisce accesso all'istanza globale del timer SCU, utilizzata nel side loop per dare il timing all'aggiornamento ed emulazione delle variabili di encoder.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>XScuTimer L'istanza corrente del timer SCU </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00192">192</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
 
 </div>
 </div>
@@ -228,7 +238,13 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00150">150</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
+<p>Calcola e restituisce il tempo di polling del timer. </p>
+<p>Questa funzione calcola il tempo di polling basandosi sui valori di TIMER_PSC (prescaler), TIMER_LV (valore di caricamento), e APU_FREQ (frequenza dell'APU).</p>
+<p>Viene utilizzato nel side loop per dare il timing all'aggiornamento ed emulazione delle variabili di encoder.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>float_t Il tempo di polling calcolato in secondi</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>La formula utilizzata e': t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5) </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00211">211</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
 
 </div>
 </div>

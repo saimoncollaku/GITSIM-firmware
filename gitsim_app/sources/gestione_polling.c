@@ -14,55 +14,74 @@
 #include "xscugic.h"
 #include "side.h"
 
+
 /************************************
  * PRIVATE MACROS AND DEFINES
  ************************************/
-#define INTC_DEVICE_ID       XPAR_SCUGIC_SINGLE_DEVICE_ID /**<ID dell'interrupt
-                                                          controller */
-#define TIMER_DEVICE_ID		 XPAR_XSCUTIMER_0_DEVICE_ID /**< ID del timer
-                                                        hardware */
-#define TIMER_IRPT_INTR		 XPAR_SCUTIMER_INTR /**< Numero di interrupt del
-                                                timer associato allo SCU */
+
+/** @brief ID dell'interrupt controller */
+#define INTC_DEVICE_ID       XPAR_SCUGIC_SINGLE_DEVICE_ID
+
+/** @brief ID del timer SCU */
+#define TIMER_DEVICE_ID		 XPAR_XSCUTIMER_0_DEVICE_ID
+
+/** @brief Numero di interrupt associato al timer  */
+#define TIMER_IRPT_INTR		 XPAR_SCUTIMER_INTR
 
 /************************************
  * STATIC VARIABLES
  ************************************/
-//const static float_t t_polling_zynq = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5);
-static XScuGic istanza_interrupt; /**< Istanza dell'interrupt*/
-static XScuTimer istanza_timer_zynq; /**< Istanza del timer hardware */
+
+/** @brief Istanza dell'interrupt controller */
+static XScuGic istanza_interrupt_gic;
+
+/** @brief Istanza del timer SCU */
+static XScuTimer istanza_timer_scu;
 
 /************************************
  * STATIC FUNCTION PROTOTYPES
  ************************************/
-static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt,
+static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt_gic,
 								XScuTimer *istanza_timer,
-								uint16_t ID_Timer_Interrupt);
-static s32 setup_interrupt_system(XScuGic *IstanzaGIC);
+								uint16_t n_timer_interrupt);
+static s32 configura_gic_system(XScuGic *IstanzaGIC);
 
 
 /************************************
  * STATIC FUNCTIONS
  ************************************/
-static s32 setup_interrupt_system(XScuGic *IstanzaGIC)
+
+/**
+ * @brief Configura il sistema di interrupt GIC
+ *
+ * @param istanza_gic Puntatore all'istanza XScuGic da inizializzare
+ * @return s32 XST_SUCCESS se la configurazione ha successo, XST_FAILURE altrimenti
+ */
+static s32 configura_gic_system(XScuGic *istanza_gic)
 {
 	s32 status = XST_SUCCESS;
 
-	XScuGic_Config *IntcConfig; /* Istanza dell'interrupt controller */
+	/* Configurazione dell'interrupt controller */
+	XScuGic_Config *gic_config;
 
+	/* Inizializzo il sistema di eccezioni */
 	Xil_ExceptionInit();
 
-	/* Inizializza i driver dell'interrupt controller */
-	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
-	if (NULL != IntcConfig)
+	/* Ottengo la configurazione dell'interrupt controller */
+	gic_config = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	if (NULL != gic_config)
 	{
-		status = XScuGic_CfgInitialize(IstanzaGIC, IntcConfig,
-						IntcConfig->CpuBaseAddress);
+		/* Inizializza l'istanza dell'interrupt controller */
+		status = XScuGic_CfgInitialize(istanza_gic, gic_config,
+						gic_config->CpuBaseAddress);
 
-		/* Collega l'handler dell'interrupt alla logica di gestione di
-		 * di interrupt hw del processore */
+		/*
+		 * Collega l'handler dell'interrupt alla logica di gestione di
+		 * di interrupt hw del processore
+		 */
 		Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
 					(Xil_ExceptionHandler)XScuGic_InterruptHandler,
-					IstanzaGIC);
+					istanza_gic);
 
 		/* Abilita l'interrupt del processore */
 		Xil_ExceptionEnableMask(XIL_EXCEPTION_IRQ);
@@ -75,22 +94,33 @@ static s32 setup_interrupt_system(XScuGic *IstanzaGIC)
 	return status;
 }
 
+
+/**
+ * @brief Connette e configura l'interrupt per il timer SCU
+ *
+ * @param istanza_interrupt Puntatore all'istanza XScuGic (interrupt GIC)
+ * @param istanza_timer Puntatore all'istanza XScuTimer (timer SCU)
+ * @param n_timer_interrupt Numero dell'interrupt del timer
+ */
 static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt,
 								XScuTimer *istanza_timer,
-								uint16_t ID_Timer_Interrupt)
+								uint16_t n_timer_interrupt)
 {
+	/* Inizializzo il sistema di eccezioni */
 	Xil_ExceptionInit();
 
-	/* Associazione funzione di interrupt */
-	XScuGic_Connect(istanza_interrupt, ID_Timer_Interrupt,
-			(Xil_ExceptionHandler)side,
+	/* Associo il side loop al timer */
+	XScuGic_Connect(istanza_interrupt, n_timer_interrupt,
+			(Xil_ExceptionHandler)side_loop,
 			(void *)istanza_timer);
 
-	/* Abilita GIC interrupt*/
-	XScuGic_Enable(istanza_interrupt, ID_Timer_Interrupt);
+	/* Abilito l'interrupt specifico per il GIC */
+	XScuGic_Enable(istanza_interrupt, n_timer_interrupt);
 
-	/* Abilita interrupt sul timer */
+	 /* Abilito la generazione di interrupt nel timer SCU */
 	XScuTimer_EnableInterrupt(istanza_timer);
+
+	/* Abilito il sistema globale di gestione delle eccezioni */
 	Xil_ExceptionEnable();
 }
 
@@ -98,57 +128,88 @@ static void connetti_interrupt_su_timer(XScuGic *istanza_interrupt,
 /************************************
  * GLOBAL FUNCTIONS
  ************************************/
+
+/**
+ * @brief Inizializza e configura il timer per il polling
+ *
+ * Questa funzione configura l'interrupt GIC,
+ * inizializza il timer SCU, esegue un self-test, connette l'interrupt,
+ * e avvia il timer con le impostazioni specificate.
+ */
 void inizializza_polling_timer()
 {
 	s32 status = XST_SUCCESS;
-	XScuTimer_Config *ConfigPtr;
+	XScuTimer_Config *scu_config_pointer;
 
-	/* Inizializza l'interrupt */
-	status = setup_interrupt_system(&istanza_interrupt);
+	/* Configura il Generic Interrupt Controller (GIC) */
+	status = configura_gic_system(&istanza_interrupt_gic);
 	while(status != XST_SUCCESS)
 	{
-		/* Interrupt setup fail */
+		/* Configurazione interrupt fallita, mi blocco qui */
 	}
 
-	/* Inizializza il driver del timer */
-	ConfigPtr = XScuTimer_LookupConfig(TIMER_DEVICE_ID);
-	status = XScuTimer_CfgInitialize(&istanza_timer_zynq, ConfigPtr,
-									 ConfigPtr->BaseAddr);
+	/* Inizializza il driver del timer SCU */
+	scu_config_pointer = XScuTimer_LookupConfig(TIMER_DEVICE_ID);
+	status = XScuTimer_CfgInitialize(&istanza_timer_scu, scu_config_pointer,
+									 scu_config_pointer->BaseAddr);
 	while(status != XST_SUCCESS)
 	{
-		/* Timer setup fail */
+		/* Configurazione timer fallita, mi blocco qui */
 	}
 
-	/* Test */
-	status = XScuTimer_SelfTest(&istanza_timer_zynq);
+	/* Eseguo un self-test del timer */
+	status = XScuTimer_SelfTest(&istanza_timer_scu);
 	while(status != XST_SUCCESS)
 	{
-		/* Timer selftest fail */
+		/* Self-test del timer fallito, mi blocco qui */
 	}
 
-	/* Connetti l'interrupt sul reset del timer */
-	connetti_interrupt_su_timer(&istanza_interrupt, &istanza_timer_zynq, TIMER_IRPT_INTR);
+	/* Configuro l'interrupt sul reset del timer */
+	connetti_interrupt_su_timer(&istanza_interrupt_gic, &istanza_timer_scu, TIMER_IRPT_INTR);
 
-	/* Abilita l'auto reset del timer */
-	XScuTimer_EnableAutoReload(&istanza_timer_zynq);
+	/* Configuro il timer per ripartire ad ogni overflow */
+	XScuTimer_EnableAutoReload(&istanza_timer_scu);
 
-	/* Imposta il prescaler */
-	XScuTimer_SetPrescaler(&istanza_timer_zynq, TIMER_PSC - 1U);
+	/* Imposto il prescaler del timer */
+	XScuTimer_SetPrescaler(&istanza_timer_scu, TIMER_PSC - 1U);
 
-	/* Carica valore a cui il timer si resetta */
-	XScuTimer_LoadTimer(&istanza_timer_zynq, TIMER_LV - 1U);
+	/* Imposto il valore di ricarica del timer */
+	XScuTimer_LoadTimer(&istanza_timer_scu, TIMER_LV - 1U);
 
-	/* Inizia il conteggio */
-	XScuTimer_Start(&istanza_timer_zynq);
+	/* Avvio il conteggio del timer */
+	XScuTimer_Start(&istanza_timer_scu);
 }
 
+/**
+ * @brief Restituisce l'istanza del timer SCU utilizzato.
+ *
+ * Questa funzione fornisce accesso all'istanza globale del timer SCU,
+ * utilizzata nel side loop per dare il timing all'aggiornamento ed
+ * emulazione delle variabili di encoder.
+ *
+ * @return XScuTimer L'istanza corrente del timer SCU
+ */
 XScuTimer ritorna_istanza_timer(void)
 {
-	return istanza_timer_zynq;
+	return istanza_timer_scu;
 }
 
+/**
+ * @brief Calcola e restituisce il tempo di polling del timer
+ *
+ * Questa funzione calcola il tempo di polling basandosi sui valori di
+ * TIMER_PSC (prescaler), TIMER_LV (valore di caricamento), e APU_FREQ
+ * (frequenza dell'APU).
+ *
+ * Viene utilizzato nel side loop per dare il timing all'aggiornamento ed
+ * emulazione delle variabili di encoder.
+ *
+ * @return float_t Il tempo di polling calcolato in secondi
+ *
+ * @note La formula utilizzata e': t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5)
+ */
 float_t ritorna_tempo_del_polling(void)
 {
-	float_t t_polling_zynq = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5);
-	return t_polling_zynq;
+	float_t t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5);
+	return t_polling;
 }

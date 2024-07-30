@@ -18,12 +18,12 @@
 /************************************
  * MAIN
  ************************************/
-int main()
+int main_loop()
 {
 	/* Inizializzazione*/
 	init_platform();
 	inizializza_polling_timer();
-	inizializza_side();
+	inizializza_side_loop();
 	inizializza_uart();
 	inizializza_variabili_encoder();
 

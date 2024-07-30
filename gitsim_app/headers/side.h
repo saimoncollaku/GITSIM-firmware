@@ -15,8 +15,8 @@ extern "C" {
 /************************************
  * GLOBAL FUNCTION PROTOTYPES
  ************************************/
-void side(void *CallBack_Timer);
-void inizializza_side(void);
+void side_loop(void *CallBack_Timer);
+void inizializza_side_loop(void);
 
 
 #ifdef __cplusplus
