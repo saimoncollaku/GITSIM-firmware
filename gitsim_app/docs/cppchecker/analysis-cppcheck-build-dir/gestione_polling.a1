@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="909930934208146379">
+<analyzerinfo hash="14824968439678033418">
         <error id="missingInclude" severity="information" msg="Include file: &quot;xscutimer.h&quot; not found." verbose="Include file: &quot;xscutimer.h&quot; not found.">
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\headers\gestione_polling.h" line="19" column="0"/>
         </error>
@@ -22,11 +22,11 @@
             <location file="C:\Xilinx\Vivado\Projects\gitsim_python\gitsim_python.sdk\gitsim_app\sources\gestione_polling.c" line="36" column="16"/>
         </error>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl functionName="setup_interrupt_system" lineNumber="60"/>
+    <functiondecl functionName="configura_gic_system" lineNumber="60"/>
     <functiondecl functionName="connetti_interrupt_su_timer" lineNumber="105"/>
-    <functiondecl functionName="inizializza_polling_timer" lineNumber="131"/>
-    <functiondecl functionName="ritorna_istanza_timer" lineNumber="175"/>
-    <functiondecl functionName="ritorna_tempo_del_polling" lineNumber="180"/>
+    <functiondecl functionName="inizializza_polling_timer" lineNumber="139"/>
+    <functiondecl functionName="ritorna_istanza_timer" lineNumber="192"/>
+    <functiondecl functionName="ritorna_tempo_del_polling" lineNumber="211"/>
     <functioncall functionName="XIL_EXCEPTION_ID_INT"/>
     <functioncall functionName="XIL_EXCEPTION_IRQ"/>
     <functioncall functionName="XPAR_SCUGIC_SINGLE_DEVICE_ID"/>
@@ -52,8 +52,8 @@
     <functioncall functionName="Xil_ExceptionHandler"/>
     <functioncall functionName="Xil_ExceptionInit"/>
     <functioncall functionName="Xil_ExceptionRegisterHandler"/>
+    <functioncall functionName="configura_gic_system"/>
     <functioncall functionName="connetti_interrupt_su_timer"/>
-    <functioncall functionName="setup_interrupt_system"/>
     <functioncall functionName="side_loop"/>
   </FileInfo>
 </analyzerinfo>

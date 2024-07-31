@@ -19,6 +19,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -141,8 +148,9 @@ Grafo delle dipendenze di inclusione per side.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Definizioni</h2></td></tr>
-<tr class="memitem:a2c5d6f43a29e3a7757f955d14f8ebb1c" id="r_a2c5d6f43a29e3a7757f955d14f8ebb1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c5d6f43a29e3a7757f955d14f8ebb1c">T_SIDE_LENTO</a>&#160;&#160;&#160;0.05f</td></tr>
-<tr class="separator:a2c5d6f43a29e3a7757f955d14f8ebb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c2eb1eca6fbfd21c3ba6aa9f978765" id="r_a96c2eb1eca6fbfd21c3ba6aa9f978765"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96c2eb1eca6fbfd21c3ba6aa9f978765">T_SIDE_SECONDARIO</a>&#160;&#160;&#160;0.05f</td></tr>
+<tr class="memdesc:a96c2eb1eca6fbfd21c3ba6aa9f978765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tempo di campionamento del side loop secondario.  <br /></td></tr>
+<tr class="separator:a96c2eb1eca6fbfd21c3ba6aa9f978765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -154,30 +162,35 @@ Funzioni</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
 <tr class="memitem:abf2715db2d34e505c9eb825fb2060ae2" id="r_abf2715db2d34e505c9eb825fb2060ae2"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf2715db2d34e505c9eb825fb2060ae2">counter_side_secondario</a></td></tr>
+<tr class="memdesc:abf2715db2d34e505c9eb825fb2060ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contatore di side loop fatti, usato per entrare nel side loop secondario.  <br /></td></tr>
 <tr class="separator:abf2715db2d34e505c9eb825fb2060ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e92cdfba4c87b903684bcc63ac4387" id="r_a43e92cdfba4c87b903684bcc63ac4387"><td class="memItemLeft" align="right" valign="top">static XScuTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43e92cdfba4c87b903684bcc63ac4387">istanza_timer</a></td></tr>
-<tr class="separator:a43e92cdfba4c87b903684bcc63ac4387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d9b9faf2ea378ec6c14d42f18ce63e" id="r_a42d9b9faf2ea378ec6c14d42f18ce63e"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42d9b9faf2ea378ec6c14d42f18ce63e">n_polls_side_lento</a> = 999999999</td></tr>
-<tr class="separator:a42d9b9faf2ea378ec6c14d42f18ce63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5421457d50dfe4231a7fb7ee451b8fa" id="r_ab5421457d50dfe4231a7fb7ee451b8fa"><td class="memItemLeft" align="right" valign="top">static XScuTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5421457d50dfe4231a7fb7ee451b8fa">istanza_timer_da_resettare</a></td></tr>
+<tr class="memdesc:ab5421457d50dfe4231a7fb7ee451b8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Istanza del timer che dà il callback al side loop.  <br /></td></tr>
+<tr class="separator:ab5421457d50dfe4231a7fb7ee451b8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9491e24970671c2497857c55f2ae73" id="r_a6f9491e24970671c2497857c55f2ae73"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9491e24970671c2497857c55f2ae73">n_loop_side_secondario</a> = UINT32_MAX</td></tr>
+<tr class="memdesc:a6f9491e24970671c2497857c55f2ae73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero di ingressi in side loop che bisogna fare per entrare nel side secondario (lento)  <br /></td></tr>
+<tr class="separator:a6f9491e24970671c2497857c55f2ae73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><dl class="section author"><dt>Autore</dt><dd>Saimon Collaku </dd></dl>
 
 <p class="definition">Definizione nel file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 </div><h2 class="groupheader">Documentazione delle definizioni</h2>
-<a id="a2c5d6f43a29e3a7757f955d14f8ebb1c" name="a2c5d6f43a29e3a7757f955d14f8ebb1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c5d6f43a29e3a7757f955d14f8ebb1c">&#9670;&#160;</a></span>T_SIDE_LENTO</h2>
+<a id="a96c2eb1eca6fbfd21c3ba6aa9f978765" name="a96c2eb1eca6fbfd21c3ba6aa9f978765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96c2eb1eca6fbfd21c3ba6aa9f978765">&#9670;&#160;</a></span>T_SIDE_SECONDARIO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define T_SIDE_LENTO&#160;&#160;&#160;0.05f</td>
+          <td class="memname">#define T_SIDE_SECONDARIO&#160;&#160;&#160;0.05f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00020">20</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p>Tempo di campionamento del side loop secondario. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00022">22</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>
@@ -197,7 +210,7 @@ Variabili</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00058">58</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00075">75</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>
@@ -216,7 +229,7 @@ Variabili</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00034">34</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00048">48</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>
@@ -241,12 +254,14 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00026">26</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p>Contatore di side loop fatti, usato per entrare nel side loop secondario. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00033">33</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>
-<a id="a43e92cdfba4c87b903684bcc63ac4387" name="a43e92cdfba4c87b903684bcc63ac4387"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43e92cdfba4c87b903684bcc63ac4387">&#9670;&#160;</a></span>istanza_timer</h2>
+<a id="ab5421457d50dfe4231a7fb7ee451b8fa" name="ab5421457d50dfe4231a7fb7ee451b8fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5421457d50dfe4231a7fb7ee451b8fa">&#9670;&#160;</a></span>istanza_timer_da_resettare</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +270,7 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">XScuTimer istanza_timer</td>
+          <td class="memname">XScuTimer istanza_timer_da_resettare</td>
         </tr>
       </table>
   </td>
@@ -265,12 +280,14 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00027">27</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p>Istanza del timer che dà il callback al side loop. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00036">36</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>
-<a id="a42d9b9faf2ea378ec6c14d42f18ce63e" name="a42d9b9faf2ea378ec6c14d42f18ce63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42d9b9faf2ea378ec6c14d42f18ce63e">&#9670;&#160;</a></span>n_polls_side_lento</h2>
+<a id="a6f9491e24970671c2497857c55f2ae73" name="a6f9491e24970671c2497857c55f2ae73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9491e24970671c2497857c55f2ae73">&#9670;&#160;</a></span>n_loop_side_secondario</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +296,7 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t n_polls_side_lento = 999999999</td>
+          <td class="memname">uint32_t n_loop_side_secondario = UINT32_MAX</td>
         </tr>
       </table>
   </td>
@@ -289,7 +306,9 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00028">28</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
+<p>Numero di ingressi in side loop che bisogna fare per entrare nel side secondario (lento) </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="side_8c_source.html#l00042">42</a> del file <a class="el" href="side_8c_source.html">side.c</a>.</p>
 
 </div>
 </div>

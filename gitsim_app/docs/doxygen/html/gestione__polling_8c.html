@@ -19,6 +19,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -148,7 +155,7 @@ Definizioni</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:a05499ac458b9b13fd6c26c075fa4130e" id="r_a05499ac458b9b13fd6c26c075fa4130e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05499ac458b9b13fd6c26c075fa4130e">connetti_interrupt_su_timer</a> (XScuGic *istanza_interrupt, XScuTimer *<a class="el" href="side_8c.html#a43e92cdfba4c87b903684bcc63ac4387">istanza_timer</a>, uint16_t n_timer_interrupt)</td></tr>
+<tr class="memitem:a05499ac458b9b13fd6c26c075fa4130e" id="r_a05499ac458b9b13fd6c26c075fa4130e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05499ac458b9b13fd6c26c075fa4130e">connetti_interrupt_su_timer</a> (XScuGic *istanza_interrupt, XScuTimer *istanza_timer, uint16_t n_timer_interrupt)</td></tr>
 <tr class="memdesc:a05499ac458b9b13fd6c26c075fa4130e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connette e configura l'interrupt per il timer SCU.  <br /></td></tr>
 <tr class="separator:a05499ac458b9b13fd6c26c075fa4130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca5103ba3151e3d354f4591b2ef2ba38" id="r_aca5103ba3151e3d354f4591b2ef2ba38"><td class="memItemLeft" align="right" valign="top">static s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca5103ba3151e3d354f4591b2ef2ba38">configura_gic_system</a> (XScuGic *istanza_gic)</td></tr>
@@ -377,12 +384,18 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calcola e restituisce il tempo di polling del timer. </p>
-<p>Questa funzione calcola il tempo di polling basandosi sui valori di TIMER_PSC (prescaler), TIMER_LV (valore di caricamento), e APU_FREQ (frequenza dell'APU).</p>
+<p>Questa funzione calcola il tempo di polling basandosi sui valori di TIMER_PSC (prescaler), TIMER_LV (valore di ricarica), e la frequenza della CPU.</p>
 <p>Viene utilizzato nel side loop per dare il timing all'aggiornamento ed emulazione delle variabili di encoder.</p>
 <dl class="section return"><dt>Restituisce</dt><dd>float_t Il tempo di polling calcolato in secondi</dd></dl>
-<dl class="section note"><dt>Nota</dt><dd>La formula utilizzata e': t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5) </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>La formula utilizzata e':  <p class="formulaDsp">
+\[
+        T_{polling} = 2 \times \frac{prescaler
+        \times valore_{ricarica}}{frequenza_{CPU}}
+\]
+</p>
+ </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00211">211</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00215">215</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
 
 </div>
 </div>

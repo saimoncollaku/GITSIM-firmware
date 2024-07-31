@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['n_5fpolls_5fside_5flento_0',['n_polls_side_lento',['../side_8c.html#a42d9b9faf2ea378ec6c14d42f18ce63e',1,'side.c']]]
+  ['n_5floop_5fside_5fsecondario_0',['n_loop_side_secondario',['../side_8c.html#a6f9491e24970671c2497857c55f2ae73',1,'side.c']]]
 ];

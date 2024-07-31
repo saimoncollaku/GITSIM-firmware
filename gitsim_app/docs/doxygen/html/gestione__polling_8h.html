@@ -19,6 +19,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -122,8 +129,10 @@ Grafo delle dipendenze di inclusione per gestione_polling.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Definizioni</h2></td></tr>
 <tr class="memitem:aada019553528d9d41021c5531ea917a7" id="r_aada019553528d9d41021c5531ea917a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aada019553528d9d41021c5531ea917a7">TIMER_PSC</a>&#160;&#160;&#160;(19U + 1U)</td></tr>
+<tr class="memdesc:aada019553528d9d41021c5531ea917a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescaler del timer SCU.  <br /></td></tr>
 <tr class="separator:aada019553528d9d41021c5531ea917a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29d99fe7f2772e285a28880a76a688ae" id="r_a29d99fe7f2772e285a28880a76a688ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d99fe7f2772e285a28880a76a688ae">TIMER_LV</a>&#160;&#160;&#160;(64U + 1U)</td></tr>
+<tr class="memdesc:a29d99fe7f2772e285a28880a76a688ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valore di ricarica (load value) del timer SCU.  <br /></td></tr>
 <tr class="separator:a29d99fe7f2772e285a28880a76a688ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -154,9 +163,10 @@ Funzioni</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Valore di load del timer, serve a definire il valore massimo su cui il timer si resetta </p>
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8h_source.html#l00036">36</a> del file <a class="el" href="gestione__polling_8h_source.html">gestione_polling.h</a>.</p>
+<p>Valore di ricarica (load value) del timer SCU. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8h_source.html#l00030">30</a> del file <a class="el" href="gestione__polling_8h_source.html">gestione_polling.h</a>.</p>
 
 </div>
 </div>
@@ -171,9 +181,10 @@ Funzioni</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Prescaler del timer, serve a definire il valore massimo su cui il timer si resetta </p>
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8h_source.html#l00032">32</a> del file <a class="el" href="gestione__polling_8h_source.html">gestione_polling.h</a>.</p>
+<p>Prescaler del timer SCU. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8h_source.html#l00027">27</a> del file <a class="el" href="gestione__polling_8h_source.html">gestione_polling.h</a>.</p>
 
 </div>
 </div>
@@ -239,12 +250,18 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calcola e restituisce il tempo di polling del timer. </p>
-<p>Questa funzione calcola il tempo di polling basandosi sui valori di TIMER_PSC (prescaler), TIMER_LV (valore di caricamento), e APU_FREQ (frequenza dell'APU).</p>
+<p>Questa funzione calcola il tempo di polling basandosi sui valori di TIMER_PSC (prescaler), TIMER_LV (valore di ricarica), e la frequenza della CPU.</p>
 <p>Viene utilizzato nel side loop per dare il timing all'aggiornamento ed emulazione delle variabili di encoder.</p>
 <dl class="section return"><dt>Restituisce</dt><dd>float_t Il tempo di polling calcolato in secondi</dd></dl>
-<dl class="section note"><dt>Nota</dt><dd>La formula utilizzata e': t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5) </dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>La formula utilizzata e':  <p class="formulaDsp">
+\[
+        T_{polling} = 2 \times \frac{prescaler
+        \times valore_{ricarica}}{frequenza_{CPU}}
+\]
+</p>
+ </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00211">211</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="gestione__polling_8c_source.html#l00215">215</a> del file <a class="el" href="gestione__polling_8c_source.html">gestione_polling.c</a>.</p>
 
 </div>
 </div>

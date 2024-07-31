@@ -23,19 +23,11 @@ extern "C" {
  * MACROS AND DEFINES
  ************************************/
 
-/*
- * Formula per ottenere il periodo di polling corretto:
- * T = {(PSC + 1)*(LV + 1)} / {CPU_CLK/2}
- */
+/** @brief Prescaler del timer SCU */
+#define TIMER_PSC		(19U + 1U)
 
-
-#define TIMER_PSC		(19U + 1U) /**< Prescaler del timer, serve a
-                                definire il valore massimo su cui il timer
-                                si resetta */
-
-#define TIMER_LV 		(64U + 1U) /**< Valore di load del timer, serve a
-                                definire il valore massimo su cui il timer
-                                si resetta */
+/** @brief Valore di ricarica (load value) del timer SCU */
+#define TIMER_LV 		(64U + 1U)
 
 /************************************
  * GLOBAL FUNCTION PROTOTYPES

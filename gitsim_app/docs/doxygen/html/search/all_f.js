@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['t_5fside_5flento_0',['T_SIDE_LENTO',['../side_8c.html#a2c5d6f43a29e3a7757f955d14f8ebb1c',1,'side.c']]],
+  ['t_5fside_5fsecondario_0',['T_SIDE_SECONDARIO',['../side_8c.html#a96c2eb1eca6fbfd21c3ba6aa9f978765',1,'side.c']]],
   ['t_5fupdate_1',['t_update',['../emulazione__encoder_8c.html#a545aac6e56804cc76b305836c9ba14c6',1,'emulazione_encoder.c']]],
   ['timer_5fdevice_5fid_2',['TIMER_DEVICE_ID',['../gestione__polling_8c.html#a0554c32b855b8053c816dd03099d0e6b',1,'gestione_polling.c']]],
   ['timer_5firpt_5fintr_3',['TIMER_IRPT_INTR',['../gestione__polling_8c.html#a6dca599668552cc7abe171e43b7358cb',1,'gestione_polling.c']]],

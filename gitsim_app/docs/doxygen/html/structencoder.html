@@ -19,6 +19,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -374,8 +381,8 @@ Campi</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Lunghezza del passo di ruota recepito dal GIT, misurato in metri. Esso deve essere ricalcolato ogni volta che il diametro o la risoluzione variano utilizzando la formula: <img class="formulaInl" alt="$ passo=\frac{\pi \cdot diametro}
-{4 \cdot risoluzione}$" src="form_0.png"/>. </p>
+<p>Lunghezza del passo di ruota recepito dal GIT, misurato in metri. Esso deve essere ricalcolato ogni volta che il diametro o la risoluzione variano utilizzando la formula: \( passo=\frac{\pi \cdot diametro}
+{4 \cdot risoluzione}\). </p>
 
 <p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8h_source.html#l00069">69</a> del file <a class="el" href="emulazione__encoder_8h_source.html">emulazione_encoder.h</a>.</p>
 

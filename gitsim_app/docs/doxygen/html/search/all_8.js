@@ -12,6 +12,6 @@ var searchData=
   ['inizializza_5fvariabili_5fencoder_9',['inizializza_variabili_encoder',['../emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4',1,'inizializza_variabili_encoder():&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#a0a13dc90d8d3711fb6386ed256e6262d',1,'inizializza_variabili_encoder(void):&#160;emulazione_encoder.c']]],
   ['intc_5fdevice_5fid_10',['INTC_DEVICE_ID',['../gestione__polling_8c.html#a90bc74590962865fc1ab7ee1be0f4b64',1,'gestione_polling.c']]],
   ['istanza_5finterrupt_5fgic_11',['istanza_interrupt_gic',['../gestione__polling_8c.html#adacef232eed5952962bf943dcfca670e',1,'gestione_polling.c']]],
-  ['istanza_5ftimer_12',['istanza_timer',['../side_8c.html#a43e92cdfba4c87b903684bcc63ac4387',1,'side.c']]],
+  ['istanza_5ftimer_5fda_5fresettare_12',['istanza_timer_da_resettare',['../side_8c.html#ab5421457d50dfe4231a7fb7ee451b8fa',1,'side.c']]],
   ['istanza_5ftimer_5fscu_13',['istanza_timer_scu',['../gestione__polling_8c.html#add81497fa1b674255327f48db9c15ac7',1,'gestione_polling.c']]]
 ];

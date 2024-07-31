@@ -19,6 +19,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -148,7 +155,7 @@ $(function(){initNavTree('globals.html',''); initResizable(); });
 <li>inizializza_variabili_encoder()&#160;:&#160;<a class="el" href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">emulazione_encoder.c</a>, <a class="el" href="emulazione__encoder_8h.html#a0a13dc90d8d3711fb6386ed256e6262d">emulazione_encoder.h</a></li>
 <li>INTC_DEVICE_ID&#160;:&#160;<a class="el" href="gestione__polling_8c.html#a90bc74590962865fc1ab7ee1be0f4b64">gestione_polling.c</a></li>
 <li>istanza_interrupt_gic&#160;:&#160;<a class="el" href="gestione__polling_8c.html#adacef232eed5952962bf943dcfca670e">gestione_polling.c</a></li>
-<li>istanza_timer&#160;:&#160;<a class="el" href="side_8c.html#a43e92cdfba4c87b903684bcc63ac4387">side.c</a></li>
+<li>istanza_timer_da_resettare&#160;:&#160;<a class="el" href="side_8c.html#ab5421457d50dfe4231a7fb7ee451b8fa">side.c</a></li>
 <li>istanza_timer_scu&#160;:&#160;<a class="el" href="gestione__polling_8c.html#add81497fa1b674255327f48db9c15ac7">gestione_polling.c</a></li>
 </ul>
 
@@ -176,7 +183,7 @@ $(function(){initNavTree('globals.html',''); initResizable(); });
 
 
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>n_polls_side_lento&#160;:&#160;<a class="el" href="side_8c.html#a42d9b9faf2ea378ec6c14d42f18ce63e">side.c</a></li>
+<li>n_loop_side_secondario&#160;:&#160;<a class="el" href="side_8c.html#a6f9491e24970671c2497857c55f2ae73">side.c</a></li>
 </ul>
 
 
@@ -206,7 +213,7 @@ $(function(){initNavTree('globals.html',''); initResizable(); });
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>T_SIDE_LENTO&#160;:&#160;<a class="el" href="side_8c.html#a2c5d6f43a29e3a7757f955d14f8ebb1c">side.c</a></li>
+<li>T_SIDE_SECONDARIO&#160;:&#160;<a class="el" href="side_8c.html#a96c2eb1eca6fbfd21c3ba6aa9f978765">side.c</a></li>
 <li>t_update&#160;:&#160;<a class="el" href="emulazione__encoder_8c.html#a545aac6e56804cc76b305836c9ba14c6">emulazione_encoder.c</a></li>
 <li>TIMER_DEVICE_ID&#160;:&#160;<a class="el" href="gestione__polling_8c.html#a0554c32b855b8053c816dd03099d0e6b">gestione_polling.c</a></li>
 <li>TIMER_IRPT_INTR&#160;:&#160;<a class="el" href="gestione__polling_8c.html#a6dca599668552cc7abe171e43b7358cb">gestione_polling.c</a></li>

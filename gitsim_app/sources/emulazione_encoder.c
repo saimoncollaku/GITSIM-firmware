@@ -79,7 +79,7 @@ static void aggiorna_encoder(encoder *encoder)
 	/* Integrazione dell'accelerazione */
 	encoder->vel = (encoder->acc * t_update) + encoder->vel;
 
-	/* Saturo la velocità se va oltre la soglia fissata */
+	/* Saturo la velocitï¿½ se va oltre la soglia fissata */
 	if (encoder->vel > VELOCITA_MAX)
 	{
 		encoder->vel = VELOCITA_MAX;
@@ -94,31 +94,31 @@ static void aggiorna_encoder(encoder *encoder)
 	}
 
 	/*
-	 * Integrazione della velocità, assegno lo spazio ad A
-	 * (che è una scelta arbitraria)
+	 * Integrazione della velocitï¿½, assegno lo spazio ad A
+	 * (che ï¿½ una scelta arbitraria)
 	 */
 	encoder->pos_A = encoder->pos_A + (encoder->vel * t_update);
 
 	/*
-	 * Estrapolo il fattore di sfasamento, cioè converto i gradi nella
-	 * quantità di spazio da cui il canale B si discosta dal canale A
+	 * Estrapolo il fattore di sfasamento, cioï¿½ converto i gradi nella
+	 * quantitï¿½ di spazio da cui il canale B si discosta dal canale A
 	 */
 	float_t k_fase = ((float_t) - (encoder->fase) / 360);
 	encoder->pos_B = encoder->pos_A + (2 * encoder->l_passo * k_fase);
 
 	/*
-	 * Indico chi è il sensore con la posizione maggiore e quale con la
+	 * Indico chi ï¿½ il sensore con la posizione maggiore e quale con la
 	 * minore, mi serve per fare il controllo sulla correzione di spazio
 	 */
 	if (k_fase <= 0)
 	{
-		/* Posizione del B è minore dell'A */
+		/* Posizione del B ï¿½ minore dell'A */
 		pos_minore = encoder->pos_B;
 		pos_maggiore = encoder->pos_A;
 	}
 	else
 	{
-		/* Posizione dell'A è minore del B */
+		/* Posizione dell'A ï¿½ minore del B */
 		pos_minore = encoder->pos_A;
 		pos_maggiore = encoder->pos_B;
 	}
@@ -165,7 +165,7 @@ static void emula_encoder(encoder *encoder)
 
 	/*
 	 * Genero le soglie su cui fare il confronto, per stimare in che
-	 * posizione è il sensore
+	 * posizione ï¿½ il sensore
 	 */
 	double_t soglia_max_def = 2 * encoder->l_passo; /* 2passi */
 	double_t soglia_min_def = - soglia_max_def; /* -2passi */
@@ -178,12 +178,12 @@ static void emula_encoder(encoder *encoder)
 
 	/*
 	 * Generazione segnale per canale A da GPIO,
-	 * se il treno va a velocità positiva allora lo spazio sarà positivo,
+	 * se il treno va a velocitï¿½ positiva allora lo spazio sarï¿½ positivo,
 	 * quindi verranno usati solo gli ultimi 2 if dei 4 totali, che fanno
-	 * il check per posizioni positive. Ogni paio di if dice se la GPIO è
+	 * il check per posizioni positive. Ogni paio di if dice se la GPIO ï¿½
 	 * alto o basso, la soglia che decide questo dipende dal duty cycle.
-	 * Esempio: il range dello spazio è 0 -> 2 passi, se duty = 50%
-	 * la soglia di transizione alto/basso sarà 1 passo.
+	 * Esempio: il range dello spazio ï¿½ 0 -> 2 passi, se duty = 50%
+	 * la soglia di transizione alto/basso sarï¿½ 1 passo.
 	 */
 	if ((encoder->pos_A >= soglia_min_def) && (encoder->pos_A < soglia_neg_A))
 	{

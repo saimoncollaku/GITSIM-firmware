@@ -198,15 +198,19 @@ XScuTimer ritorna_istanza_timer(void)
  * @brief Calcola e restituisce il tempo di polling del timer
  *
  * Questa funzione calcola il tempo di polling basandosi sui valori di
- * TIMER_PSC (prescaler), TIMER_LV (valore di caricamento), e APU_FREQ
- * (frequenza dell'APU).
+ * TIMER_PSC (prescaler), TIMER_LV (valore di ricarica), e la frequenza
+ * della CPU.
  *
  * Viene utilizzato nel side loop per dare il timing all'aggiornamento ed
  * emulazione delle variabili di encoder.
  *
  * @return float_t Il tempo di polling calcolato in secondi
  *
- * @note La formula utilizzata e': t_polling = (TIMER_PSC * TIMER_LV) / (APU_FREQ * 0.5)
+ * @note La formula utilizzata e':
+ * \f[
+ * 		T_{polling} = 2 \times \frac{prescaler
+ * 		\times valore_{ricarica}}{frequenza_{CPU}}
+ * \f]
  */
 float_t ritorna_tempo_del_polling(void)
 {
