@@ -24,6 +24,145 @@
 /** @brief Velocita' massima lineare emulabile dal GIT, in m/s */
 #define VELOCITA_MAX (700/3.6)
 
+/******************************************************************************
+ * TYPEDEFS
+ *****************************************************************************/
+
+/** @brief Rappresenta lo stato dell'encoder basato sui livelli dei canali A e B.
+ *  Utilizzato per decodificare la posizione e la generare il conteggio.
+ */
+typedef enum
+{
+	/** @brief Stato 0: Canale A = 0, Canale B = 0 */
+	zero,
+	/** @brief Stato 1: Canale A = 0, Canale B = 1 */
+	uno,
+	/** @brief Stato 2: Canale A = 1, Canale B = 0 */
+	due,
+	/** @brief Stato 3: Canale A = 1, Canale B = 1 */
+	tre,
+	/** @brief Stato incerto, usato per l'inizializzazione */
+	incerto
+}stato_encoder;
+
+
+/** @brief Struttura che rappresenta un encoder incrementale emulato.
+ *
+ *  Questa struttura contiene tutti i parametri e le informazioni necessarie
+ *  per emulare e gestire un encoder incrementale in un sistema embedded.
+ *  Include caratteristiche fisiche, stati operativi/errore, e parametri di
+ *  output.
+ */
+typedef struct
+{
+  /** @brief Duty cycle del segnale in uscita al canale A.
+   *  Espresso come intero percentuale. Moltiplicare per 0.01 per ottenere il
+   *   valore effettivo.
+   */
+  uint16_t duty_A;
+
+  /** @brief Duty cycle del segnale in uscita al canale B.
+   *  Espresso come intero percentuale. Moltiplicare per 0.01 per ottenere il
+   *   valore effettivo.
+   */
+  uint16_t duty_B;
+
+  /** @brief Flag per indicare l'incollaggio del canale A.
+   *  true se il canale è incollato, false altrimenti.
+   */
+  bool incollaggio_A;
+
+  /** @brief Flag per indicare l'incollaggio del canale B.
+   *  true se il canale è incollato, false altrimenti.
+   */
+  bool incollaggio_B;
+
+  /** @brief Flag per indicare errore di frequenza sul canale A.
+   *  true se c'è un errore di frequenza, false altrimenti.
+   */
+  bool err_freq_A;
+
+  /** @brief Flag per indicare errore di frequenza sul canale B.
+   *  true se c'è un errore di frequenza, false altrimenti.
+   */
+  bool err_freq_B;
+
+  /** @brief Errore di frequenza per passo.
+   *  Rappresenta la deviazione dalla frequenza attesa per ogni passo dell'
+   *  encoder.
+   */
+  float_t err_freq_passo;
+
+  /** @brief Sfasamento dei due segnali dell'encoder.
+   *  Misurato in gradi.
+   */
+  int16_t fase;
+
+  /** @brief Impulsi per giro dell'encoder.
+   *  Numero di suddivisioni del disco o impulsi per giro, misurato in PPR
+   *  (Pulses Per Revolution).
+   */
+  uint16_t ppr;
+
+  /** @brief Diametro della ruota collegata al GIT.
+   *  Misurato in metri.
+   */
+  float_t diametro;
+
+  /** @brief Lunghezza del passo di ruota rilevato da un canale dell'encoder.
+   *  Misurato in metri. Ricalcolato quando diametro o risoluzione variano.
+   *  Corrisponde alla lunghezza con risoluzione x2.
+   */
+  double_t l_passo;
+
+  /** @brief Posizione del sensore A.
+   *  Misurato in metri. Rappresenta la posizione nell'intervallo di 4 passi,
+   *  con risoluzione x2
+   */
+  double_t pos_A;
+
+  /** @brief Posizione del sensore B.
+   *  Misurato in metri. Rappresenta la posizione nell'intervallo di 4 passi,
+   *  con risoluzione x2
+   */
+  double_t pos_B;
+
+  /** @brief Velocità del GIT.
+   *  Misurato in m/s.
+   */
+  double_t vel;
+
+  /** @brief Accelerazione del GIT.
+   *  Misurato in m/s^2.
+   */
+  double_t acc;
+
+  /** @brief Numero di passi svolti dall'ultimo reset.
+   *  Conteggio contato con i passi a risoluzione x4.
+   *
+   *  @note quindi la lunghezza del passo equivalente per il
+   *  calcolo dei conteggi e la metà rispetto a quello della
+   *  variabile l_passo.
+   */
+  uint16_t conteggio;
+
+  /** @brief Indirizzo GPIO per il canale A.
+   *  Struttura XGpio per la gestione del GPIO del canale A.
+   */
+  XGpio indirizzo_gpio_A;
+
+  /** @brief Indirizzo GPIO per il canale B.
+   *  Struttura XGpio per la gestione del GPIO del canale B.
+   */
+  XGpio indirizzo_gpio_B;
+
+  /** @brief Stato corrente dell'encoder.
+   *  Enumerazione che rappresenta lo stato operativo dell'encoder.
+   */
+  stato_encoder stato;
+
+} encoder;
+
 
 /******************************************************************************
  * STATIC VARIABLES
@@ -309,7 +448,7 @@ static void inizializza_encoder(encoder *e_x)
 	e_x->vel = 0;
 	e_x->acc = 0;
 	e_x->pos_A = 0;
-	e_x->pos_B = 0;
+	e_x->pos_B = PI_GRECO / 512;
 	e_x->duty_A = 50;
 	e_x->duty_B = 50;
 	e_x->fase = 90;
