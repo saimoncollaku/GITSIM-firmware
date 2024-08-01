@@ -97,192 +97,205 @@ typedef struct
  ************************************/
 
 void inizializza_variabili_encoder(void);
+
+/**
+ * @brief Emula le uscite degli encoder e_1 ed e_2
+ *
+ * @details Questa funzione gestisce l'emulazione dei sensori per gli encoder e_1 ed e_2.
+ * L'emulazione viene eseguita solo se l'applicazione GITSIM è connessa, altrimenti
+ * la funzione non esegue alcuna operazione.
+ *
+ * @note L'emulazione dei sensori è utile per test e debug, permettendo di simulare
+ * il comportamento degli encoder senza hardware fisico.
+ *
+ * @see e_1, e_2, ritorna_stato_connessione_app, emula_encoder
+ */
 void emula_sensori_encoder(void);
 void aggiorna_variabili_encoder(void);
 
 /**
- * @brief Resetta i conteggi di entrambi gli encoder E1 ed E2
+ * @brief Resetta i conteggi di entrambi gli encoder e_1 ed e_2
  *
- * @details Questa funzione azzera i conteggi degli encoder E1 ed E2,
+ * @details Questa funzione azzera i conteggi degli encoder e_1 ed e_2,
  * riportandoli a zero. È utile per inizializzare o reinizializzare
  * i dati per prevenire l'overflow delle variabili di conteggio.
  *
- * @see E1, E2
+ * @see e_1, e_2
  * @see encoder.conteggio
  */
 void reset_conteggi_encoder(void);
 
 /**
- * @brief Restituisce la velocità corrente emulata dall'encoder E1
+ * @brief Restituisce la velocità corrente emulata dall'encoder e_1
  *
- * @return double_t La velocità corrente dell'encoder E1 (in m/s)
+ * @return double_t La velocità corrente dell'encoder e_1 (in m/s)
  *
  * @details Questa funzione fornisce accesso al valore di velocità attuale
- * emulato per l'encoder E1, in metri al secondo. Fare attenzione al fatto
+ * emulato per l'encoder e_1, in metri al secondo. Fare attenzione al fatto
  * che il valore è un double_t.
  *
- * @see E1
+ * @see e_1
  * @see encoder.vel
  */
 double_t ritorna_velocita_encoder1(void);
 
 /**
- * @brief Restituisce la velocità corrente emulata dall'encoder E2
+ * @brief Restituisce la velocità corrente emulata dall'encoder e_2
  *
- * @return double_t La velocità corrente dell'encoder E2 (in m/s)
+ * @return double_t La velocità corrente dell'encoder e_2 (in m/s)
  *
  * @details Questa funzione fornisce accesso al valore di velocità attuale
- * emulato per l'encoder E2, in metri al secondo. Fare attenzione al fatto
+ * emulato per l'encoder e_2, in metri al secondo. Fare attenzione al fatto
  * che il valore è un double_t.
  *
- * @see E2
+ * @see e_2
  * @see encoder.vel
  */
 double_t ritorna_velocita_encoder2(void);
 
 /**
- * @brief Restituisce il valore di conteggio corrente dell'encoder E1
+ * @brief Restituisce il valore di conteggio corrente dell'encoder e_1
  *
- * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder E1
+ * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder e_1
  *
  * @details Questa funzione fornisce accesso al valore di conteggio attuale
- * dell'encoder E1 con risoluzione x4. Il conteggio rappresenta il numero
+ * dell'encoder e_1 con risoluzione x4. Il conteggio rappresenta il numero
  * di impulsi rilevati dall'encoder dall'ultimo reset o dall'inizio dell'
  * emulazione.
  *
- * @see E1
+ * @see e_1
  * @see encoder.conteggio
  * @see reset_conteggi_encoder()
  */
 uint16_t ritorna_conteggio_encoder1(void);
 
 /**
- * @brief Restituisce il valore di conteggio corrente dell'encoder E2
+ * @brief Restituisce il valore di conteggio corrente dell'encoder e_2
  *
- * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder E2
+ * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder e_2
  *
  * @details Questa funzione fornisce accesso al valore di conteggio attuale
- * dell'encoder E2 con risoluzione x4. Il conteggio rappresenta il numero
+ * dell'encoder e_2 con risoluzione x4. Il conteggio rappresenta il numero
  * di impulsi rilevati dall'encoder dall'ultimo reset o dall'inizio dell'
  * emulazione.
  *
- * @see E2
+ * @see e_2
  * @see encoder.conteggio
  * @see reset_conteggi_encoder()
  */
 uint16_t ritorna_conteggio_encoder2(void);
 
 /**
- * @brief Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E1
+ * @brief Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_1
  *
- * @param ppr Il ppr da assegnare all'encoder E1
+ * @param ppr Il ppr da assegnare all'encoder e_1
  *
  * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)
- * per l'encoder E1. Questo parametro è dato normalmente dal datasheet del
+ * per l'encoder e_1. Questo parametro è dato normalmente dal datasheet del
  * costruttore dell'encoder e per la misura dei passi corrisponderebbe
  * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).
  *
- * @see E1
+ * @see e_1
  * @see encoder.ppr
  */
 void assegna_ppr_encoder1(uint16_t ppr);
 
 /**
- * @brief Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E2
+ * @brief Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_2
  *
- * @param ppr Il ppr da assegnare all'encoder E2
+ * @param ppr Il ppr da assegnare all'encoder e_2
  *
  * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)
- * per l'encoder E2. Questo parametro è dato normalmente dal datasheet del
+ * per l'encoder e_2. Questo parametro è dato normalmente dal datasheet del
  * costruttore dell'encoder e per la misura dei passi corrisponderebbe
  * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).
  *
- * @see E2
+ * @see e_2
  * @see encoder.ppr
  */
 void assegna_ppr_encoder2(uint16_t ppr);
 
 /**
- * @brief Assegna il diametro della ruota a entrambi gli encoder E1 ed E2
+ * @brief Assegna il diametro della ruota a entrambi gli encoder e_1 ed e_2
  *
  * @param diametro Il diametro della ruota da assegnare (in metri)
  *
  * @details Questa funzione imposta il diametro della ruota per entrambi gli encoder
- * E1 ed E2. Il valore del diametro viene assegnato direttamente senza conversioni.
+ * e_1 ed e_2. Il valore del diametro viene assegnato direttamente senza conversioni.
  *
- * @see E1, E2
+ * @see e_1, e_2
  * @see encoder.diametro
  */
 void assegna_diametro_ruota(float_t diametro);
 
 /**
- * @brief Assegna un valore di velocità all'encoder E1
+ * @brief Assegna un valore di velocità all'encoder e_1
  *
  * @param vel Valore di velocità da assegnare (in m/s)
  *
  * @details Questa funzione converte il valore di velocità fornito
- * da float_t a double_t e lo assegna al campo 'vel' dell'encoder E1.
+ * da float_t a double_t e lo assegna al campo 'vel' dell'encoder e_1.
  *
  * @note La conversione da float_t a double_t comporta un
  * cambiamento di precisione, dipendente dalla libreria math.h
  *
- * @see E1
+ * @see e_1
  * @see encoder.vel
  */
 void assegna_velocita_encoder1(float_t vel);
 
 /**
- * @brief Assegna un valore di velocità all'encoder E2
+ * @brief Assegna un valore di velocità all'encoder e_2
  *
  * @param vel Valore di velocità da assegnare (in m/s)
  *
  * @details Questa funzione converte il valore di velocità fornito
- * da float_t a double_t e lo assegna al campo 'vel' dell'encoder E2.
+ * da float_t a double_t e lo assegna al campo 'vel' dell'encoder e_2.
  *
  * @note La conversione da float_t a double_t comporta un
  * cambiamento di precisione, dipendente dalla libreria math.h
  *
- * @see E2
+ * @see e_2
  * @see encoder.vel
  */
 void assegna_velocita_encoder2(float_t vel);
 
 /**
- * @brief Assegna un valore di accelerazione all'encoder E1
+ * @brief Assegna un valore di accelerazione all'encoder e_1
  *
  * @param acc Valore di accelerazione da assegnare (in m/s<sup>2</sup>)
  *
  * @details Questa funzione converte il valore di accelerazione fornito
- * da float_t a double_t e lo assegna al campo 'acc' dell'encoder E1.
+ * da float_t a double_t e lo assegna al campo 'acc' dell'encoder e_1.
  *
  * @note La conversione da float_t a double_t comporta un
  * cambiamento di precisione, dipendente dalla libreria math.h
  *
- * @see E1
+ * @see e_1
  * @see encoder.acc
  */
 void assegna_accelerazione_encoder1(float_t acc);
 
 /**
- * @brief Assegna un valore di accelerazione all'encoder E2
+ * @brief Assegna un valore di accelerazione all'encoder e_2
  *
  * @param acc Valore di accelerazione da assegnare (in m/s<sup>2</sup>)
  *
  * @details Questa funzione converte il valore di accelerazione fornito
- * da float_t a double_t e lo assegna al campo 'acc' dell'encoder E2.
+ * da float_t a double_t e lo assegna al campo 'acc' dell'encoder e_2.
  *
  * @note La conversione da float_t a double_t può comportare un
  * cambiamento di precisione, dipendente dalla libreria math.h
  *
- * @see E2
+ * @see e_2
  * @see encoder.acc
  */
 void assegna_accelerazione_encoder2(float_t acc);
 
 /**
- * @brief Aggiorna il passo dell'encoder E1
+ * @brief Aggiorna il passo dell'encoder e_1
  *
- * Questa funzione calcola e aggiorna la  lunghezza del passo dell'encoder E1
+ * Questa funzione calcola e aggiorna la  lunghezza del passo dell'encoder e_1
  * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).
  *
  * La formula utilizzata è:
@@ -297,15 +310,15 @@ void assegna_accelerazione_encoder2(float_t acc);
  * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del
  * 	 passo
  *
- * @see E1
+ * @see e_1
  * @see encoder.l_passo
  */
 void aggiorna_passo_encoder1(void);
 
 /**
- * @brief Aggiorna il passo dell'encoder E2
+ * @brief Aggiorna il passo dell'encoder e_2
  *
- * Questa funzione calcola e aggiorna la  lunghezza del passo dell'encoder E2
+ * Questa funzione calcola e aggiorna la  lunghezza del passo dell'encoder e_2
  * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).
  *
  * La formula utilizzata è:
@@ -320,7 +333,7 @@ void aggiorna_passo_encoder1(void);
  * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del
  * 	 passo
  *
- * @see E2
+ * @see e_2
  * @see encoder.l_passo
  */
 void aggiorna_passo_encoder2(void);

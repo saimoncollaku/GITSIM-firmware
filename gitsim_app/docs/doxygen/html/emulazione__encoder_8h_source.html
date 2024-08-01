@@ -210,282 +210,295 @@ $(function(){initNavTree('emulazione__encoder_8h_source.html',''); initResizable
 <div class="line"><span class="lineno">   97</span><span class="comment"> ************************************/</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  104</span><span class="comment"> * @brief Resetta i conteggi di entrambi gli encoder E1 ed E2</span></div>
-<div class="line"><span class="lineno">  105</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  106</span><span class="comment"> * @details Questa funzione azzera i conteggi degli encoder E1 ed E2,</span></div>
-<div class="line"><span class="lineno">  107</span><span class="comment"> * riportandoli a zero. È utile per inizializzare o reinizializzare</span></div>
-<div class="line"><span class="lineno">  108</span><span class="comment"> * i dati per prevenire l&#39;overflow delle variabili di conteggio.</span></div>
-<div class="line"><span class="lineno">  109</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  110</span><span class="comment"> * @see E1, E2</span></div>
-<div class="line"><span class="lineno">  111</span><span class="comment"> * @see encoder.conteggio</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  102</span><span class="comment"> * @brief Emula le uscite degli encoder e_1 ed e_2</span></div>
+<div class="line"><span class="lineno">  103</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  104</span><span class="comment"> * @details Questa funzione gestisce l&#39;emulazione dei sensori per gli encoder e_1 ed e_2.</span></div>
+<div class="line"><span class="lineno">  105</span><span class="comment"> * L&#39;emulazione viene eseguita solo se l&#39;applicazione GITSIM è connessa, altrimenti</span></div>
+<div class="line"><span class="lineno">  106</span><span class="comment"> * la funzione non esegue alcuna operazione.</span></div>
+<div class="line"><span class="lineno">  107</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  108</span><span class="comment"> * @note L&#39;emulazione dei sensori è utile per test e debug, permettendo di simulare</span></div>
+<div class="line"><span class="lineno">  109</span><span class="comment"> * il comportamento degli encoder senza hardware fisico.</span></div>
+<div class="line"><span class="lineno">  110</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  111</span><span class="comment"> * @see e_1, e_2, ritorna_stato_connessione_app, emula_encoder</span></div>
 <div class="line"><span class="lineno">  112</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  116</span><span class="comment"> * @brief Restituisce la velocità corrente emulata dall&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  117</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  118</span><span class="comment"> * @return double_t La velocità corrente dell&#39;encoder E1 (in m/s)</span></div>
-<div class="line"><span class="lineno">  119</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  120</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di velocità attuale</span></div>
-<div class="line"><span class="lineno">  121</span><span class="comment"> * emulato per l&#39;encoder E1, in metri al secondo. Fare attenzione al fatto</span></div>
-<div class="line"><span class="lineno">  122</span><span class="comment"> * che il valore è un double_t.</span></div>
-<div class="line"><span class="lineno">  123</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  124</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  125</span><span class="comment"> * @see encoder.vel</span></div>
-<div class="line"><span class="lineno">  126</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  130</span><span class="comment"> * @brief Restituisce la velocità corrente emulata dall&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  131</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  132</span><span class="comment"> * @return double_t La velocità corrente dell&#39;encoder E2 (in m/s)</span></div>
-<div class="line"><span class="lineno">  133</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  134</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di velocità attuale</span></div>
-<div class="line"><span class="lineno">  135</span><span class="comment"> * emulato per l&#39;encoder E2, in metri al secondo. Fare attenzione al fatto</span></div>
-<div class="line"><span class="lineno">  136</span><span class="comment"> * che il valore è un double_t.</span></div>
-<div class="line"><span class="lineno">  137</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  138</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  139</span><span class="comment"> * @see encoder.vel</span></div>
-<div class="line"><span class="lineno">  140</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  144</span><span class="comment"> * @brief Restituisce il valore di conteggio corrente dell&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  145</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  146</span><span class="comment"> * @return uint16_t Il valore di conteggio (con risoluzione x4) dell&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  147</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  148</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di conteggio attuale</span></div>
-<div class="line"><span class="lineno">  149</span><span class="comment"> * dell&#39;encoder E1 con risoluzione x4. Il conteggio rappresenta il numero</span></div>
-<div class="line"><span class="lineno">  150</span><span class="comment"> * di impulsi rilevati dall&#39;encoder dall&#39;ultimo reset o dall&#39;inizio dell&#39;</span></div>
-<div class="line"><span class="lineno">  151</span><span class="comment"> * emulazione.</span></div>
-<div class="line"><span class="lineno">  152</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  153</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  154</span><span class="comment"> * @see encoder.conteggio</span></div>
-<div class="line"><span class="lineno">  155</span><span class="comment"> * @see reset_conteggi_encoder()</span></div>
-<div class="line"><span class="lineno">  156</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  160</span><span class="comment"> * @brief Restituisce il valore di conteggio corrente dell&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  161</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  162</span><span class="comment"> * @return uint16_t Il valore di conteggio (con risoluzione x4) dell&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  163</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  164</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di conteggio attuale</span></div>
-<div class="line"><span class="lineno">  165</span><span class="comment"> * dell&#39;encoder E2 con risoluzione x4. Il conteggio rappresenta il numero</span></div>
-<div class="line"><span class="lineno">  166</span><span class="comment"> * di impulsi rilevati dall&#39;encoder dall&#39;ultimo reset o dall&#39;inizio dell&#39;</span></div>
-<div class="line"><span class="lineno">  167</span><span class="comment"> * emulazione.</span></div>
-<div class="line"><span class="lineno">  168</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  169</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  170</span><span class="comment"> * @see encoder.conteggio</span></div>
-<div class="line"><span class="lineno">  171</span><span class="comment"> * @see reset_conteggi_encoder()</span></div>
-<div class="line"><span class="lineno">  172</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  176</span><span class="comment"> * @brief Assegna il valore di impulsi per rivoluzione (ppr) all&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  177</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  178</span><span class="comment"> * @param ppr Il ppr da assegnare all&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  179</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  180</span><span class="comment"> * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)</span></div>
-<div class="line"><span class="lineno">  181</span><span class="comment"> * per l&#39;encoder E1. Questo parametro è dato normalmente dal datasheet del</span></div>
-<div class="line"><span class="lineno">  182</span><span class="comment"> * costruttore dell&#39;encoder e per la misura dei passi corrisponderebbe</span></div>
-<div class="line"><span class="lineno">  183</span><span class="comment"> * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</span></div>
-<div class="line"><span class="lineno">  184</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  185</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  186</span><span class="comment"> * @see encoder.ppr</span></div>
-<div class="line"><span class="lineno">  187</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a>(uint16_t ppr);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  191</span><span class="comment"> * @brief Assegna il valore di impulsi per rivoluzione (ppr) all&#39;encoder E2</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  117</span><span class="comment"> * @brief Resetta i conteggi di entrambi gli encoder e_1 ed e_2</span></div>
+<div class="line"><span class="lineno">  118</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  119</span><span class="comment"> * @details Questa funzione azzera i conteggi degli encoder e_1 ed e_2,</span></div>
+<div class="line"><span class="lineno">  120</span><span class="comment"> * riportandoli a zero. È utile per inizializzare o reinizializzare</span></div>
+<div class="line"><span class="lineno">  121</span><span class="comment"> * i dati per prevenire l&#39;overflow delle variabili di conteggio.</span></div>
+<div class="line"><span class="lineno">  122</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment"> * @see e_1, e_2</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment"> * @see encoder.conteggio</span></div>
+<div class="line"><span class="lineno">  125</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  129</span><span class="comment"> * @brief Restituisce la velocità corrente emulata dall&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  130</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  131</span><span class="comment"> * @return double_t La velocità corrente dell&#39;encoder e_1 (in m/s)</span></div>
+<div class="line"><span class="lineno">  132</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  133</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di velocità attuale</span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment"> * emulato per l&#39;encoder e_1, in metri al secondo. Fare attenzione al fatto</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment"> * che il valore è un double_t.</span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment"> * @see encoder.vel</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment"> * @brief Restituisce la velocità corrente emulata dall&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment"> * @return double_t La velocità corrente dell&#39;encoder e_2 (in m/s)</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di velocità attuale</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment"> * emulato per l&#39;encoder e_2, in metri al secondo. Fare attenzione al fatto</span></div>
+<div class="line"><span class="lineno">  149</span><span class="comment"> * che il valore è un double_t.</span></div>
+<div class="line"><span class="lineno">  150</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  151</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  152</span><span class="comment"> * @see encoder.vel</span></div>
+<div class="line"><span class="lineno">  153</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">double_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment"> * @brief Restituisce il valore di conteggio corrente dell&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  158</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment"> * @return uint16_t Il valore di conteggio (con risoluzione x4) dell&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  161</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di conteggio attuale</span></div>
+<div class="line"><span class="lineno">  162</span><span class="comment"> * dell&#39;encoder e_1 con risoluzione x4. Il conteggio rappresenta il numero</span></div>
+<div class="line"><span class="lineno">  163</span><span class="comment"> * di impulsi rilevati dall&#39;encoder dall&#39;ultimo reset o dall&#39;inizio dell&#39;</span></div>
+<div class="line"><span class="lineno">  164</span><span class="comment"> * emulazione.</span></div>
+<div class="line"><span class="lineno">  165</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  167</span><span class="comment"> * @see encoder.conteggio</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment"> * @see reset_conteggi_encoder()</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  173</span><span class="comment"> * @brief Restituisce il valore di conteggio corrente dell&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  174</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  175</span><span class="comment"> * @return uint16_t Il valore di conteggio (con risoluzione x4) dell&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  176</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  177</span><span class="comment"> * @details Questa funzione fornisce accesso al valore di conteggio attuale</span></div>
+<div class="line"><span class="lineno">  178</span><span class="comment"> * dell&#39;encoder e_2 con risoluzione x4. Il conteggio rappresenta il numero</span></div>
+<div class="line"><span class="lineno">  179</span><span class="comment"> * di impulsi rilevati dall&#39;encoder dall&#39;ultimo reset o dall&#39;inizio dell&#39;</span></div>
+<div class="line"><span class="lineno">  180</span><span class="comment"> * emulazione.</span></div>
+<div class="line"><span class="lineno">  181</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  182</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  183</span><span class="comment"> * @see encoder.conteggio</span></div>
+<div class="line"><span class="lineno">  184</span><span class="comment"> * @see reset_conteggi_encoder()</span></div>
+<div class="line"><span class="lineno">  185</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">uint16_t</a> <a class="code hl_function" href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  189</span><span class="comment"> * @brief Assegna il valore di impulsi per rivoluzione (ppr) all&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  190</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  191</span><span class="comment"> * @param ppr Il ppr da assegnare all&#39;encoder e_1</span></div>
 <div class="line"><span class="lineno">  192</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  193</span><span class="comment"> * @param ppr Il ppr da assegnare all&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  194</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  195</span><span class="comment"> * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)</span></div>
-<div class="line"><span class="lineno">  196</span><span class="comment"> * per l&#39;encoder E2. Questo parametro è dato normalmente dal datasheet del</span></div>
-<div class="line"><span class="lineno">  197</span><span class="comment"> * costruttore dell&#39;encoder e per la misura dei passi corrisponderebbe</span></div>
-<div class="line"><span class="lineno">  198</span><span class="comment"> * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</span></div>
-<div class="line"><span class="lineno">  199</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  200</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  201</span><span class="comment"> * @see encoder.ppr</span></div>
-<div class="line"><span class="lineno">  202</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a>(uint16_t ppr);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  206</span><span class="comment"> * @brief Assegna il diametro della ruota a entrambi gli encoder E1 ed E2</span></div>
+<div class="line"><span class="lineno">  193</span><span class="comment"> * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)</span></div>
+<div class="line"><span class="lineno">  194</span><span class="comment"> * per l&#39;encoder e_1. Questo parametro è dato normalmente dal datasheet del</span></div>
+<div class="line"><span class="lineno">  195</span><span class="comment"> * costruttore dell&#39;encoder e per la misura dei passi corrisponderebbe</span></div>
+<div class="line"><span class="lineno">  196</span><span class="comment"> * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</span></div>
+<div class="line"><span class="lineno">  197</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  198</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  199</span><span class="comment"> * @see encoder.ppr</span></div>
+<div class="line"><span class="lineno">  200</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a>(uint16_t ppr);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  204</span><span class="comment"> * @brief Assegna il valore di impulsi per rivoluzione (ppr) all&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  205</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  206</span><span class="comment"> * @param ppr Il ppr da assegnare all&#39;encoder e_2</span></div>
 <div class="line"><span class="lineno">  207</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  208</span><span class="comment"> * @param diametro Il diametro della ruota da assegnare (in metri)</span></div>
-<div class="line"><span class="lineno">  209</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  210</span><span class="comment"> * @details Questa funzione imposta il diametro della ruota per entrambi gli encoder</span></div>
-<div class="line"><span class="lineno">  211</span><span class="comment"> * E1 ed E2. Il valore del diametro viene assegnato direttamente senza conversioni.</span></div>
+<div class="line"><span class="lineno">  208</span><span class="comment"> * @details Questa funzione imposta il valore ppr (impulsi per rivoluzione)</span></div>
+<div class="line"><span class="lineno">  209</span><span class="comment"> * per l&#39;encoder e_2. Questo parametro è dato normalmente dal datasheet del</span></div>
+<div class="line"><span class="lineno">  210</span><span class="comment"> * costruttore dell&#39;encoder e per la misura dei passi corrisponderebbe</span></div>
+<div class="line"><span class="lineno">  211</span><span class="comment"> * alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</span></div>
 <div class="line"><span class="lineno">  212</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  213</span><span class="comment"> * @see E1, E2</span></div>
-<div class="line"><span class="lineno">  214</span><span class="comment"> * @see encoder.diametro</span></div>
+<div class="line"><span class="lineno">  213</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  214</span><span class="comment"> * @see encoder.ppr</span></div>
 <div class="line"><span class="lineno">  215</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a>(float_t diametro);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a>(uint16_t ppr);</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  219</span><span class="comment"> * @brief Assegna un valore di velocità all&#39;encoder E1</span></div>
+<div class="line"><span class="lineno">  219</span><span class="comment"> * @brief Assegna il diametro della ruota a entrambi gli encoder e_1 ed e_2</span></div>
 <div class="line"><span class="lineno">  220</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  221</span><span class="comment"> * @param vel Valore di velocità da assegnare (in m/s)</span></div>
+<div class="line"><span class="lineno">  221</span><span class="comment"> * @param diametro Il diametro della ruota da assegnare (in metri)</span></div>
 <div class="line"><span class="lineno">  222</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  223</span><span class="comment"> * @details Questa funzione converte il valore di velocità fornito</span></div>
-<div class="line"><span class="lineno">  224</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;vel&#39; dell&#39;encoder E1.</span></div>
+<div class="line"><span class="lineno">  223</span><span class="comment"> * @details Questa funzione imposta il diametro della ruota per entrambi gli encoder</span></div>
+<div class="line"><span class="lineno">  224</span><span class="comment"> * e_1 ed e_2. Il valore del diametro viene assegnato direttamente senza conversioni.</span></div>
 <div class="line"><span class="lineno">  225</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  226</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
-<div class="line"><span class="lineno">  227</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
-<div class="line"><span class="lineno">  228</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  229</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  230</span><span class="comment"> * @see encoder.vel</span></div>
-<div class="line"><span class="lineno">  231</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a>(float_t vel);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  235</span><span class="comment"> * @brief Assegna un valore di velocità all&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  236</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  237</span><span class="comment"> * @param vel Valore di velocità da assegnare (in m/s)</span></div>
+<div class="line"><span class="lineno">  226</span><span class="comment"> * @see e_1, e_2</span></div>
+<div class="line"><span class="lineno">  227</span><span class="comment"> * @see encoder.diametro</span></div>
+<div class="line"><span class="lineno">  228</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a>(float_t diametro);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  232</span><span class="comment"> * @brief Assegna un valore di velocità all&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  233</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  234</span><span class="comment"> * @param vel Valore di velocità da assegnare (in m/s)</span></div>
+<div class="line"><span class="lineno">  235</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  236</span><span class="comment"> * @details Questa funzione converte il valore di velocità fornito</span></div>
+<div class="line"><span class="lineno">  237</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;vel&#39; dell&#39;encoder e_1.</span></div>
 <div class="line"><span class="lineno">  238</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  239</span><span class="comment"> * @details Questa funzione converte il valore di velocità fornito</span></div>
-<div class="line"><span class="lineno">  240</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;vel&#39; dell&#39;encoder E2.</span></div>
+<div class="line"><span class="lineno">  239</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
+<div class="line"><span class="lineno">  240</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
 <div class="line"><span class="lineno">  241</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  242</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
-<div class="line"><span class="lineno">  243</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
-<div class="line"><span class="lineno">  244</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  245</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  246</span><span class="comment"> * @see encoder.vel</span></div>
-<div class="line"><span class="lineno">  247</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a>(float_t vel);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  251</span><span class="comment"> * @brief Assegna un valore di accelerazione all&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  252</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  253</span><span class="comment"> * @param acc Valore di accelerazione da assegnare (in m/s&lt;sup&gt;2&lt;/sup&gt;)</span></div>
+<div class="line"><span class="lineno">  242</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  243</span><span class="comment"> * @see encoder.vel</span></div>
+<div class="line"><span class="lineno">  244</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a>(float_t vel);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  248</span><span class="comment"> * @brief Assegna un valore di velocità all&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  249</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  250</span><span class="comment"> * @param vel Valore di velocità da assegnare (in m/s)</span></div>
+<div class="line"><span class="lineno">  251</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  252</span><span class="comment"> * @details Questa funzione converte il valore di velocità fornito</span></div>
+<div class="line"><span class="lineno">  253</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;vel&#39; dell&#39;encoder e_2.</span></div>
 <div class="line"><span class="lineno">  254</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  255</span><span class="comment"> * @details Questa funzione converte il valore di accelerazione fornito</span></div>
-<div class="line"><span class="lineno">  256</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;acc&#39; dell&#39;encoder E1.</span></div>
+<div class="line"><span class="lineno">  255</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
+<div class="line"><span class="lineno">  256</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
 <div class="line"><span class="lineno">  257</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  258</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
-<div class="line"><span class="lineno">  259</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
-<div class="line"><span class="lineno">  260</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  261</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  262</span><span class="comment"> * @see encoder.acc</span></div>
-<div class="line"><span class="lineno">  263</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a>(float_t acc);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  267</span><span class="comment"> * @brief Assegna un valore di accelerazione all&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  268</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  269</span><span class="comment"> * @param acc Valore di accelerazione da assegnare (in m/s&lt;sup&gt;2&lt;/sup&gt;)</span></div>
+<div class="line"><span class="lineno">  258</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  259</span><span class="comment"> * @see encoder.vel</span></div>
+<div class="line"><span class="lineno">  260</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a>(float_t vel);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  264</span><span class="comment"> * @brief Assegna un valore di accelerazione all&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  265</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  266</span><span class="comment"> * @param acc Valore di accelerazione da assegnare (in m/s&lt;sup&gt;2&lt;/sup&gt;)</span></div>
+<div class="line"><span class="lineno">  267</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  268</span><span class="comment"> * @details Questa funzione converte il valore di accelerazione fornito</span></div>
+<div class="line"><span class="lineno">  269</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;acc&#39; dell&#39;encoder e_1.</span></div>
 <div class="line"><span class="lineno">  270</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  271</span><span class="comment"> * @details Questa funzione converte il valore di accelerazione fornito</span></div>
-<div class="line"><span class="lineno">  272</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;acc&#39; dell&#39;encoder E2.</span></div>
+<div class="line"><span class="lineno">  271</span><span class="comment"> * @note La conversione da float_t a double_t comporta un</span></div>
+<div class="line"><span class="lineno">  272</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
 <div class="line"><span class="lineno">  273</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  274</span><span class="comment"> * @note La conversione da float_t a double_t può comportare un</span></div>
-<div class="line"><span class="lineno">  275</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
-<div class="line"><span class="lineno">  276</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  277</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  278</span><span class="comment"> * @see encoder.acc</span></div>
-<div class="line"><span class="lineno">  279</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a>(float_t acc);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  283</span><span class="comment"> * @brief Aggiorna il passo dell&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  284</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  285</span><span class="comment"> * Questa funzione calcola e aggiorna la  lunghezza del passo dell&#39;encoder E1</span></div>
-<div class="line"><span class="lineno">  286</span><span class="comment"> * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).</span></div>
-<div class="line"><span class="lineno">  287</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  288</span><span class="comment"> * La formula utilizzata è:</span></div>
-<div class="line"><span class="lineno">  289</span><span class="comment"> * @f[</span></div>
-<div class="line"><span class="lineno">  290</span><span class="comment"> *    l_{passo} = \frac{diametro \cdot \pi}{ppr \cdot 2}</span></div>
-<div class="line"><span class="lineno">  291</span><span class="comment"> * @f]</span></div>
-<div class="line"><span class="lineno">  292</span><span class="comment"> * dove:</span></div>
-<div class="line"><span class="lineno">  293</span><span class="comment"> * - @f$l_{passo}@f$ è il passo dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  294</span><span class="comment"> * - @f$diametro@f$ è il diametro della ruota dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  295</span><span class="comment"> * - @f$\pi@f$ è il valore di PI greco</span></div>
-<div class="line"><span class="lineno">  296</span><span class="comment"> * - @f$ppr@f$ è il numero di impulsi per rivoluzione dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  297</span><span class="comment"> * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del</span></div>
-<div class="line"><span class="lineno">  298</span><span class="comment"> *   passo</span></div>
-<div class="line"><span class="lineno">  299</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  300</span><span class="comment"> * @see E1</span></div>
-<div class="line"><span class="lineno">  301</span><span class="comment"> * @see encoder.l_passo</span></div>
-<div class="line"><span class="lineno">  302</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  306</span><span class="comment"> * @brief Aggiorna il passo dell&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  307</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  308</span><span class="comment"> * Questa funzione calcola e aggiorna la  lunghezza del passo dell&#39;encoder E2</span></div>
-<div class="line"><span class="lineno">  309</span><span class="comment"> * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).</span></div>
-<div class="line"><span class="lineno">  310</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  311</span><span class="comment"> * La formula utilizzata è:</span></div>
-<div class="line"><span class="lineno">  312</span><span class="comment"> * @f[</span></div>
-<div class="line"><span class="lineno">  313</span><span class="comment"> *    l_{passo} = \frac{diametro \cdot \pi}{ppr \cdot 2}</span></div>
-<div class="line"><span class="lineno">  314</span><span class="comment"> * @f]</span></div>
-<div class="line"><span class="lineno">  315</span><span class="comment"> * dove:</span></div>
-<div class="line"><span class="lineno">  316</span><span class="comment"> * - @f$l_{passo}@f$ è il passo dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  317</span><span class="comment"> * - @f$diametro@f$ è il diametro della ruota dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  318</span><span class="comment"> * - @f$\pi@f$ è il valore di PI greco</span></div>
-<div class="line"><span class="lineno">  319</span><span class="comment"> * - @f$ppr@f$ è il numero di impulsi per rivoluzione dell&#39;encoder</span></div>
-<div class="line"><span class="lineno">  320</span><span class="comment"> * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del</span></div>
-<div class="line"><span class="lineno">  321</span><span class="comment"> *   passo</span></div>
-<div class="line"><span class="lineno">  322</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">  323</span><span class="comment"> * @see E2</span></div>
-<div class="line"><span class="lineno">  324</span><span class="comment"> * @see encoder.l_passo</span></div>
-<div class="line"><span class="lineno">  325</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a1dbeb5d24ff6d11ace4daccd93c60ba6"><div class="ttname"><a href="emulazione__encoder_8c.html#a1dbeb5d24ff6d11ace4daccd93c60ba6">E1</a></div><div class="ttdeci">static encoder E1</div><div class="ttdoc">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00039">emulazione_encoder.c:39</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8c.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00440">emulazione_encoder.c:440</a></div></div>
+<div class="line"><span class="lineno">  274</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  275</span><span class="comment"> * @see encoder.acc</span></div>
+<div class="line"><span class="lineno">  276</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a>(float_t acc);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  280</span><span class="comment"> * @brief Assegna un valore di accelerazione all&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  281</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  282</span><span class="comment"> * @param acc Valore di accelerazione da assegnare (in m/s&lt;sup&gt;2&lt;/sup&gt;)</span></div>
+<div class="line"><span class="lineno">  283</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  284</span><span class="comment"> * @details Questa funzione converte il valore di accelerazione fornito</span></div>
+<div class="line"><span class="lineno">  285</span><span class="comment"> * da float_t a double_t e lo assegna al campo &#39;acc&#39; dell&#39;encoder e_2.</span></div>
+<div class="line"><span class="lineno">  286</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  287</span><span class="comment"> * @note La conversione da float_t a double_t può comportare un</span></div>
+<div class="line"><span class="lineno">  288</span><span class="comment"> * cambiamento di precisione, dipendente dalla libreria math.h</span></div>
+<div class="line"><span class="lineno">  289</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  290</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  291</span><span class="comment"> * @see encoder.acc</span></div>
+<div class="line"><span class="lineno">  292</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a>(float_t acc);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  296</span><span class="comment"> * @brief Aggiorna il passo dell&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  297</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  298</span><span class="comment"> * Questa funzione calcola e aggiorna la  lunghezza del passo dell&#39;encoder e_1</span></div>
+<div class="line"><span class="lineno">  299</span><span class="comment"> * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).</span></div>
+<div class="line"><span class="lineno">  300</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  301</span><span class="comment"> * La formula utilizzata è:</span></div>
+<div class="line"><span class="lineno">  302</span><span class="comment"> * @f[</span></div>
+<div class="line"><span class="lineno">  303</span><span class="comment"> *    l_{passo} = \frac{diametro \cdot \pi}{ppr \cdot 2}</span></div>
+<div class="line"><span class="lineno">  304</span><span class="comment"> * @f]</span></div>
+<div class="line"><span class="lineno">  305</span><span class="comment"> * dove:</span></div>
+<div class="line"><span class="lineno">  306</span><span class="comment"> * - @f$l_{passo}@f$ è il passo dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  307</span><span class="comment"> * - @f$diametro@f$ è il diametro della ruota dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  308</span><span class="comment"> * - @f$\pi@f$ è il valore di PI greco</span></div>
+<div class="line"><span class="lineno">  309</span><span class="comment"> * - @f$ppr@f$ è il numero di impulsi per rivoluzione dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  310</span><span class="comment"> * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del</span></div>
+<div class="line"><span class="lineno">  311</span><span class="comment"> *   passo</span></div>
+<div class="line"><span class="lineno">  312</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  313</span><span class="comment"> * @see e_1</span></div>
+<div class="line"><span class="lineno">  314</span><span class="comment"> * @see encoder.l_passo</span></div>
+<div class="line"><span class="lineno">  315</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  319</span><span class="comment"> * @brief Aggiorna il passo dell&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  320</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  321</span><span class="comment"> * Questa funzione calcola e aggiorna la  lunghezza del passo dell&#39;encoder e_2</span></div>
+<div class="line"><span class="lineno">  322</span><span class="comment"> * basandosi sul suo diametro e sul numero di impulsi per rivoluzione (ppr).</span></div>
+<div class="line"><span class="lineno">  323</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  324</span><span class="comment"> * La formula utilizzata è:</span></div>
+<div class="line"><span class="lineno">  325</span><span class="comment"> * @f[</span></div>
+<div class="line"><span class="lineno">  326</span><span class="comment"> *    l_{passo} = \frac{diametro \cdot \pi}{ppr \cdot 2}</span></div>
+<div class="line"><span class="lineno">  327</span><span class="comment"> * @f]</span></div>
+<div class="line"><span class="lineno">  328</span><span class="comment"> * dove:</span></div>
+<div class="line"><span class="lineno">  329</span><span class="comment"> * - @f$l_{passo}@f$ è il passo dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  330</span><span class="comment"> * - @f$diametro@f$ è il diametro della ruota dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  331</span><span class="comment"> * - @f$\pi@f$ è il valore di PI greco</span></div>
+<div class="line"><span class="lineno">  332</span><span class="comment"> * - @f$ppr@f$ è il numero di impulsi per rivoluzione dell&#39;encoder</span></div>
+<div class="line"><span class="lineno">  333</span><span class="comment"> * - Il fattore 2 nel denominatore è usato per ottenere la risoluzione x2 del</span></div>
+<div class="line"><span class="lineno">  334</span><span class="comment"> *   passo</span></div>
+<div class="line"><span class="lineno">  335</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">  336</span><span class="comment"> * @see e_2</span></div>
+<div class="line"><span class="lineno">  337</span><span class="comment"> * @see encoder.l_passo</span></div>
+<div class="line"><span class="lineno">  338</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keywordtype">void</span> <a class="code hl_function" href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>}</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a2374f48fa71a504e1b776cb8a657e06d"><div class="ttname"><a href="emulazione__encoder_8c.html#a2374f48fa71a504e1b776cb8a657e06d">emula_encoder</a></div><div class="ttdeci">static void emula_encoder(encoder *e_x)</div><div class="ttdoc">Emula il comportamento di un encoder.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00195">emulazione_encoder.c:195</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8c.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00570">emulazione_encoder.c:570</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8c_html_a271856af8b8b2cadea103f02bd5b668f"><div class="ttname"><a href="emulazione__encoder_8c.html#a271856af8b8b2cadea103f02bd5b668f">VELOCITA_MAX</a></div><div class="ttdeci">#define VELOCITA_MAX</div><div class="ttdoc">Velocita' massima lineare emulabile dal GIT, in m/s.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00025">emulazione_encoder.c:25</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8c.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00414">emulazione_encoder.c:414</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a2d68873e63158a117fa2be744dfd1a48"><div class="ttname"><a href="emulazione__encoder_8c.html#a2d68873e63158a117fa2be744dfd1a48">E2</a></div><div class="ttdeci">static encoder E2</div><div class="ttdoc">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00045">emulazione_encoder.c:45</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a31c0a7f35c565d3beff657e44beb8ba9"><div class="ttname"><a href="emulazione__encoder_8c.html#a31c0a7f35c565d3beff657e44beb8ba9">valuta_stato_encoder</a></div><div class="ttdeci">static void valuta_stato_encoder(encoder *encoder, bool statoA, bool statoB)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00271">emulazione_encoder.c:271</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a4070100d200e3aa39629900d96c86de7"><div class="ttname"><a href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a></div><div class="ttdeci">void emula_sensori_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00368">emulazione_encoder.c:368</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8c.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00544">emulazione_encoder.c:544</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a4070100d200e3aa39629900d96c86de7"><div class="ttname"><a href="emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7">emula_sensori_encoder</a></div><div class="ttdeci">void emula_sensori_encoder()</div><div class="ttdoc">Emula i sensori degli encoder se l'applicazione è connessa.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00498">emulazione_encoder.c:498</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8c_html_a545aac6e56804cc76b305836c9ba14c6"><div class="ttname"><a href="emulazione__encoder_8c.html#a545aac6e56804cc76b305836c9ba14c6">t_update</a></div><div class="ttdeci">static float_t t_update</div><div class="ttdoc">Tempo di aggiornamento delle variabili di encoder.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00033">emulazione_encoder.c:33</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a595e41b6e74d7c73e109267d3c6185a0"><div class="ttname"><a href="emulazione__encoder_8c.html#a595e41b6e74d7c73e109267d3c6185a0">reset_gpio</a></div><div class="ttdeci">static void reset_gpio(encoder *encoder)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00262">emulazione_encoder.c:262</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8c.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00409">emulazione_encoder.c:409</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8c.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00539">emulazione_encoder.c:539</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a7a65a4b7030717c3b3b41be8a959cad2"><div class="ttname"><a href="emulazione__encoder_8c.html#a7a65a4b7030717c3b3b41be8a959cad2">inizializza_encoder</a></div><div class="ttdeci">static void inizializza_encoder(encoder *e_x)</div><div class="ttdoc">Inizializza una struttura encoder con valori predefiniti.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00300">emulazione_encoder.c:300</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a856a909edfa5ce1eeb00477fc36606c2"><div class="ttname"><a href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2">e_1</a></div><div class="ttdeci">static encoder e_1</div><div class="ttdoc">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00039">emulazione_encoder.c:39</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_a8a99c1b5ec44f0f37ae9e30394ce06d0"><div class="ttname"><a href="emulazione__encoder_8c.html#a8a99c1b5ec44f0f37ae9e30394ce06d0">reset_gpio</a></div><div class="ttdeci">static void reset_gpio(encoder *e_x)</div><div class="ttdoc">Resetta lo stato dei GPIO associati all'encoder.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00332">emulazione_encoder.c:332</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8c_html_a96ee7a4d2aee8a097cf25167be12018f"><div class="ttname"><a href="emulazione__encoder_8c.html#a96ee7a4d2aee8a097cf25167be12018f">PI_GRECO</a></div><div class="ttdeci">#define PI_GRECO</div><div class="ttdoc">Costante pigreco.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00022">emulazione_encoder.c:22</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_aa3c1a771357c0494f787da14b49a1255"><div class="ttname"><a href="emulazione__encoder_8c.html#aa3c1a771357c0494f787da14b49a1255">emula_encoder</a></div><div class="ttdeci">static void emula_encoder(encoder *encoder)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00155">emulazione_encoder.c:155</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_aa5f668eb17b9909cee1f23d59bc1ff0e"><div class="ttname"><a href="emulazione__encoder_8c.html#aa5f668eb17b9909cee1f23d59bc1ff0e">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1()</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00399">emulazione_encoder.c:399</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8c.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdoc">Assegna il diametro della ruota a entrambi gli encoder E1 ed E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00419">emulazione_encoder.c:419</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8c.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00425">emulazione_encoder.c:425</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_abab32b99b4dbae2dfcab33db6c043df1"><div class="ttname"><a href="emulazione__encoder_8c.html#abab32b99b4dbae2dfcab33db6c043df1">inizializza_encoder</a></div><div class="ttdeci">static void inizializza_encoder(encoder *encoder)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00245">emulazione_encoder.c:245</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_abd632f950c7db7923b3efc93e43b6b6a"><div class="ttname"><a href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a></div><div class="ttdeci">void reset_conteggi_encoder()</div><div class="ttdoc">Resetta i conteggi di entrambi gli encoder E1 ed E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00383">emulazione_encoder.c:383</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_abd8515068e97207bc58b4ed9fa3378a1"><div class="ttname"><a href="emulazione__encoder_8c.html#abd8515068e97207bc58b4ed9fa3378a1">aggiorna_encoder</a></div><div class="ttdeci">static void aggiorna_encoder(encoder *encoder)</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00062">emulazione_encoder.c:62</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_abec5dbea1209c33f57b6e198b568d199"><div class="ttname"><a href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a></div><div class="ttdeci">void aggiorna_variabili_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00353">emulazione_encoder.c:353</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_ad4c02bb329fe2b0101f7b8348879b392"><div class="ttname"><a href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a></div><div class="ttdeci">void aggiorna_passo_encoder2(void)</div><div class="ttdoc">Aggiorna il passo dell'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00450">emulazione_encoder.c:450</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_ad708854593fcede64d064abf3eb94514"><div class="ttname"><a href="emulazione__encoder_8c.html#ad708854593fcede64d064abf3eb94514">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2()</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00404">emulazione_encoder.c:404</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_adb19ec24d33f34186a3a6f1d8fcff445"><div class="ttname"><a href="emulazione__encoder_8c.html#adb19ec24d33f34186a3a6f1d8fcff445">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2()</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00394">emulazione_encoder.c:394</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_add8b04e0f68d02c8381598ad996a6627"><div class="ttname"><a href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a></div><div class="ttdeci">void aggiorna_passo_encoder1(void)</div><div class="ttdoc">Aggiorna il passo dell'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00445">emulazione_encoder.c:445</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8c.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00435">emulazione_encoder.c:435</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_af365796989f4167084d5d6cebf1905b4"><div class="ttname"><a href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a></div><div class="ttdeci">void inizializza_variabili_encoder()</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00334">emulazione_encoder.c:334</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8c.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00430">emulazione_encoder.c:430</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8c_html_af98a3fdbf248c008920827b801012ff7"><div class="ttname"><a href="emulazione__encoder_8c.html#af98a3fdbf248c008920827b801012ff7">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1()</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00389">emulazione_encoder.c:389</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00440">emulazione_encoder.c:440</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00414">emulazione_encoder.c:414</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00409">emulazione_encoder.c:409</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_a8097758f4e4c5efc56c99bf84b79fa65"><div class="ttname"><a href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1(void)</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00389">emulazione_encoder.c:389</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdoc">Assegna il diametro della ruota a entrambi gli encoder E1 ed E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00419">emulazione_encoder.c:419</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00425">emulazione_encoder.c:425</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_aa59b42e2b68027e7fb2708e0bd174db0"><div class="ttname"><a href="emulazione__encoder_8c.html#aa59b42e2b68027e7fb2708e0bd174db0">aggiorna_encoder</a></div><div class="ttdeci">static void aggiorna_encoder(encoder *e_x)</div><div class="ttdoc">Aggiorna lo stato di un encoder.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00085">emulazione_encoder.c:85</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_aa5f668eb17b9909cee1f23d59bc1ff0e"><div class="ttname"><a href="emulazione__encoder_8c.html#aa5f668eb17b9909cee1f23d59bc1ff0e">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1()</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00529">emulazione_encoder.c:529</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8c.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdoc">Assegna il diametro della ruota a entrambi gli encoder e_1 ed e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00549">emulazione_encoder.c:549</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8c.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00555">emulazione_encoder.c:555</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_abd632f950c7db7923b3efc93e43b6b6a"><div class="ttname"><a href="emulazione__encoder_8c.html#abd632f950c7db7923b3efc93e43b6b6a">reset_conteggi_encoder</a></div><div class="ttdeci">void reset_conteggi_encoder()</div><div class="ttdoc">Resetta i conteggi di entrambi gli encoder e_1 ed e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00513">emulazione_encoder.c:513</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_abec5dbea1209c33f57b6e198b568d199"><div class="ttname"><a href="emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199">aggiorna_variabili_encoder</a></div><div class="ttdeci">void aggiorna_variabili_encoder()</div><div class="ttdoc">Aggiorna le variabili degli encoder se l'applicazione è connessa.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00470">emulazione_encoder.c:470</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ac9916f1954ff514d2354b7c5ee0dcc4e"><div class="ttname"><a href="emulazione__encoder_8c.html#ac9916f1954ff514d2354b7c5ee0dcc4e">valuta_stato_encoder</a></div><div class="ttdeci">static void valuta_stato_encoder(encoder *e_x, bool statoA, bool statoB)</div><div class="ttdoc">Valuta e aggiorna lo stato dell'encoder basato sui segnali dei canali A e B.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00359">emulazione_encoder.c:359</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ad4c02bb329fe2b0101f7b8348879b392"><div class="ttname"><a href="emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392">aggiorna_passo_encoder2</a></div><div class="ttdeci">void aggiorna_passo_encoder2(void)</div><div class="ttdoc">Aggiorna il passo dell'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00580">emulazione_encoder.c:580</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ad708854593fcede64d064abf3eb94514"><div class="ttname"><a href="emulazione__encoder_8c.html#ad708854593fcede64d064abf3eb94514">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2()</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00534">emulazione_encoder.c:534</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_adb19ec24d33f34186a3a6f1d8fcff445"><div class="ttname"><a href="emulazione__encoder_8c.html#adb19ec24d33f34186a3a6f1d8fcff445">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2()</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00524">emulazione_encoder.c:524</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_add8b04e0f68d02c8381598ad996a6627"><div class="ttname"><a href="emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627">aggiorna_passo_encoder1</a></div><div class="ttdeci">void aggiorna_passo_encoder1(void)</div><div class="ttdoc">Aggiorna il passo dell'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00575">emulazione_encoder.c:575</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8c.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00565">emulazione_encoder.c:565</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af365796989f4167084d5d6cebf1905b4"><div class="ttname"><a href="emulazione__encoder_8c.html#af365796989f4167084d5d6cebf1905b4">inizializza_variabili_encoder</a></div><div class="ttdeci">void inizializza_variabili_encoder()</div><div class="ttdoc">Inizializza le variabili e i GPIO per gli encoder.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00438">emulazione_encoder.c:438</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8c.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00560">emulazione_encoder.c:560</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_af98a3fdbf248c008920827b801012ff7"><div class="ttname"><a href="emulazione__encoder_8c.html#af98a3fdbf248c008920827b801012ff7">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1()</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00519">emulazione_encoder.c:519</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8c_html_afd4f192ea976fccbdbe15a4db0d2eed8"><div class="ttname"><a href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8">e_2</a></div><div class="ttdeci">static encoder e_2</div><div class="ttdoc">Struttura dati utilizzata per contenere tutte le variabili di stato dell'encoder 2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00045">emulazione_encoder.c:45</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a2516e7ee550542b3b205dcb5a2b0ce43"><div class="ttname"><a href="emulazione__encoder_8h.html#a2516e7ee550542b3b205dcb5a2b0ce43">assegna_accelerazione_encoder2</a></div><div class="ttdeci">void assegna_accelerazione_encoder2(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00570">emulazione_encoder.c:570</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a2c6c35197adc71411fb983a1848b208b"><div class="ttname"><a href="emulazione__encoder_8h.html#a2c6c35197adc71411fb983a1848b208b">assegna_ppr_encoder2</a></div><div class="ttdeci">void assegna_ppr_encoder2(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00544">emulazione_encoder.c:544</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a665499ef86bda82319eedf900e57ca7d"><div class="ttname"><a href="emulazione__encoder_8h.html#a665499ef86bda82319eedf900e57ca7d">assegna_ppr_encoder1</a></div><div class="ttdeci">void assegna_ppr_encoder1(uint16_t ppr)</div><div class="ttdoc">Assegna il valore di impulsi per rivoluzione (ppr) all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00539">emulazione_encoder.c:539</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_a8097758f4e4c5efc56c99bf84b79fa65"><div class="ttname"><a href="emulazione__encoder_8h.html#a8097758f4e4c5efc56c99bf84b79fa65">ritorna_velocita_encoder1</a></div><div class="ttdeci">double_t ritorna_velocita_encoder1(void)</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00519">emulazione_encoder.c:519</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ab2792138135796f95248512a82fd6767"><div class="ttname"><a href="emulazione__encoder_8h.html#ab2792138135796f95248512a82fd6767">assegna_diametro_ruota</a></div><div class="ttdeci">void assegna_diametro_ruota(float_t diametro)</div><div class="ttdoc">Assegna il diametro della ruota a entrambi gli encoder e_1 ed e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00549">emulazione_encoder.c:549</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ab358634ef9e3b741a898816578d8f368"><div class="ttname"><a href="emulazione__encoder_8h.html#ab358634ef9e3b741a898816578d8f368">assegna_velocita_encoder1</a></div><div class="ttdeci">void assegna_velocita_encoder1(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00555">emulazione_encoder.c:555</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b">uno</a></div><div class="ttdeci">@ uno</div><div class="ttdef"><b>Definition</b> <a href="#l00029">emulazione_encoder.h:29</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99">tre</a></div><div class="ttdeci">@ tre</div><div class="ttdef"><b>Definition</b> <a href="#l00031">emulazione_encoder.h:31</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db">zero</a></div><div class="ttdeci">@ zero</div><div class="ttdef"><b>Definition</b> <a href="#l00028">emulazione_encoder.h:28</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a">due</a></div><div class="ttdeci">@ due</div><div class="ttdef"><b>Definition</b> <a href="#l00030">emulazione_encoder.h:30</a></div></div>
 <div class="ttc" id="aemulazione__encoder_8h_html_ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c"><div class="ttname"><a href="emulazione__encoder_8h.html#ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c">incerto</a></div><div class="ttdeci">@ incerto</div><div class="ttdef"><b>Definition</b> <a href="#l00033">emulazione_encoder.h:32</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ad9b89960a40205bfa08e969668a90038"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1(void)</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00399">emulazione_encoder.c:399</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ad9ce0f0afcc896ca8dad86f9fd2fa7a9"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2(void)</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00394">emulazione_encoder.c:394</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder E1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00435">emulazione_encoder.c:435</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_ae999bf6b9b44defa8212f47192d0c450"><div class="ttname"><a href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2(void)</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00404">emulazione_encoder.c:404</a></div></div>
-<div class="ttc" id="aemulazione__encoder_8h_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder E2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00430">emulazione_encoder.c:430</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ad9b89960a40205bfa08e969668a90038"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9b89960a40205bfa08e969668a90038">ritorna_conteggio_encoder1</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder1(void)</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00529">emulazione_encoder.c:529</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ad9ce0f0afcc896ca8dad86f9fd2fa7a9"><div class="ttname"><a href="emulazione__encoder_8h.html#ad9ce0f0afcc896ca8dad86f9fd2fa7a9">ritorna_velocita_encoder2</a></div><div class="ttdeci">double_t ritorna_velocita_encoder2(void)</div><div class="ttdoc">Restituisce la velocità corrente emulata dall'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00524">emulazione_encoder.c:524</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ae305da08bee212858b2639544793f541"><div class="ttname"><a href="emulazione__encoder_8h.html#ae305da08bee212858b2639544793f541">assegna_accelerazione_encoder1</a></div><div class="ttdeci">void assegna_accelerazione_encoder1(float_t acc)</div><div class="ttdoc">Assegna un valore di accelerazione all'encoder e_1.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00565">emulazione_encoder.c:565</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_ae999bf6b9b44defa8212f47192d0c450"><div class="ttname"><a href="emulazione__encoder_8h.html#ae999bf6b9b44defa8212f47192d0c450">ritorna_conteggio_encoder2</a></div><div class="ttdeci">uint16_t ritorna_conteggio_encoder2(void)</div><div class="ttdoc">Restituisce il valore di conteggio corrente dell'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00534">emulazione_encoder.c:534</a></div></div>
+<div class="ttc" id="aemulazione__encoder_8h_html_af64a357c6ad264e627bfb52867e74a34"><div class="ttname"><a href="emulazione__encoder_8h.html#af64a357c6ad264e627bfb52867e74a34">assegna_velocita_encoder2</a></div><div class="ttdeci">void assegna_velocita_encoder2(float_t vel)</div><div class="ttdoc">Assegna un valore di velocità all'encoder e_2.</div><div class="ttdef"><b>Definition</b> <a href="emulazione__encoder_8c_source.html#l00560">emulazione_encoder.c:560</a></div></div>
 <div class="ttc" id="agestione__uart_8h_html_a08f294acc7835e12d7697b8920910d29"><div class="ttname"><a href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a></div><div class="ttdeci">bool ritorna_stato_connessione_app(void)</div><div class="ttdef"><b>Definition</b> <a href="gestione__uart_8c_source.html#l00285">gestione_uart.c:285</a></div></div>
 <div class="ttc" id="astructencoder_html_a154e80c108a59f6e83a4ba086812811e"><div class="ttname"><a href="structencoder.html#a154e80c108a59f6e83a4ba086812811e">encoder::pos_A</a></div><div class="ttdeci">double_t pos_A</div><div class="ttdef"><b>Definition</b> <a href="#l00076">emulazione_encoder.h:76</a></div></div>
 <div class="ttc" id="astructencoder_html_a163640e005e8c38fdca97e7246c63fbf"><div class="ttname"><a href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">encoder::ppr</a></div><div class="ttdeci">uint16_t ppr</div><div class="ttdef"><b>Definition</b> <a href="#l00062">emulazione_encoder.h:62</a></div></div>

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['e1_0',['E1',['../emulazione__encoder_8c.html#a1dbeb5d24ff6d11ace4daccd93c60ba6',1,'emulazione_encoder.c']]],
-  ['e2_1',['E2',['../emulazione__encoder_8c.html#a2d68873e63158a117fa2be744dfd1a48',1,'emulazione_encoder.c']]],
-  ['emula_5fencoder_2',['emula_encoder',['../emulazione__encoder_8c.html#aa3c1a771357c0494f787da14b49a1255',1,'emulazione_encoder.c']]],
+  ['e_5f1_0',['e_1',['../emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2',1,'emulazione_encoder.c']]],
+  ['e_5f2_1',['e_2',['../emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8',1,'emulazione_encoder.c']]],
+  ['emula_5fencoder_2',['emula_encoder',['../emulazione__encoder_8c.html#a2374f48fa71a504e1b776cb8a657e06d',1,'emulazione_encoder.c']]],
   ['emula_5fsensori_5fencoder_3',['emula_sensori_encoder',['../emulazione__encoder_8c.html#a4070100d200e3aa39629900d96c86de7',1,'emula_sensori_encoder():&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#a5b0b8a41698d413616d6c2430cc6f831',1,'emula_sensori_encoder(void):&#160;emulazione_encoder.c']]],
   ['emulazione_5fencoder_2ec_4',['emulazione_encoder.c',['../emulazione__encoder_8c.html',1,'']]],
   ['emulazione_5fencoder_2eh_5',['emulazione_encoder.h',['../emulazione__encoder_8h.html',1,'']]],

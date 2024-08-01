@@ -1,7 +1,7 @@
 var searchData=
 [
   ['acc_0',['acc',['../structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd',1,'encoder']]],
-  ['aggiorna_5fencoder_1',['aggiorna_encoder',['../emulazione__encoder_8c.html#abd8515068e97207bc58b4ed9fa3378a1',1,'emulazione_encoder.c']]],
+  ['aggiorna_5fencoder_1',['aggiorna_encoder',['../emulazione__encoder_8c.html#aa59b42e2b68027e7fb2708e0bd174db0',1,'emulazione_encoder.c']]],
   ['aggiorna_5fpasso_5fencoder1_2',['aggiorna_passo_encoder1',['../emulazione__encoder_8c.html#add8b04e0f68d02c8381598ad996a6627',1,'aggiorna_passo_encoder1(void):&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#add8b04e0f68d02c8381598ad996a6627',1,'aggiorna_passo_encoder1(void):&#160;emulazione_encoder.c']]],
   ['aggiorna_5fpasso_5fencoder2_3',['aggiorna_passo_encoder2',['../emulazione__encoder_8c.html#ad4c02bb329fe2b0101f7b8348879b392',1,'aggiorna_passo_encoder2(void):&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#ad4c02bb329fe2b0101f7b8348879b392',1,'aggiorna_passo_encoder2(void):&#160;emulazione_encoder.c']]],
   ['aggiorna_5fvariabili_5fencoder_4',['aggiorna_variabili_encoder',['../emulazione__encoder_8c.html#abec5dbea1209c33f57b6e198b568d199',1,'aggiorna_variabili_encoder():&#160;emulazione_encoder.c'],['../emulazione__encoder_8h.html#a6ef846a4fe22b68e5a5355b51a64535e',1,'aggiorna_variabili_encoder(void):&#160;emulazione_encoder.c']]],
