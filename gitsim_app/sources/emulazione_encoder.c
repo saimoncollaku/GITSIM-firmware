@@ -1,22 +1,22 @@
 /**
- ********************************************************************************
+ ******************************************************************************
  * @file    emulazione_encoder.c
  * @author  Saimon Collaku
- ********************************************************************************
+ ******************************************************************************
  */
 
 
-/************************************
+/******************************************************************************
  * INCLUDES
- ************************************/
+ *****************************************************************************/
 #include "emulazione_encoder.h"
 #include "gestione_uart.h"
 #include "gestione_polling.h"
 
 
-/************************************
+/******************************************************************************
  * PRIVATE MACROS AND DEFINES
- ************************************/
+ *****************************************************************************/
 
 /** @brief Costante pigreco */
 #define PI_GRECO 3.14159265358
@@ -25,9 +25,9 @@
 #define VELOCITA_MAX (700/3.6)
 
 
-/************************************
+/******************************************************************************
  * STATIC VARIABLES
- ************************************/
+ *****************************************************************************/
 
 /** @brief Tempo di aggiornamento delle variabili di encoder */
 static float_t t_update;
@@ -45,9 +45,9 @@ static encoder e_1;
 static encoder e_2;
 
 
-/************************************
+/******************************************************************************
  * STATIC FUNCTION PROTOTYPES
- ************************************/
+ *****************************************************************************/
 static void aggiorna_encoder(encoder *e_x);
 static void emula_encoder(encoder *e_x);
 static void inizializza_encoder(encoder *e_x);
@@ -55,9 +55,9 @@ static void valuta_stato_encoder(encoder *e_x, bool statoA, bool statoB);
 static void reset_gpio(encoder *e_x);
 
 
-/************************************
+/******************************************************************************
  * STATIC FUNCTIONS
- ************************************/
+ *****************************************************************************/
 
 /**
  * @brief Aggiorna lo stato di un encoder
@@ -77,10 +77,12 @@ static void reset_gpio(encoder *e_x);
  * 5. Gestione della saturazione dello spazio
  *
  * @note
- * - La costante VELOCITA_MAX definisce il limite di saturazione della velocità.
- * - La variabile t_update rappresenta l'intervallo di tempo per l'aggiornamento.
+ * - La variabile t_update rappresenta l'intervallo di tempo per
+ * l'integrazione
  *
  * @see encoder
+ * @see VELOCITA_MAX
+ * @see t_update
  */
 static void aggiorna_encoder(encoder *e_x)
 {
@@ -180,15 +182,18 @@ static void aggiorna_encoder(encoder *e_x)
  *
  * @details
  * Questa funzione simula il comportamento di un encoder generando segnali
- * per i canali A e B basati sulla posizione attuale dell'encoder. Il processo include:
+ * per i canali A e B basati sulla posizione attuale dell'encoder. Il processo
+ * include:
  * 1. Calcolo delle soglie basate sul duty cycle per ciascun canale
  * 2. Generazione dei segnali per i canali A e B usando GPIO
  * 3. Valutazione dello stato dell'encoder basata sui segnali generati
  *
  * @note
  * - Assume l'uso di XGpio per la scrittura dei segnali
- * - Il comportamento è influenzato dai duty cycle e dalle posizioni dei canali A e B
- * - Utilizza la funzione valuta_stato_encoder per aggiornare lo stato dell'encoder
+ * - Il comportamento è influenzato dai duty cycle e dalle posizioni dei canali
+ * A e B
+ * - Utilizza la funzione valuta_stato_encoder per aggiornare lo stato dell'
+ * encoder
  *
  * @see encoder, valuta_stato_encoder, XGpio_DiscreteWrite
  */
@@ -219,8 +224,8 @@ static void emula_encoder(encoder *e_x)
 	 * Generazione segnale per canale A da GPIO,
 	 * se il treno va a velocit� positiva allora lo spazio sar� positivo,
 	 * quindi verranno usati solo gli ultimi 2 if dei 4 totali, che fanno
-	 * il check per posizioni positive. Ogni paio di if dice se la GPIO �
-	 * alto o basso, la soglia che decide questo dipende dal duty cycle.
+	 * il check per posizioni positive. Ogni paio di if dice se la GPIO è
+	 * alta o bassa, la soglia che decide questo dipende dal duty cycle.
 	 * Esempio: il range dello spazio � 0 -> 2 passi, se duty = 50%
 	 * la soglia di transizione alto/basso sar� 1 passo.
 	 */
@@ -287,8 +292,10 @@ static void emula_encoder(encoder *e_x)
  * @param e_x Puntatore alla struttura dell'encoder da inizializzare
  *
  * @details
- * Imposta i valori iniziali per tutti i campi della struttura encoder, inclusi:
- * velocità, accelerazione, posizioni, duty cycle, fase, conteggio, stato di incollaggio,
+ * Imposta i valori iniziali per tutti i campi della struttura encoder,
+ * inclusi:
+ * velocità, accelerazione, posizioni, duty cycle, fase, conteggio, stato di
+ * incollaggio,
  * impulsi per rivoluzione (ppr), diametro e lunghezza del passo.
  *
  * @note
@@ -325,7 +332,8 @@ static void inizializza_encoder(encoder *e_x)
  *
  * @note
  * - Utilizza le funzioni XGpio per la configurazione e il controllo dei GPIO
- * - Assume che i campi indirizzo_gpio_A e indirizzo_gpio_B siano correttamente inizializzati
+ * - Assume che i campi indirizzo_gpio_A e indirizzo_gpio_B siano correttamente
+ *  inizializzati
  *
  * @see encoder, XGpio_SetDataDirection, XGpio_DiscreteClear
  */
@@ -339,19 +347,23 @@ static void reset_gpio(encoder *e_x)
 }
 
 /**
- * @brief Valuta e aggiorna lo stato dell'encoder basato sui segnali dei canali A e B
+ * @brief Valuta e aggiorna lo stato dell'encoder basato sui segnali dei canali
+ *  A e B
  *
  * @param e_x Puntatore alla struttura dell'encoder
  * @param statoA Stato logico del canale A
  * @param statoB Stato logico del canale B
  *
  * @details
- * Questa funzione determina lo stato dell'encoder basandosi sui segnali dei canali A e B.
- * Aggiorna il conteggio dell'encoder quando viene rilevato un cambiamento di stato valido.
+ * Questa funzione determina lo stato dell'encoder basandosi sui segnali dei
+ * canali A e B.
+ * Aggiorna il conteggio dell'encoder quando viene rilevato un cambiamento di
+ * stato valido.
  * Gli stati possibili sono: zero, uno, due, tre e incerto.
  *
  * @note
- * - Il conteggio viene incrementato solo quando lo stato cambia da uno stato valido a un altro
+ * - Il conteggio viene incrementato solo quando lo stato cambia da uno stato
+ * valido a un altro
  * - Lo stato 'incerto' è usato per gestire l'inizializzazione
  *
  * @see encoder
@@ -415,26 +427,10 @@ static void valuta_stato_encoder(encoder *e_x, bool statoA, bool statoB)
 }
 
 
-/************************************
+/******************************************************************************
  * GLOBAL FUNCTIONS
- ************************************/
+ *****************************************************************************/
 
-/**
- * @brief Inizializza le variabili e i GPIO per gli encoder
- *
- * @details
- * Questa funzione esegue le seguenti operazioni:
- * 1. Imposta il tempo di aggiornamento (t_update)
- * 2. Inizializza le strutture degli encoder e_1 e e_2
- * 3. Inizializza i GPIO associati a ciascun encoder
- * 4. Resetta lo stato dei GPIO
- *
- * @note
- * - Utilizza funzioni esterne come ritorna_tempo_del_polling()
- * - Utilizza costanti XPAR per l'identificazione dei dispositivi GPIO
- *
- * @see inizializza_encoder, XGpio_Initialize, reset_gpio
- */
 void inizializza_variabili_encoder()
 {
 	t_update = ritorna_tempo_del_polling();
@@ -454,19 +450,6 @@ void inizializza_variabili_encoder()
 	reset_gpio(&e_2);
 }
 
-/**
- * @brief Aggiorna le variabili degli encoder se l'applicazione è connessa
- *
- * @details
- * Verifica lo stato di connessione dell'applicazione e, se connessa,
- * aggiorna le variabili per entrambi gli encoder e_1 e e_2.
- *
- * @note
- * - Dipende dalla funzione ritorna_stato_connessione_app()
- * - Non esegue alcuna azione se l'applicazione non è connessa
- *
- * @see aggiorna_encoder, ritorna_stato_connessione_app
- */
 void aggiorna_variabili_encoder()
 {
 	bool stato_connessione_app = ritorna_stato_connessione_app();
@@ -482,19 +465,6 @@ void aggiorna_variabili_encoder()
 	}
 }
 
-/**
- * @brief Emula i sensori degli encoder se l'applicazione è connessa
- *
- * @details
- * Verifica lo stato di connessione dell'applicazione e, se connessa,
- * esegue l'emulazione per entrambi gli encoder e_1 e e_2.
- *
- * @note
- * - Dipende dalla funzione ritorna_stato_connessione_app()
- * - Non esegue alcuna azione se l'applicazione non è connessa
- *
- * @see emula_encoder, ritorna_stato_connessione_app
- */
 void emula_sensori_encoder()
 {
 	bool stato_connessione_app = ritorna_stato_connessione_app();
@@ -574,13 +544,16 @@ void assegna_accelerazione_encoder2(float_t acc)
 
 void aggiorna_passo_encoder1(void)
 {
-	e_1.l_passo = (((double_t) e_1.diametro * PI_GRECO) / ((double_t) e_1.ppr)) * 0.5;
+	double_t numeratore = ((double_t) e_1.diametro) * PI_GRECO;
+	double_t denominatore = ((double_t) e_1.ppr) * 2;
+	e_1.l_passo = numeratore / denominatore;
 }
 
 void aggiorna_passo_encoder2(void)
 {
-	e_2.l_passo = (((double_t) e_2.diametro * PI_GRECO) / ((double_t) e_2.ppr)) * 0.5;
+	double_t numeratore = ((double_t) e_2.diametro) * PI_GRECO;
+	double_t denominatore = ((double_t) e_2.ppr) * 2;
+	e_2.l_passo = numeratore / denominatore;
 }
 
-
-
+/****************** (C) COPYRIGHT GITSIM ***** END OF FILE *******************/

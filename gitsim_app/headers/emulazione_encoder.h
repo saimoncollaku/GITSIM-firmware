@@ -1,8 +1,8 @@
 /**
- ********************************************************************************
+ ******************************************************************************
  * @file    emulazione_encoder.h
  * @author  Saimon Collaku
- ********************************************************************************
+ ******************************************************************************
  */
 
 #ifndef HEADERS_EMULAZIONE_ENCODER_H_
@@ -12,105 +12,207 @@
 extern "C" {
 #endif
 
-/************************************
+/******************************************************************************
  * INCLUDES
- ************************************/
+ *****************************************************************************/
 #include <math.h>
 #include "xgpio.h"
 #include <stdbool.h>
 
 
-/************************************
+/******************************************************************************
  * TYPEDEFS
- ************************************/
+ *****************************************************************************/
+
+/** @brief Rappresenta lo stato dell'encoder basato sui livelli dei canali A e
+ *  B.
+ *
+ *  Utilizzato per decodificare la posizione e la generare il conteggio.
+ */
 typedef enum
 {
+	/** @brief Stato 0: Canale A = 0, Canale B = 0 */
 	zero,
+	/** @brief Stato 1: Canale A = 0, Canale B = 1 */
 	uno,
+	/** @brief Stato 2: Canale A = 1, Canale B = 0 */
 	due,
+	/** @brief Stato 3: Canale A = 1, Canale B = 1 */
 	tre,
+	/** @brief Stato incerto, usato per l'inizializzazione */
 	incerto
 }stato_encoder;
 
 
+/** @brief Struttura che rappresenta un encoder incrementale emulato.
+ *
+ *  Questa struttura contiene tutti i parametri e le informazioni necessarie
+ *  per emulare e gestire un encoder incrementale in un sistema embedded.
+ *  Include caratteristiche fisiche, stati operativi/errore, e parametri di
+ *  output.
+ */
 typedef struct
 {
-  uint16_t duty_A;          /**< Duty cycle del segnale in uscita al canale A,
-                                espresso come intero percentuale (fare
-                                attenzione perchè bisogna convertirlo in numero
-                                moltiplicando per 0.01). */
+  /** @brief Duty cycle del segnale in uscita al canale A.
+   *  Espresso come intero percentuale. Moltiplicare per 0.01 per ottenere il
+   *   valore effettivo.
+   */
+  uint16_t duty_A;
 
-  uint16_t duty_B;          /**< Duty cycle del segnale in uscita al canale B,
-                                espresso come percentuale (fare
-                                attenzione perchè bisogna convertirlo in numero
-                                moltiplicando per 0.01). */
+  /** @brief Duty cycle del segnale in uscita al canale B.
+   *  Espresso come intero percentuale. Moltiplicare per 0.01 per ottenere il
+   *   valore effettivo.
+   */
+  uint16_t duty_B;
+
+  /** @brief Flag per indicare l'incollaggio del canale A.
+   *  true se il canale è incollato, false altrimenti.
+   */
   bool incollaggio_A;
 
+  /** @brief Flag per indicare l'incollaggio del canale B.
+   *  true se il canale è incollato, false altrimenti.
+   */
   bool incollaggio_B;
 
+  /** @brief Flag per indicare errore di frequenza sul canale A.
+   *  true se c'è un errore di frequenza, false altrimenti.
+   */
   bool err_freq_A;
 
+  /** @brief Flag per indicare errore di frequenza sul canale B.
+   *  true se c'è un errore di frequenza, false altrimenti.
+   */
   bool err_freq_B;
 
+  /** @brief Errore di frequenza per passo.
+   *  Rappresenta la deviazione dalla frequenza attesa per ogni passo dell'
+   *  encoder.
+   */
   float_t err_freq_passo;
 
+  /** @brief Sfasamento dei due segnali dell'encoder.
+   *  Misurato in gradi.
+   */
+  int16_t fase;
 
+  /** @brief Impulsi per giro dell'encoder.
+   *  Numero di suddivisioni del disco o impulsi per giro, misurato in PPR
+   *  (Pulses Per Revolution).
+   */
+  uint16_t ppr;
 
-  int16_t fase;           /**< Sfasamento dei due segnali dal GIT, misurato
-                                in gradi. */
+  /** @brief Diametro della ruota collegata al GIT.
+   *  Misurato in metri.
+   */
+  float_t diametro;
 
-  uint16_t ppr;            /**< Risoluzione del GIT riconducibile come numero
-                                di suddivisioni del disco o al numero di
-                                impulsi per giro, misurato in ppr. */
+  /** @brief Lunghezza del passo di ruota rilevato da un canale dell'encoder.
+   *  Misurato in metri. Ricalcolato quando diametro o risoluzione variano.
+   *  Corrisponde alla lunghezza con risoluzione x2.
+   */
+  double_t l_passo;
 
-  float_t diametro;              /**< Diametro della ruota il cui asse è
-                                collegato al GIT, misurato in metri. */
+  /** @brief Posizione del sensore A.
+   *  Misurato in metri. Rappresenta la posizione nell'intervallo di 4 passi,
+   *  con risoluzione x2
+   */
+  double_t pos_A;
 
-  double_t l_passo;             /**< Lunghezza del passo di ruota recepito dal
-                                GIT, misurato in metri.  Esso deve essere
-                                ricalcolato ogni volta che il diametro o
-                                la risoluzione variano utilizzando la
-                                formula: \f$ passo=\frac{\pi \cdot diametro}
-                                {4 \cdot risoluzione}\f$. */
+  /** @brief Posizione del sensore B.
+   *  Misurato in metri. Rappresenta la posizione nell'intervallo di 4 passi,
+   *  con risoluzione x2
+   */
+  double_t pos_B;
 
-  double_t pos_A;       /**< Posizione del sensore A, misurato in metri. */
+  /** @brief Velocità del GIT.
+   *  Misurato in m/s.
+   */
+  double_t vel;
 
-  double_t pos_B;       /**< Posizione del sensore B nell'intervallo di 4
-                                passi, misurato in metri */
+  /** @brief Accelerazione del GIT.
+   *  Misurato in m/s<sup>2</sup>
+   */
+  double_t acc;
 
-  double_t vel;         /**< Velocità del GIT, in m/s */
+  /** @brief Numero di passi svolti dall'ultimo reset.
+   *  Conteggio contato con i passi a risoluzione x4.
+   *
+   *  @note quindi la lunghezza del passo equivalente per il
+   *  calcolo dei conteggi e la metà rispetto a quello della
+   *  variabile l_passo.
+   */
+  uint16_t conteggio;
 
-  double_t acc;         /**< Accelerazione del GIT, in m/s^2 */
-
-  uint16_t conteggio;        /**< Numero di passi svolti dall'ultimo reset,
-                                i passi sono quelli ottenuti tramite la
-                                tecnica di risoluzione x4 */
+  /** @brief Indirizzo GPIO per il canale A.
+   *  Struttura XGpio per la gestione del GPIO del canale A.
+   */
   XGpio indirizzo_gpio_A;
+
+  /** @brief Indirizzo GPIO per il canale B.
+   *  Struttura XGpio per la gestione del GPIO del canale B.
+   */
   XGpio indirizzo_gpio_B;
 
+  /** @brief Stato corrente dell'encoder.
+   *  Enumerazione che rappresenta lo stato operativo dell'encoder.
+   */
   stato_encoder stato;
+
 } encoder;
 
 
-/************************************
+/******************************************************************************
  * GLOBAL FUNCTION PROTOTYPES
- ************************************/
+ *****************************************************************************/
 
+/**
+ * @brief Inizializza le variabili e i GPIO per gli encoder
+ *
+ * @details
+ * Questa funzione esegue le seguenti operazioni:
+ * 1. Imposta il tempo di aggiornamento (t_update)
+ * 2. Inizializza le strutture degli encoder e_1 e e_2
+ * 3. Inizializza i GPIO associati a ciascun encoder
+ * 4. Resetta lo stato dei GPIO
+ *
+ * @note
+ * - Utilizza funzioni esterne come ritorna_tempo_del_polling()
+ * - Utilizza costanti XPAR per l'identificazione dei dispositivi GPIO
+ *
+ * @see inizializza_encoder, XGpio_Initialize, reset_gpio
+ */
 void inizializza_variabili_encoder(void);
+
 
 /**
  * @brief Emula le uscite degli encoder e_1 ed e_2
  *
- * @details Questa funzione gestisce l'emulazione dei sensori per gli encoder e_1 ed e_2.
- * L'emulazione viene eseguita solo se l'applicazione GITSIM è connessa, altrimenti
- * la funzione non esegue alcuna operazione.
+ * @details Questa funzione gestisce l'emulazione dei sensori per gli encoder
+ *  e_1 ed e_2.
+ * L'emulazione viene eseguita solo se l'applicazione GITSIM è connessa,
+ * altrimenti la funzione non esegue alcuna operazione.
  *
- * @note L'emulazione dei sensori è utile per test e debug, permettendo di simulare
- * il comportamento degli encoder senza hardware fisico.
+ * @note L'emulazione dei sensori è utile per test e debug, permettendo di
+ * simulare il comportamento degli encoder senza hardware fisico.
  *
  * @see e_1, e_2, ritorna_stato_connessione_app, emula_encoder
  */
 void emula_sensori_encoder(void);
+
+/**
+ * @brief Aggiorna le variabili degli encoder se l'applicazione è connessa
+ *
+ * @details
+ * Verifica lo stato di connessione dell'applicazione e, se connessa,
+ * aggiorna le variabili per entrambi gli encoder e_1 e e_2.
+ *
+ * @note
+ * - Dipende dalla funzione ritorna_stato_connessione_app()
+ * - Non esegue alcuna azione se l'applicazione non è connessa
+ *
+ * @see aggiorna_encoder, ritorna_stato_connessione_app
+ */
 void aggiorna_variabili_encoder(void);
 
 /**
@@ -156,7 +258,8 @@ double_t ritorna_velocita_encoder2(void);
 /**
  * @brief Restituisce il valore di conteggio corrente dell'encoder e_1
  *
- * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder e_1
+ * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder
+ * e_1
  *
  * @details Questa funzione fornisce accesso al valore di conteggio attuale
  * dell'encoder e_1 con risoluzione x4. Il conteggio rappresenta il numero
@@ -172,7 +275,8 @@ uint16_t ritorna_conteggio_encoder1(void);
 /**
  * @brief Restituisce il valore di conteggio corrente dell'encoder e_2
  *
- * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder e_2
+ * @return uint16_t Il valore di conteggio (con risoluzione x4) dell'encoder
+ * e_2
  *
  * @details Questa funzione fornisce accesso al valore di conteggio attuale
  * dell'encoder e_2 con risoluzione x4. Il conteggio rappresenta il numero
@@ -220,8 +324,9 @@ void assegna_ppr_encoder2(uint16_t ppr);
  *
  * @param diametro Il diametro della ruota da assegnare (in metri)
  *
- * @details Questa funzione imposta il diametro della ruota per entrambi gli encoder
- * e_1 ed e_2. Il valore del diametro viene assegnato direttamente senza conversioni.
+ * @details Questa funzione imposta il diametro della ruota per entrambi gli
+ * encoder e_1 ed e_2. Il valore del diametro viene assegnato direttamente
+ * senza conversioni.
  *
  * @see e_1, e_2
  * @see encoder.diametro
@@ -343,3 +448,5 @@ void aggiorna_passo_encoder2(void);
 #endif
 
 #endif 
+
+/****************** (C) COPYRIGHT GITSIM ***** END OF FILE *******************/

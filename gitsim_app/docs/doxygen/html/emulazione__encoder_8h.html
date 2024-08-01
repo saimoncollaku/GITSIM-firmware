@@ -133,6 +133,7 @@ Grafo delle dipendenze di inclusione per emulazione_encoder.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Strutture dati</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencoder.html">encoder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura che rappresenta un encoder incrementale emulato.  <a href="structencoder.html#details">Continua...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -146,6 +147,7 @@ Tipi enumerati (enum)</h2></td></tr>
 &#160;&#160;<a class="el" href="#ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c">incerto</a>
 <br />
  }</td></tr>
+<tr class="memdesc:ac5ebc22a2d6fd11a8466d1880fff61c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta lo stato dell'encoder basato sui livelli dei canali A e B.  <a href="#ac5ebc22a2d6fd11a8466d1880fff61c0">Continua...</a><br /></td></tr>
 <tr class="separator:ac5ebc22a2d6fd11a8466d1880fff61c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -218,15 +220,23 @@ Funzioni</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Rappresenta lo stato dell'encoder basato sui livelli dei canali A e B. </p>
+<p>Utilizzato per decodificare la posizione e la generare il conteggio. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db" name="ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db"></a>zero&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b" name="ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b"></a>uno&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a" name="ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a"></a>due&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99" name="ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99"></a>tre&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c" name="ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c"></a>incerto&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db" name="ac5ebc22a2d6fd11a8466d1880fff61c0a7b3ef6ceb30a5b0c69691a9574a1b6db"></a>zero&#160;</td><td class="fielddoc"><p>Stato 0: Canale A = 0, Canale B = 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b" name="ac5ebc22a2d6fd11a8466d1880fff61c0a0d61261788c798920c0750a67ddc767b"></a>uno&#160;</td><td class="fielddoc"><p>Stato 1: Canale A = 0, Canale B = 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a" name="ac5ebc22a2d6fd11a8466d1880fff61c0ac3c1f0cf1bb398ffe961d56f2a83f19a"></a>due&#160;</td><td class="fielddoc"><p>Stato 2: Canale A = 1, Canale B = 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99" name="ac5ebc22a2d6fd11a8466d1880fff61c0a33873816ca9640f3fa5e4d7be830db99"></a>tre&#160;</td><td class="fielddoc"><p>Stato 3: Canale A = 1, Canale B = 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c" name="ac5ebc22a2d6fd11a8466d1880fff61c0af2a9b288bddad995354163d883588f6c"></a>incerto&#160;</td><td class="fielddoc"><p>Stato incerto, usato per l'inizializzazione. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8h_source.html#l00026">26</a> del file <a class="el" href="emulazione__encoder_8h_source.html">emulazione_encoder.h</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8h_source.html#l00032">32</a> del file <a class="el" href="emulazione__encoder_8h_source.html">emulazione_encoder.h</a>.</p>
 
 </div>
 </div>
@@ -262,9 +272,9 @@ Funzioni</h2></td></tr>
 </ul>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">encoder.l_passo</a> </dd></dl>
+<a class="el" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45" title="Lunghezza del passo di ruota rilevato da un canale dell&#39;encoder. Misurato in metri....">encoder.l_passo</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00575">575</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00545">545</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -299,9 +309,9 @@ Funzioni</h2></td></tr>
 </ul>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45">encoder.l_passo</a> </dd></dl>
+<a class="el" href="structencoder.html#a8e27ae3ab7c03427eb5ee42ab646aa45" title="Lunghezza del passo di ruota rilevato da un canale dell&#39;encoder. Misurato in metri....">encoder.l_passo</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00580">580</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00552">552</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -329,7 +339,7 @@ Funzioni</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#aa59b42e2b68027e7fb2708e0bd174db0" title="Aggiorna lo stato di un encoder.">aggiorna_encoder</a>, <a class="el" href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00470">470</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00453">453</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -359,9 +369,9 @@ Funzioni</h2></td></tr>
 <dl class="section note"><dt>Nota</dt><dd>La conversione da float_t a double_t comporta un cambiamento di precisione, dipendente dalla libreria math.h</dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">encoder.acc</a> </dd></dl>
+<a class="el" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd" title="Accelerazione del GIT. Misurato in m/s2">encoder.acc</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00565">565</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00535">535</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -391,9 +401,9 @@ Funzioni</h2></td></tr>
 <dl class="section note"><dt>Nota</dt><dd>La conversione da float_t a double_t può comportare un cambiamento di precisione, dipendente dalla libreria math.h</dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd">encoder.acc</a> </dd></dl>
+<a class="el" href="structencoder.html#a5af3e088f719b48eadbd2ac4e8d34fbd" title="Accelerazione del GIT. Misurato in m/s2">encoder.acc</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00570">570</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00540">540</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -422,9 +432,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione imposta il diametro della ruota per entrambi gli encoder e_1 ed e_2. Il valore del diametro viene assegnato direttamente senza conversioni.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a>, <a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9">encoder.diametro</a> </dd></dl>
+<a class="el" href="structencoder.html#ab9a0b6484dbeb660f4cb2a66cf9c0ca9" title="Diametro della ruota collegata al GIT. Misurato in metri.">encoder.diametro</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00549">549</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00519">519</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -453,9 +463,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione imposta il valore ppr (impulsi per rivoluzione) per l'encoder e_1. Questo parametro è dato normalmente dal datasheet del costruttore dell'encoder e per la misura dei passi corrisponderebbe alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">encoder.ppr</a> </dd></dl>
+<a class="el" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf" title="Impulsi per giro dell&#39;encoder. Numero di suddivisioni del disco o impulsi per giro,...">encoder.ppr</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00539">539</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00509">509</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -484,9 +494,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione imposta il valore ppr (impulsi per rivoluzione) per l'encoder e_2. Questo parametro è dato normalmente dal datasheet del costruttore dell'encoder e per la misura dei passi corrisponderebbe alla risoluzione x1 (cioè usare solo i fronti di salita di un canale).</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf">encoder.ppr</a> </dd></dl>
+<a class="el" href="structencoder.html#a163640e005e8c38fdca97e7246c63fbf" title="Impulsi per giro dell&#39;encoder. Numero di suddivisioni del disco o impulsi per giro,...">encoder.ppr</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00544">544</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00514">514</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -516,9 +526,9 @@ Funzioni</h2></td></tr>
 <dl class="section note"><dt>Nota</dt><dd>La conversione da float_t a double_t comporta un cambiamento di precisione, dipendente dalla libreria math.h</dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf">encoder.vel</a> </dd></dl>
+<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf" title="Velocità del GIT. Misurato in m/s.">encoder.vel</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00555">555</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00525">525</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -548,9 +558,9 @@ Funzioni</h2></td></tr>
 <dl class="section note"><dt>Nota</dt><dd>La conversione da float_t a double_t comporta un cambiamento di precisione, dipendente dalla libreria math.h</dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf">encoder.vel</a> </dd></dl>
+<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf" title="Velocità del GIT. Misurato in m/s.">encoder.vel</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00560">560</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00530">530</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -572,17 +582,9 @@ Funzioni</h2></td></tr>
 <p>Emula le uscite degli encoder e_1 ed e_2. </p>
 <p>Questa funzione gestisce l'emulazione dei sensori per gli encoder e_1 ed e_2. L'emulazione viene eseguita solo se l'applicazione GITSIM è connessa, altrimenti la funzione non esegue alcuna operazione.</p>
 <dl class="section note"><dt>Nota</dt><dd>L'emulazione dei sensori è utile per test e debug, permettendo di simulare il comportamento degli encoder senza hardware fisico.</dd></dl>
-<dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a>, <a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a>, <a class="el" href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a>, <a class="el" href="emulazione__encoder_8c.html#a2374f48fa71a504e1b776cb8a657e06d" title="Emula il comportamento di un encoder.">emula_encoder</a></dd></dl>
-<p>Emula le uscite degli encoder e_1 ed e_2.</p>
-<p>Verifica lo stato di connessione dell'applicazione e, se connessa, esegue l'emulazione per entrambi gli encoder e_1 e e_2.</p>
-<dl class="section note"><dt>Nota</dt><dd><ul>
-<li>Dipende dalla funzione <a class="el" href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app()</a></li>
-<li>Non esegue alcuna azione se l'applicazione non è connessa</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a2374f48fa71a504e1b776cb8a657e06d" title="Emula il comportamento di un encoder.">emula_encoder</a>, <a class="el" href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a> </dd></dl>
+<dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a>, <a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a>, <a class="el" href="gestione__uart_8h.html#a08f294acc7835e12d7697b8920910d29">ritorna_stato_connessione_app</a>, <a class="el" href="emulazione__encoder_8c.html#a2374f48fa71a504e1b776cb8a657e06d" title="Emula il comportamento di un encoder.">emula_encoder</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00498">498</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00468">468</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -615,7 +617,7 @@ Funzioni</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a7a65a4b7030717c3b3b41be8a959cad2" title="Inizializza una struttura encoder con valori predefiniti.">inizializza_encoder</a>, XGpio_Initialize, <a class="el" href="emulazione__encoder_8c.html#a8a99c1b5ec44f0f37ae9e30394ce06d0" title="Resetta lo stato dei GPIO associati all&#39;encoder.">reset_gpio</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00438">438</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00434">434</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -638,9 +640,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione azzera i conteggi degli encoder e_1 ed e_2, riportandoli a zero. È utile per inizializzare o reinizializzare i dati per prevenire l'overflow delle variabili di conteggio.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a>, <a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d">encoder.conteggio</a> </dd></dl>
+<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d" title="Numero di passi svolti dall&#39;ultimo reset. Conteggio contato con i passi a risoluzione x4.">encoder.conteggio</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00513">513</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00483">483</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -664,11 +666,11 @@ Funzioni</h2></td></tr>
 <p>Questa funzione fornisce accesso al valore di conteggio attuale dell'encoder e_1 con risoluzione x4. Il conteggio rappresenta il numero di impulsi rilevati dall'encoder dall'ultimo reset o dall'inizio dell' emulazione.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d">encoder.conteggio</a> </dd>
+<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d" title="Numero di passi svolti dall&#39;ultimo reset. Conteggio contato con i passi a risoluzione x4.">encoder.conteggio</a> </dd>
 <dd>
 <a class="el" href="#a559fe09b56682a1c68cb049aab4c42ec" title="Resetta i conteggi di entrambi gli encoder e_1 ed e_2.">reset_conteggi_encoder()</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00529">529</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00499">499</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -692,11 +694,11 @@ Funzioni</h2></td></tr>
 <p>Questa funzione fornisce accesso al valore di conteggio attuale dell'encoder e_2 con risoluzione x4. Il conteggio rappresenta il numero di impulsi rilevati dall'encoder dall'ultimo reset o dall'inizio dell' emulazione.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d">encoder.conteggio</a> </dd>
+<a class="el" href="structencoder.html#abb823a68809270d2076d935df527fb0d" title="Numero di passi svolti dall&#39;ultimo reset. Conteggio contato con i passi a risoluzione x4.">encoder.conteggio</a> </dd>
 <dd>
 <a class="el" href="#a559fe09b56682a1c68cb049aab4c42ec" title="Resetta i conteggi di entrambi gli encoder e_1 ed e_2.">reset_conteggi_encoder()</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00534">534</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00504">504</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -720,9 +722,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione fornisce accesso al valore di velocità attuale emulato per l'encoder e_1, in metri al secondo. Fare attenzione al fatto che il valore è un double_t.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#a856a909edfa5ce1eeb00477fc36606c2" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 1.">e_1</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf">encoder.vel</a> </dd></dl>
+<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf" title="Velocità del GIT. Misurato in m/s.">encoder.vel</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00519">519</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00489">489</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
@@ -746,9 +748,9 @@ Funzioni</h2></td></tr>
 <p>Questa funzione fornisce accesso al valore di velocità attuale emulato per l'encoder e_2, in metri al secondo. Fare attenzione al fatto che il valore è un double_t.</p>
 <dl class="section see"><dt>Si veda anche</dt><dd><a class="el" href="emulazione__encoder_8c.html#afd4f192ea976fccbdbe15a4db0d2eed8" title="Struttura dati utilizzata per contenere tutte le variabili di stato dell&#39;encoder 2.">e_2</a> </dd>
 <dd>
-<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf">encoder.vel</a> </dd></dl>
+<a class="el" href="structencoder.html#a611077c5760214be5601fce57d5543bf" title="Velocità del GIT. Misurato in m/s.">encoder.vel</a> </dd></dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00524">524</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="emulazione__encoder_8c_source.html#l00494">494</a> del file <a class="el" href="emulazione__encoder_8c_source.html">emulazione_encoder.c</a>.</p>
 
 </div>
 </div>
