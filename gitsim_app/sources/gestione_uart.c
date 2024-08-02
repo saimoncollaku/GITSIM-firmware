@@ -51,7 +51,7 @@
  * Contiene: velocità encoder 1 (4 byte), velocità encoder 2 (4 byte),
  * conteggio encoder 1 (2 byte), conteggio encoder 2 (2 byte).
  */
-#define L_TELEGRAMMA_RISP   	(uint16_t) 12
+#define L_TELEGRAMMA_RISP   	(uint16_t) 13
 
 
 /**
@@ -90,16 +90,23 @@
 /**
  * @brief Massimo valore di PPR (Pulses Per Revolution) consentito per l'encoder
  *
- * Definisce il valore massimo accettabile per il numero di impulsi per giro dell'encoder.
+ * Definisce il valore massimo accettabile per il numero di impulsi per giro
+ * dell'encoder.
  */
 #define MAX_PPR_ENCODER 		(uint16_t) 128
 
 /**
  * @brief Minimo valore di PPR (Pulse Per Revolution) consentito per l'encoder
  *
- * Definisce il valore minimo accettabile per il numero di impulsi per giro dell'encoder.
+ * Definisce il valore minimo accettabile per il numero di impulsi per giro
+ * dell'encoder.
  */
 #define MIN_PPR_ENCODER 		(uint16_t) 80
+
+/**
+ * @brief Valore fisso da mandare come ultimo byte nel telegramma di risposta
+ */
+#define IDENTIFICATIVO_RISPOSTA 	(uint8_t) 218
 
 
 /**
@@ -159,7 +166,8 @@ static bool stato_connessione_app = false;
  * - true: l'handshake è avvenuto con successo
  * - false: l'handshake non è ancora avvenuto
  *
- * Questo flag viene usato per gestire la sequenza della comunicazione con l'app.
+ * Questo flag viene usato per gestire la sequenza della comunicazione con l'
+ * app.
  * La comunicazione è fatta in modo che la task di scrittura venga attivata se
  * si è fatta una lettura, e si vada in lettura se si è fatta una scrittura.
  */
@@ -169,8 +177,8 @@ static bool handshake_avvenuto = false;
 /******************************************************************************
  * STATIC FUNCTION PROTOTYPES
  *****************************************************************************/
-static void  leggi_telegramma_di_connessione( void );
-static void leggi_telegramma_funzionamento( void );
+static void  leggi_telegramma_di_connessione(void);
+static void leggi_telegramma_funzionamento(void);
 static void azione_funzionamento_valore(uint8_t identificatore,
 										const uint8_t *array_stringa);
 
@@ -454,6 +462,9 @@ void manda_telegramma_di_risposta()
     	temp_cont = ritorna_conteggio_encoder2();
     	buffer[10] = temp_cont & 0xFFU;
     	buffer[11] = (temp_cont >> 8U) & 0xFFU;
+
+    	/* Mando identificativo del telegramma della risposta (fisso) */
+    	buffer[12] = IDENTIFICATIVO_RISPOSTA;
 
     	// Send the buffer over UART
     	for(uint16_t indice = 0; indice < L_TELEGRAMMA_RISP; indice++)
